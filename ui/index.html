@@ -18,17 +18,18 @@
             
             <h2 class="h2-header">Welcome, <small>Please sign in</small></h2> <br>
             <center><small>New to <strong>Epic Mail?</strong> Sign Up <a href="sign-up.html">here</a></small></center>
-            <form action="" id="login-form">
+            <form action="" id="login-form" name="loginform">
                   <!-- <label for="email">Email</label> -->
                  
 
-                    <input type="email" id="email" placeholder="Enter your email" name="email" />
+                    <input type="email" id="email" placeholder="Enter your email" name="email" class="" required/>
+                    <label id="labeltext"></label>
                     <br>
                   <!-- <label for="password">Password</label> -->
                     
                     <input type="password" id="password" placeholder="Enter your password" name="password" />
                     <br>
-                  <button class="btn">Sign in</button>
+                  <input type="submit" class="btn" value="Sign in" onclick="validate();" />
                   <br>
                   <center><small>Forgotten <strong>Password?</strong> Click <a href="#">here</a></small></center>
           </form>
@@ -36,5 +37,6 @@
           </div>
      
   </section>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
