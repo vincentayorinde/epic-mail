@@ -67,6 +67,11 @@ html, body {
 
   }
 
+  #labeltext{
+    color: red;
+    visibility: hidden;
+  }
+
   #profile-menu{
     background-color: rosybrown;
     width: 170px;
@@ -127,6 +132,7 @@ html, body {
     background-color: white;
   }
 
+
   #login-form{
     padding-top:10px;
     margin: auto;
@@ -137,14 +143,14 @@ html, body {
   #login-form >
   input[type='email'],
   input[type='password'],
-  button{
+  input[type='submit']{
     padding: 10px;
     margin: 10px;
     width: 400px;
     font-family: 'Montserrat', sans-serif;
   }
   
-  #login-form > button{
+  #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
     width: 420px;
@@ -155,7 +161,7 @@ html, body {
     transition-duration: 1s;
     transition-delay: 0.14s;
   }
-  #login-form > button:hover{
+  #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
     width: 420px;

@@ -2,7 +2,7 @@
   "name": "epic-mail",
   "version": "1.0.0",
   "description": "Epic Mail is a web application that help people exchange messages or information over the internet",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "deploy": "gh-pages -d ui"
   },
@@ -18,5 +18,11 @@
   "homepage": "https://github.com/vincentayorinde/epic-mail",
   "dependencies": {
     "gh-pages": "^2.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+
   }
 }
