@@ -1682,7 +1682,7 @@ td {
       padding-top:10px;
       margin: auto;
       height: 400px;
-      width: 400px;
+      width: 300px;
   }
   #sign-up-form >
   input[type='email'],
@@ -1691,14 +1691,14 @@ td {
   button{
     padding: 10px;
     margin: 10px;
-    width: 400px;
+    width: 300px;
     font-family: 'Montserrat', sans-serif;
   }
 
   #sign-up-form > button{
     padding: 10px;
     margin: 10px;
-    width: 420px;
+    width: 320px;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
