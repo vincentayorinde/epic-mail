@@ -14,7 +14,7 @@ Sign Up
 : https://vincentayorinde.github.io/epic-mail/sign-up.html
 
 Reset Password 
-: https://vincentayorinde.github.io/epic-mail/sign-up.html
+: https://vincentayorinde.github.io/epic-mail/reset-password.html
 
 Mailbox
 : https://vincentayorinde.github.io/epic-mail/mailbox.html
