@@ -7,14 +7,17 @@ Epic Mail is a web application that help people exchange messages or information
 2. Internet browser
 
 ### Template Pages URL
-SIGN IN - https://vincentayorinde.github.io/epic-mail/index.html
+Sign In 
+: https://vincentayorinde.github.io/epic-mail/index.html
 
-SIGN UP - https://vincentayorinde.github.io/epic-mail/sign-up.html
+Sign Up
+: https://vincentayorinde.github.io/epic-mail/sign-up.html
 
-RESET PASSWORD - https://vincentayorinde.github.io/epic-mail/sign-up.html
+Reset Password 
+: https://vincentayorinde.github.io/epic-mail/sign-up.html
 
-MAILBOX - https://vincentayorinde.github.io/epic-mail/mailbox.html
-
+Mailbox
+: https://vincentayorinde.github.io/epic-mail/mailbox.html
 
 
 
@@ -26,10 +29,10 @@ The branches created in this application are structured such that they correspon
 Html and Css
 Javascript
 
-##Contributors
+## Contributors
 
 Vincent Olagbemide (vincentayorinde)
 
-##Author
+## Author
 
 Vincent Olagbemide (vincentayorinde)
