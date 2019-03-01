@@ -1651,7 +1651,7 @@ td {
   #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 95vw;
+    width: 105%;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
