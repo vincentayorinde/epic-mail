@@ -21,7 +21,7 @@ Mailbox
 
 
 
-### Branches
+### Branches 
 The branches created in this application are structured such that they correspond to feature developed in the application. For example, the  name with a ft-login-xxx corresponds codes for the login page and ft-signup-xxx corresponds to codes for the signup page, other branches will be add as project is still ongoing.
  The develop branch is positioned currently as the default branch due to the on-going nature of this project. It is expected that as the project nears completion some branches will be merged and completely deleted.
 
