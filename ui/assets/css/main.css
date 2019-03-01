@@ -1533,9 +1533,9 @@ td {
   }
    /* HEADER STYLE */
    header{
-    height: 40px;
+    height: 50px;
     background-color: #ddd;
-    padding: 10px 40px 15px 40px;
+    padding: 2px 5px 5px 5px;
     text-align: left;
   }
   .header-left{
@@ -1573,8 +1573,8 @@ td {
     height: 80px;
     cursor: pointer;
     position: fixed;
-    top: 60px; 
-    right: 40px;
+    top: 55px; 
+    right: 6px;
     display: none;
   }
  
@@ -1716,6 +1716,7 @@ td {
     float: left;
     background-color: white;
     height: 100vh; 
+    display: none;
   }
   .mailbox-content{
     width: 80%;
@@ -1734,8 +1735,10 @@ td {
 
   /* SIDEBAR MENU */
   .sidebar-menu{
+    visibility: hidden;
     width: 100%;
     background-color: bisque;
+    display: none;
    
   }
   .sidebar-menu ul li{
@@ -1781,7 +1784,7 @@ td {
     background-color:white;
     width: 100%;
     height: 100vh;
-    padding-left: 60px;
+    padding-left: 10px;
   }
   
 }
