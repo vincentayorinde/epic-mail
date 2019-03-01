@@ -1673,16 +1673,16 @@ td {
 
   /* SIGN UP PAGE  */
   .sign-up-page{
-    width: 100%;
+    width: 100vw;
     float: left;
     background-color: white;
   }
 
   #sign-up-form{
       padding-top:10px;
-      margin: auto;
+      /* margin: auto; */
       height: 400px;
-      width: 300px;
+      width: 100%;
   }
   #sign-up-form >
   input[type='email'],
@@ -1691,14 +1691,14 @@ td {
   button{
     padding: 10px;
     margin: 10px;
-    width: 300px;
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
   }
 
   #sign-up-form > button{
     padding: 10px;
     margin: 10px;
-    width: 320px;
+    width: 100%;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
