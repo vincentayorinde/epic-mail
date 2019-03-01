@@ -9,35 +9,46 @@
   <title>Mailbox</title>
 </head>
 <body>
-  <section class="mailbox-page">
     <header>
-      <div class="header-left">
-         <img src="assets/img/logo_sm.png" alt="EPIC Mail Logo" title="EPIC Mail Logo">
-      </div>
-      <div class="header-right" onclick="showProfileMenu();">
-          <div class="profile-name small-text">
-             Administrator 
-          </div>
-          <div class="profile-pic">
-            <img class="profile-pic" src="assets/img/profile-pictures/vince.jpg" alt="Administrator" title="Full Name">
-          </div>
-      </div>
-      <div id="profile-menu">
-          <ul>
-            <li><a href="#" class="small-text">Profile</a></li>
-            <li><a href="#" class="small-text">Sign Out</a></li>
-          </ul>
-      </div>
-    </header>
+        <div class="header-left">
+           <img src="assets/img/logo_sm.png" alt="EPIC Mail Logo" title="EPIC Mail Logo">
+        </div>
+        <div title="Access Profile or Sign out" class="header-right" onclick="showProfileMenu();">
+            <div class="profile-name small-text">
+               Administrator 
+            </div>
+            <div class="profile-pic">
+              <img class="profile-pic" src="assets/img/profile-pictures/vince.jpg" alt="Administrator" title="Full Name">
+            </div>
+        </div>
+        <div id="profile-menu">
+            <ul>
+              <li onclick="loadContent('profile')"><a href="#" class="small-text">Profile</a></li>
+              <li><a href="index.html" class="small-text">Sign Out</a></li>
+            </ul>
+        </div>
+      </header>
+  <section class="mailbox-page">
         <div class="mailbox-sidebar">
+          <div class="sidebar-menu">
+            <ul>
+              <li onclick="loadContent('compose')"><a href="#" class="small-text"><img class="icons" src="assets/img/icons/compose.png" alt="Compose" height="15px" width="15px" />Compose</a></li>
+              <li onclick="loadContent('inbox')"><a href="#" class="small-text"><img class="icons" src="assets/img/icons/inbox.png" alt="Inbox" height="15px" width="15px" />Inbox</a></li>
+              <li onclick="loadContent('sent')"><a href="#" class="small-text"><img class="icons" src="assets/img/icons/sent.png" alt="Sent" height="15px" width="15px" />Sent</a></li>
+              <li onclick="loadContent('draft')"><a href="#" class="small-text"><img class="icons" src="assets/img/icons/draft.png" alt="Dreft" height="15px" width="15px" />Draft</a></li>
+              <li onclick="loadContent('group')"><a href="#" class="small-text"><img class="icons" src="assets/img/icons/group.png" alt="Groups" height="18px" width="18px" />Groups</a></li>
+            </ul>
+          </div>
         </div> 
 
         <div class="mailbox-content">
+          <div id="content"></div>
         </div>
-    <footer>
-      Footer
-    </footer>
-</section>
+    </section>
+      <footer>
+        Footer
+      </footer>
+     
 <script src="assets/js/main.js"></script>
 </body>
 </html>
