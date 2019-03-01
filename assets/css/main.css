@@ -1625,7 +1625,7 @@ td {
     height: 100vh; 
   }
   .index-login-form{
-    width: 50vw;
+    width: 100%;
     float: left;
     background-color: white;
   }
@@ -1635,7 +1635,7 @@ td {
     padding-top:10px;
     margin: auto;
     height: 400px;
-    width: 400px;
+    width: 100%;
     
   }
   #login-form >
@@ -1644,7 +1644,7 @@ td {
   input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 90vw;
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
   }
   
