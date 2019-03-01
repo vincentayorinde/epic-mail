@@ -27,6 +27,9 @@ Html and Css
 Javascript
 
 ##Contributors
+
 Vincent Olagbemide (vincentayorinde)
+
 ##Author
+
 Vincent Olagbemide (vincentayorinde)
