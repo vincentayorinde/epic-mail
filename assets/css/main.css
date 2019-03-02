@@ -1513,10 +1513,15 @@ td {
   .header-left{
     float: left;
   }
+  .header-left img{
+    margin-top: 4px;
+    width: 170px;
+    height: 35px;
+  }
   .header-right{
     float: right;
     cursor: pointer;
-    padding: 0px 10px 5px 10px;
+    /* padding: 0px 10px 5px 10px; */
   }
   .header-right:hover{
     background-color: #f0f0f0;
