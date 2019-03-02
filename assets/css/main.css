@@ -900,7 +900,7 @@ display: none;
     background-color: #99cc33;
     height: 4rem;
     line-height: 40px;
-    padding-left: 4rem;
+    padding-left: 2rem;
     padding-top: 1rem;
   }
   .sidebar-menu ul li:hover{
@@ -909,7 +909,7 @@ display: none;
     background-color:#f9f9f9;
     height: 4rem;
     line-height: 40px;
-    padding-left: 4rem;
+    padding-left: 2rem;
     padding-top: 1rem;
     transition-property: background-color;
     transition-duration: 0.55s;
