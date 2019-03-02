@@ -14,12 +14,12 @@ const loadContent = (page) => {
 };
 loadContent('inbox');
 
-/* Set the width of the side navigation to 250px */
-function openNav() {
+const openNav = () => {
   document.getElementById('mySidenav').style.width = '250px';
-}
+};
+openNav();
 
-/* Set the width of the side navigation to 0 */
-function closeNav() {
+const closeNav = () => {
   document.getElementById('mySidenav').style.width = '0';
-}
+};
+closeNav();

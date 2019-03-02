@@ -96,7 +96,9 @@ color: #f1f1f1;
 .sidenav .closebtn {
 display: none;
 }
-
+#menu{
+  display: none;
+}
 
 /* 
   ##Device = Desktops
@@ -1820,5 +1822,7 @@ display: none;
 
 #menu{
   float: left;
+  display: block;
 }
+
 }
