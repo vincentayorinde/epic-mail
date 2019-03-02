@@ -10,9 +10,33 @@
 </head>
 <body>
     <header>
+        <span id="menu" onclick="openNav()"> <img src="assets/img/icons/menu.png" alt="Menu"></span>
         <div class="header-left">
            <img src="assets/img/logo_sm.png" alt="EPIC Mail Logo" title="EPIC Mail Logo">
         </div>
+        
+        <div id="mySidenav" class="sidenav">
+            <span class="header-right-m">
+                <div class="profile-pic-m">
+                    <img class="profile-pic-m" src="assets/img/profile-pictures/vince.jpg" alt="Administrator" title="Full Name">
+                  </div>
+                <div class="profile-name-m small-text">
+                    Administrator 
+                </div>
+                
+              </span>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+           
+            <a href="#">Compose</a>
+            <a href="#">Inbox</a>
+            <a href="#">Sent</a>
+            <a href="#">Draft</a>
+            <a href="#">Groups</a>
+            <hr>
+            <a href="#">Profile</a>
+            <a href="#">Sign out</a>
+          </div>
+          
         <div title="Access Profile or Sign out" class="header-right" onclick="showProfileMenu();">
             <div class="profile-name small-text">
                Administrator 

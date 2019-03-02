@@ -82,6 +82,21 @@ td {
   padding: 4px;
   color: white;
 }
+.sidenav {
+  display: none;
+}
+.sidenav a {
+display: none;
+}
+
+.sidenav a:hover {
+color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+display: none;
+}
+
 
 /* 
   ##Device = Desktops
@@ -1508,34 +1523,39 @@ td {
     height: 50px;
     background-color: #ddd;
     padding: 2px 5px 5px 5px;
-    text-align: left;
+    /* text-align: left; */
   }
   .header-left{
-    float: left;
+    text-align: center;
   }
   .header-left img{
     margin-top: 4px;
     width: 170px;
     height: 35px;
+    
   }
   .header-right{
-    float: right;
-    cursor: pointer;
-    /* padding: 0px 10px 5px 10px; */
+    display: none;
+  }
+  .header-right-m{
+    display: block;
+    margin-bottom: 50px;
+    padding-left: 10px;
   }
   .header-right:hover{
     background-color: #f0f0f0;
   }
 
-  .profile-pic{
+  .profile-pic-m{
     border-radius: 50%;
     height: 45px;
     width: 45px;
     float: left;
   }
-  .profile-name{
-   padding: 12px 10px 14px 0px;
+  .profile-name-m{
+   padding: 12px 10px 14px 10px;
    float: left;
+   color: white;
 
   }
 
@@ -1763,5 +1783,42 @@ td {
     height: 100vh;
     padding-left: 10px;
   }
-  
+  .sidenav {
+    height: 100%;
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: #003399; 
+    overflow-x: hidden;
+    padding-top: 30px;
+    transition: 0.5s; 
+    display: block;
+  }
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  display: inline;
+}
+
+#menu{
+  float: left;
+}
 }
