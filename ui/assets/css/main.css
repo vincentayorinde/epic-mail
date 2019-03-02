@@ -31,20 +31,20 @@ html, body {
 #compose-message{
   /* padding-top:5px; */
   height: 50vh;
-  width: 400px;
+  width: 100vw;
   
 }
 #compose-form input[type='text'],
 textarea{
   padding: 10px;
   margin: 10px;
-  width: 400px;
+  width: 100vw;
   font-family: 'Montserrat', sans-serif;
 }
 #compose-form input[type='submit']{
   padding: 10px;
   margin: 10px;
-  width: 420px;
+  width: 100vw;
   font-family: 'Montserrat', sans-serif;
   background-color: gray;
   color: white;
@@ -69,7 +69,7 @@ td {
 }
 #rec-del{
   background-color: gray;
-  width: 70px;
+  width: 100vw;
   height: 25px;
   padding: 4px;
   color: white;
@@ -77,10 +77,27 @@ td {
 }
 #add-group{
   background-color: red;
-  width: 70px;
+  width: 100vw;
   height: 25px;
   padding: 4px;
   color: white;
+}
+.sidenav {
+  display: none;
+}
+.sidenav a {
+display: none;
+}
+
+.sidenav a:hover {
+color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+display: none;
+}
+#menu{
+  display: none;
 }
 
 /* 
@@ -172,7 +189,7 @@ td {
    /* INDEX/ LOGIN PAGE */
    .index-page {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     clear: both;
   }
   .index-page-image{
@@ -184,7 +201,7 @@ td {
     height: 100vh; 
   }
   .index-login-form{
-    width: 50%;
+    width: 50vw;
     float: left;
     background-color: white;
   }
@@ -194,7 +211,7 @@ td {
     padding-top:10px;
     margin: auto;
     height: 400px;
-    width: 400px;
+    width: 30vw;
     
   }
   #login-form >
@@ -203,14 +220,14 @@ td {
   input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 400px;
+    width: -webkit-fill-available;
     font-family: 'Montserrat', sans-serif;
   }
   
   #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 420px;
+    width: -webkit-fill-available;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -221,7 +238,7 @@ td {
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: 420px;
+    width: -webkit-fill-available;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -232,7 +249,7 @@ td {
 
   /* SIGN UP PAGE  */
   .sign-up-page{
-    width: 100%;
+    width: 100vw;
     float: left;
     background-color: white;
   }
@@ -250,14 +267,14 @@ td {
   button{
     padding: 10px;
     margin: 10px;
-    width: 400px;
+    width:-webkit-fill-available;
     font-family: 'Montserrat', sans-serif;
   }
 
   #sign-up-form > button{
     padding: 10px;
     margin: 10px;
-    width: 420px;
+    width: -webkit-fill-available;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -267,7 +284,7 @@ td {
   
   .mailbox-page {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     clear: both;
   }
   .mailbox-sidebar{
@@ -293,14 +310,14 @@ td {
 
   /* SIDEBAR MENU */
   .sidebar-menu{
-    width: 100%;
+    width: 100vw;
     background-color: bisque;
    
   }
   .sidebar-menu ul li{
     text-decoration: none;
     list-style: none;
-    background-color: aqua;
+    background-color: #99cc33;
     height: 4rem;
     line-height: 40px;
     padding-left: 6rem;
@@ -338,7 +355,7 @@ td {
   
   object{
     background-color:white;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     padding-left: 60px;
   }
@@ -354,16 +371,16 @@ td {
   
   .index-page {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     clear: both;
   }
   header{
-    width: 100%;
+    width: 100vw;
     height: 30px;
     background-color: peru;
   }
   footer{
-    width: 100%;
+    width: 100vw;
     height: 30px;
     background-color: beige;
     float: left;
@@ -376,7 +393,7 @@ td {
     
   }
   .index-login-form{
-    width: 50%;
+    width: 50vw;
     float: left;
     background-color: blueviolet;
     height: 100vh;
@@ -463,19 +480,19 @@ td {
    /* INDEX/ LOGIN PAGE */
    .index-page {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     clear: both;
   }
   .index-page-image{
     background-image: url('../img/index-img.jpg');
     background-position: center;
-    width: 50%;
+    width: 50vw;
     float: left;
     background-color: gray;
     height: 100vh; 
   }
   .index-login-form{
-    width: 50%;
+    width: 50vw;
     float: left;
     background-color: white;
   }
@@ -485,7 +502,7 @@ td {
     padding-top:10px;
     margin: auto;
     height: 400px;
-    width: 400px;
+    width: 40vw;
     
   }
   #login-form >
@@ -523,7 +540,7 @@ td {
 
   /* SIGN UP PAGE  */
   .sign-up-page{
-    width: 100%;
+    width: 100vw;
     float: left;
     background-color: white;
   }
@@ -558,7 +575,7 @@ td {
   
   .mailbox-page {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     clear: both;
   }
   .mailbox-sidebar{
@@ -584,14 +601,14 @@ td {
 
   /* SIDEBAR MENU */
   .sidebar-menu{
-    width: 100%;
+    width: 100vw;
     background-color: bisque;
    
   }
   .sidebar-menu ul li{
     text-decoration: none;
     list-style: none;
-    background-color: aqua;
+    background-color: #99cc33;
     height: 4rem;
     line-height: 40px;
     padding-left: 6rem;
@@ -629,7 +646,7 @@ td {
   
   object{
     background-color:white;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     padding-left: 60px;
   }
@@ -643,16 +660,16 @@ td {
 @media (min-width: 768px) and (max-width: 1024px) {
   .index-page {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     clear: both;
   }
   header{
-    width: 100%;
+    width: 100vw;
     height: 30px;
     background-color: peru;
   }
   footer{
-    width: 100%;
+    width: 100vw;
     height: 30px;
     background-color: beige;
     float: left;
@@ -665,7 +682,7 @@ td {
     
   }
   .index-login-form{
-    width: 50%;
+    width: 50vw;
     float: left;
     background-color: blueviolet;
     height: 100vh;
@@ -752,7 +769,7 @@ td {
    /* INDEX/ LOGIN PAGE */
    .index-page {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     clear: both;
   }
   .index-page-image{
@@ -764,7 +781,7 @@ td {
     height: 100vh; 
   }
   .index-login-form{
-    width: 50%;
+    width: 50vw;
     float: left;
     background-color: white;
   }
@@ -774,7 +791,7 @@ td {
     padding-top:10px;
     margin: auto;
     height: 400px;
-    width: 400px;
+    width: 40vw;
     
   }
   #login-form >
@@ -783,14 +800,14 @@ td {
   input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 400px;
+    width: -webkit-fill-available;
     font-family: 'Montserrat', sans-serif;
   }
   
   #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 420px;
+    width: -webkit-fill-available;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -812,7 +829,7 @@ td {
 
   /* SIGN UP PAGE  */
   .sign-up-page{
-    width: 100%;
+    width: 100vw;
     float: left;
     background-color: white;
   }
@@ -821,7 +838,7 @@ td {
       padding-top:10px;
       margin: auto;
       height: 400px;
-      width: 400px;
+      width: 50vw;
   }
   #sign-up-form >
   input[type='email'],
@@ -830,14 +847,14 @@ td {
   button{
     padding: 10px;
     margin: 10px;
-    width: 400px;
+    width:-webkit-fill-available;
     font-family: 'Montserrat', sans-serif;
   }
 
   #sign-up-form > button{
     padding: 10px;
     margin: 10px;
-    width: 420px;
+    width: -webkit-fill-available;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -847,7 +864,7 @@ td {
   
   .mailbox-page {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     clear: both;
   }
   .mailbox-sidebar{
@@ -873,14 +890,14 @@ td {
 
   /* SIDEBAR MENU */
   .sidebar-menu{
-    width: 100%;
+    width: 100vw;
     background-color: bisque;
    
   }
   .sidebar-menu ul li{
     text-decoration: none;
     list-style: none;
-    background-color: aqua;
+    background-color: #99cc33;
     height: 4rem;
     line-height: 40px;
     padding-left: 6rem;
@@ -918,7 +935,7 @@ td {
   
   object{
     background-color:white;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     padding-left: 60px;
   }
@@ -932,33 +949,28 @@ td {
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .index-page {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     clear: both;
   }
   header{
-    width: 100%;
+    width: 100vw;
     height: 30px;
     background-color: peru;
   }
   footer{
-    width: 100%;
+    width: 100vw;
     height: 30px;
     background-color: beige;
     float: left;
   }
   .index-page-image{
-    width: 50%;
+    width: 50vw;
     float: left;
     background-color: aqua;
     height: 100vh;
     
   }
-  .index-login-form{
-    width: 50%;
-    float: left;
-    background-color: blueviolet;
-    height: 100vh;
-  }
+ 
    /* HEADER STYLE */
    header{
     height: 40px;
@@ -1001,8 +1013,8 @@ td {
     height: 80px;
     cursor: pointer;
     position: fixed;
-    top: 60px; 
-    right: 40px;
+    top: 55px; 
+    right: 26px;
     display: none;
   }
  
@@ -1041,7 +1053,7 @@ td {
    /* INDEX/ LOGIN PAGE */
    .index-page {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     clear: both;
   }
   .index-page-image{
@@ -1053,7 +1065,7 @@ td {
     height: 100vh; 
   }
   .index-login-form{
-    width: 50%;
+    width: 50vw;
     float: left;
     background-color: white;
   }
@@ -1063,7 +1075,7 @@ td {
     padding-top:10px;
     margin: auto;
     height: 400px;
-    width: 400px;
+    width: 30vw;
     
   }
   #login-form >
@@ -1072,14 +1084,14 @@ td {
   input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 400px;
+    width: -webkit-fill-available;
     font-family: 'Montserrat', sans-serif;
   }
   
   #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 420px;
+    width: -webkit-fill-available;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -1090,7 +1102,7 @@ td {
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: 420px;
+    width: -webkit-fill-available;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -1101,7 +1113,7 @@ td {
 
   /* SIGN UP PAGE  */
   .sign-up-page{
-    width: 100%;
+    width: 100vw;
     float: left;
     background-color: white;
   }
@@ -1110,7 +1122,7 @@ td {
       padding-top:10px;
       margin: auto;
       height: 400px;
-      width: 400px;
+      width: 50vw;
   }
   #sign-up-form >
   input[type='email'],
@@ -1119,14 +1131,14 @@ td {
   button{
     padding: 10px;
     margin: 10px;
-    width: 400px;
+    width: -webkit-fill-available;
     font-family: 'Montserrat', sans-serif;
   }
 
   #sign-up-form > button{
     padding: 10px;
     margin: 10px;
-    width: 420px;
+    width: -webkit-fill-available;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -1136,7 +1148,7 @@ td {
   
   .mailbox-page {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     clear: both;
   }
   .mailbox-sidebar{
@@ -1162,14 +1174,14 @@ td {
 
   /* SIDEBAR MENU */
   .sidebar-menu{
-    width: 100%;
+    width: 100vw;
     background-color: bisque;
    
   }
   .sidebar-menu ul li{
     text-decoration: none;
     list-style: none;
-    background-color: aqua;
+    background-color: #99cc33;
     height: 4rem;
     line-height: 40px;
     padding-left: 6rem;
@@ -1207,7 +1219,7 @@ td {
   
   object{
     background-color:white;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     padding-left: 60px;
   }
@@ -1222,16 +1234,11 @@ td {
   
   .index-page {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     clear: both;
   }
-  header{
-    width: 100%;
-    height: 30px;
-    background-color: peru;
-  }
   footer{
-    width: 100%;
+    width: 100vw;
     height: 30px;
     background-color: beige;
     float: left;
@@ -1240,17 +1247,11 @@ td {
     display: none;
     
   }
-  .index-login-form{
-    width: 100%;
-    float: left;
-    background-color: blueviolet;
-    height: 100vh;
-  }
     /* HEADER STYLE */
   header{
     height: 40px;
     background-color: #ddd;
-    padding: 10px 40px 15px 40px;
+    padding: 2px 5px 5px 5px;
     text-align: left;
   }
   .header-left{
@@ -1288,8 +1289,8 @@ td {
     height: 80px;
     cursor: pointer;
     position: fixed;
-    top: 60px; 
-    right: 40px;
+    top: 50px; 
+    right: 8px;
     display: none;
   }
  
@@ -1321,28 +1322,19 @@ td {
     background-color: beige;
     float: left;
   }
-  /* section{
-    padding-top: 30px;
-  } */
-
-   /* INDEX/ LOGIN PAGE */
-   .index-page {
-    height: 100%;
-    width: 100%;
-    clear: both;
-  }
   .index-page-image{
     background-image: url('../img/index-img.jpg');
     background-position: center;
-    width: 50%;
+    width: 50vw;
     float: left;
     background-color: gray;
     height: 100vh; 
   }
   .index-login-form{
-    width: 50%;
+    width: 100vw;
     float: left;
     background-color: white;
+    margin: auto;
   }
 
 
@@ -1350,7 +1342,7 @@ td {
     padding-top:10px;
     margin: auto;
     height: 400px;
-    width: 400px;
+    width: 70vw;
     
   }
   #login-form >
@@ -1359,14 +1351,14 @@ td {
   input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 400px;
+    width: -webkit-fill-available;
     font-family: 'Montserrat', sans-serif;
   }
   
   #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 420px;
+    width: -webkit-fill-available;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -1377,7 +1369,7 @@ td {
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: 420px;
+    width: -webkit-fill-available;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -1388,7 +1380,7 @@ td {
 
   /* SIGN UP PAGE  */
   .sign-up-page{
-    width: 100%;
+    width: 100vw;
     float: left;
     background-color: white;
   }
@@ -1397,7 +1389,7 @@ td {
       padding-top:10px;
       margin: auto;
       height: 400px;
-      width: 400px;
+      width: 60vw;
   }
   #sign-up-form >
   input[type='email'],
@@ -1406,14 +1398,14 @@ td {
   button{
     padding: 10px;
     margin: 10px;
-    width: 400px;
+    width: -webkit-fill-available;
     font-family: 'Montserrat', sans-serif;
   }
 
   #sign-up-form > button{
     padding: 10px;
     margin: 10px;
-    width: 420px;
+    width: -webkit-fill-available;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -1423,7 +1415,7 @@ td {
   
   .mailbox-page {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     clear: both;
   }
   .mailbox-sidebar{
@@ -1431,6 +1423,7 @@ td {
     float: left;
     background-color: white;
     height: 100vh; 
+    display: none;
   }
   .mailbox-content{
     width: 80%;
@@ -1447,16 +1440,17 @@ td {
     height: 100%;
   }
 
-  /* SIDEBAR MENU */
-  .sidebar-menu{
-    width: 100%;
-    background-color: bisque;
-   
-  }
+ /* SIDEBAR MENU */
+ .sidebar-menu{
+  visibility: hidden;
+  width: 100vw;
+  background-color: bisque;
+  display: none;
+ }
   .sidebar-menu ul li{
     text-decoration: none;
     list-style: none;
-    background-color: aqua;
+    background-color: #99cc33;
     height: 4rem;
     line-height: 40px;
     padding-left: 6rem;
@@ -1494,7 +1488,7 @@ td {
   
   object{
     background-color:white;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     padding-left: 60px;
   } 
@@ -1505,19 +1499,14 @@ td {
   ##Screen = B/w 320px to 479px
 */
 
-@media (min-width: 300px) and (max-width: 480px) {
+@media (min-width: 200px) and (max-width: 480px) {
   .index-page {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     clear: both;
   }
-  header{
-    width: 100%;
-    height: 30px;
-    background-color: peru;
-  }
   footer{
-    width: 100%;
+    width: 100vw;
     height: 30px;
     background-color: beige;
     float: left;
@@ -1526,39 +1515,49 @@ td {
     display: none;
   }
   .index-login-form{
-    width: 90%;
+    width: 100vw;
     /* float: left; */
     background-color: blueviolet;
     height: 100vh;
   }
    /* HEADER STYLE */
    header{
-    height: 40px;
+    height: 50px;
     background-color: #ddd;
-    padding: 10px 40px 15px 40px;
-    text-align: left;
+    padding: 2px 5px 5px 5px;
+    /* text-align: left; */
   }
   .header-left{
-    float: left;
+    text-align: center;
+  }
+  .header-left img{
+    margin-top: 4px;
+    width: 170px;
+    height: 35px;
+    
   }
   .header-right{
-    float: right;
-    cursor: pointer;
-    padding: 0px 10px 5px 10px;
+    display: none;
+  }
+  .header-right-m{
+    display: block;
+    margin-bottom: 50px;
+    padding-left: 10px;
   }
   .header-right:hover{
     background-color: #f0f0f0;
   }
 
-  .profile-pic{
+  .profile-pic-m{
     border-radius: 50%;
     height: 45px;
     width: 45px;
     float: left;
   }
-  .profile-name{
-   padding: 12px 10px 14px 0px;
+  .profile-name-m{
+   padding: 12px 10px 14px 10px;
    float: left;
+   color: white;
 
   }
 
@@ -1573,15 +1572,15 @@ td {
     height: 80px;
     cursor: pointer;
     position: fixed;
-    top: 60px; 
-    right: 40px;
+    top: 55px; 
+    right: 6px;
     display: none;
   }
  
   #profile-menu ul li{
     text-decoration: none;
     list-style: none;
-    background-color: aqua;
+    background-color: #99cc33;
     height: 40px;
     line-height: 40px;
     padding-left: 20px;
@@ -1619,7 +1618,7 @@ td {
   .index-page-image{
     background-image: url('../img/index-img.jpg');
     background-position: center;
-    width: 50%;
+    width: 50vw;
     float: left;
     background-color: gray;
     height: 100vh; 
@@ -1635,7 +1634,7 @@ td {
     padding-top:10px;
     margin: auto;
     height: 400px;
-    width: 100%;
+    width: 100vw;
     
   }
   #login-form >
@@ -1644,14 +1643,14 @@ td {
   input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 100%;
+    width: -webkit-fill-available;
     font-family: 'Montserrat', sans-serif;
   }
   
   #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 105%;
+    width: -webkit-fill-available;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -1662,7 +1661,7 @@ td {
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: 105%;
+    width: -webkit-fill-available;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -1682,7 +1681,7 @@ td {
       padding-top:10px;
       /* margin: auto; */
       height: 400px;
-      width: 100%;
+      width: 100vw;
   }
   #sign-up-form >
   input[type='email'],
@@ -1691,14 +1690,14 @@ td {
   button{
     padding: 10px;
     margin: 10px;
-    width: 100%;
+    width: -webkit-fill-available;
     font-family: 'Montserrat', sans-serif;
   }
 
   #sign-up-form > button{
     padding: 10px;
     margin: 10px;
-    width: 105%;
+    width: -webkit-fill-available;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -1708,7 +1707,7 @@ td {
   
   .mailbox-page {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     clear: both;
   }
   .mailbox-sidebar{
@@ -1716,6 +1715,7 @@ td {
     float: left;
     background-color: white;
     height: 100vh; 
+    display: none;
   }
   .mailbox-content{
     width: 80%;
@@ -1734,14 +1734,16 @@ td {
 
   /* SIDEBAR MENU */
   .sidebar-menu{
-    width: 100%;
+    visibility: hidden;
+    width: 100vw;
     background-color: bisque;
+    display: none;
    
   }
   .sidebar-menu ul li{
     text-decoration: none;
     list-style: none;
-    background-color: aqua;
+    background-color: #99cc33;
     height: 4rem;
     line-height: 40px;
     padding-left: 6rem;
@@ -1779,9 +1781,48 @@ td {
   
   object{
     background-color:white;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    padding-left: 60px;
+    padding-left: 10px;
   }
-  
+  .sidenav {
+    height: 100%;
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: #003399; 
+    overflow-x: hidden;
+    padding-top: 30px;
+    transition: 0.5s; 
+    display: block;
+  }
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  display: inline;
+}
+
+#menu{
+  float: left;
+  display: block;
+}
+
 }
