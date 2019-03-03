@@ -309,7 +309,7 @@ display: none;
   .mailbox-content{
     width: webkit-fill-available;
     float: left;
-    background-color:greenyellow;
+    background-color:white;
     height: 100vh;
   }
   .mailbox-content .content{
@@ -364,14 +364,14 @@ display: none;
   
   object{
     background-color:white;
-    width: 75vw;
+    width: 74vw;
     height: 100vh;
     padding-left: 20px;
   }
   
 .divRowBody{
   width: -webkit-fill-available;
-  background-color: aqua;
+  background-color: #dcfbbd;
 }
 .rowHead{
   display: block;
@@ -636,13 +636,13 @@ display: none;
   .mailbox-sidebar{
     width: 20%;
     float: left;
-    background-color: white;
+    background-color: #fff;
     height: 100vh; 
   }
   .mailbox-content{
     width: 75vw;
     float: left;
-    background-color:greenyellow;
+    background-color:#fff;
     height: 100vh;
   }
   
@@ -975,7 +975,7 @@ display: none;
   .mailbox-content{
     width: 75vw;
     float: left;
-    background-color:greenyellow;
+    background-color:white;
     height: 100vh;
   }
  
@@ -1311,12 +1311,11 @@ display: none;
   .mailbox-content{
     width: 75vw;
     float: left;
-    background-color:greenyellow;
+    background-color:white;
     height: 100vh;
   }
   .mailbox-content .content {
     display: none;
-    background-color: green;
   }
   .mailbox-content .content{
     width: -webkit-fill-available;
@@ -1441,7 +1440,7 @@ display: none;
 }
 
 .colBody{
-  background-color: dcfbbd;
+  background-color: #dcfbbd;
   width: -webkit-fill-available;
   display: flex;
   cursor: pointer;
@@ -1670,12 +1669,11 @@ display: none;
   .mailbox-content{
     width: 75vw;
     float: left;
-    background-color:greenyellow;
+    background-color:white;
     height: 100vh;
   }
   .mailbox-content .content {
     display: none;
-    background-color: green;
   }
   .mailbox-content .content{
     width: -webkit-fill-available;
@@ -1801,7 +1799,7 @@ display: none;
 }
 
 .colBody{
-  background-color: dcfbbd;
+  background-color: #dcfbbd;
   width: -webkit-fill-available;
   display: flex;
   cursor: pointer;
@@ -2043,7 +2041,7 @@ display: none;
   .mailbox-content{
     width: -webkit-fill-available;
     float: left;
-    background-color:greenyellow;
+    background-color:white;
     height: 100vh;
   }
  
