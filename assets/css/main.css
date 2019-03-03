@@ -294,23 +294,19 @@ display: none;
     height: 100vh; 
   }
   .mailbox-content{
-    width: 80%;
+    width: webkit-fill-available;
     float: left;
     background-color:greenyellow;
     height: 100vh;
   }
-  .mailbox-content .content {
-    display: none;
-    background-color: green;
-  }
   .mailbox-content .content{
-    width: 70%;
+    width: -webkit-fill-available;
     height: 100%;
   }
 
   /* SIDEBAR MENU */
   .sidebar-menu{
-    width: 100vw;
+    width: -webkit-fill-available;
     background-color: bisque;
    
   }
@@ -355,11 +351,54 @@ display: none;
   
   object{
     background-color:white;
-    width: 100vw;
+    width: 75vw;
     height: 100vh;
-    padding-left: 60px;
+    padding-left: 20px;
   }
+  
+.divRowBody{
+  width: -webkit-fill-available;
+  background-color: aqua;
+}
+.rowHead{
+  display: block;
+  width: -webkit-fill-available;
+  
+}
 
+.colHead{
+  background-color: red;
+  width: -webkit-fill-available;
+  display: flex;
+}
+.colHead h4{
+  flex: 1;
+  width: -webkit-fill-available;
+  float: left;
+  padding: 20px 20px 20px 40px;
+}
+
+.rowBody{
+  display: block;
+  width: -webkit-fill-available;
+  
+}
+
+.colBody{
+  background-color: yellow;
+  width: -webkit-fill-available;
+  display: flex;
+  cursor: pointer;
+}
+.colBody:hover{
+  background-color: yellowgreen;
+}
+.colBody .col{
+  flex: 1;
+  width: -webkit-fill-available;
+  float: left;
+  padding: 20px 20px 20px 40px;
+}
 }
 
 /* 
@@ -414,7 +453,7 @@ display: none;
     padding: 0px 10px 5px 10px;
   }
   .header-right:hover{
-    background-color: #f0f0f0;
+    background-color: #c01515;
   }
 
   .profile-pic{
@@ -585,23 +624,20 @@ display: none;
     height: 100vh; 
   }
   .mailbox-content{
-    width: 80%;
+    width: 75vw;
     float: left;
     background-color:greenyellow;
     height: 100vh;
   }
-  .mailbox-content .content {
-    display: none;
-    background-color: green;
-  }
+  
   .mailbox-content .content{
-    width: 70%;
+    width: -webkit-fill-available;
     height: 100%;
   }
 
   /* SIDEBAR MENU */
   .sidebar-menu{
-    width: 100vw;
+    width: -webkit-fill-available;
     background-color: bisque;
    
   }
@@ -646,7 +682,7 @@ display: none;
   
   object{
     background-color:white;
-    width: 100vw;
+    width: 80vw;
     height: 100vh;
     padding-left: 60px;
   }
@@ -874,23 +910,20 @@ display: none;
     height: 100vh; 
   }
   .mailbox-content{
-    width: 80%;
+    width: 75vw;
     float: left;
     background-color:greenyellow;
     height: 100vh;
   }
-  .mailbox-content .content {
-    display: none;
-    background-color: green;
-  }
+ 
   .mailbox-content .content{
-    width: 70%;
+    width: -webkit-fill-available;
     height: 100%;
   }
 
   /* SIDEBAR MENU */
   .sidebar-menu{
-    width: 100vw;
+    width: -webkit-fill-available;
     background-color: bisque;
    
   }
@@ -935,7 +968,7 @@ display: none;
   
   object{
     background-color:white;
-    width: 100vw;
+    width: -webkit-fill-available;
     height: 100vh;
     padding-left: 60px;
   }
@@ -1167,7 +1200,7 @@ display: none;
     height: 100vh; 
   }
   .mailbox-content{
-    width: 80%;
+    width: 75vw;
     float: left;
     background-color:greenyellow;
     height: 100vh;
@@ -1177,13 +1210,13 @@ display: none;
     background-color: green;
   }
   .mailbox-content .content{
-    width: 70%;
+    width: -webkit-fill-available;
     height: 100%;
   }
 
   /* SIDEBAR MENU */
   .sidebar-menu{
-    width: 100vw;
+    width: -webkit-fill-available
     background-color: bisque;
    
   }
@@ -1228,7 +1261,7 @@ display: none;
   
   object{
     background-color:white;
-    width: 100vw;
+    width: -webkit-fill-available;
     height: 100vh;
     padding-left: 60px;
   }
@@ -1484,7 +1517,7 @@ display: none;
     display: none;
   }
   .mailbox-content{
-    width: 80%;
+    width: 75vw;
     float: left;
     background-color:greenyellow;
     height: 100vh;
@@ -1494,14 +1527,14 @@ display: none;
     background-color: green;
   }
   .mailbox-content .content{
-    width: 70%;
+    width: -webkit-fill-available;
     height: 100%;
   }
 
  /* SIDEBAR MENU */
  .sidebar-menu{
   visibility: hidden;
-  width: 100vw;
+  width: -webkit-fill-available;
   background-color: bisque;
   display: none;
  }
@@ -1546,7 +1579,7 @@ display: none;
   
   object{
     background-color:white;
-    width: 100vw;
+    width: -webkit-fill-available;
     height: 100vh;
     padding-left: 60px;
   } 
@@ -1815,24 +1848,21 @@ display: none;
     display: none;
   }
   .mailbox-content{
-    width: 80%;
+    width: -webkit-fill-available;
     float: left;
     background-color:greenyellow;
     height: 100vh;
   }
-  .mailbox-content .content {
-    display: none;
-    background-color: green;
-  }
+ 
   .mailbox-content .content{
-    width: 70%;
+    width: -webkit-fill-available;
     height: 100%;
   }
 
   /* SIDEBAR MENU */
   .sidebar-menu{
     visibility: hidden;
-    width: 100vw;
+    width: -webkit-fill-available;
     background-color: bisque;
     display: none;
    
@@ -1878,9 +1908,9 @@ display: none;
   
   object{
     background-color:white;
-    width: 100vw;
+    width: -webkit-fill-available;
     height: 100vh;
-    padding-left: 10px;
+    padding-left: 0px;
   }
   .sidenav {
     height: 100%;
@@ -1920,6 +1950,37 @@ display: none;
 #menu{
   float: left;
   display: block;
+}
+
+.divRowBody{
+  width: -webkit-fill-available;
+  background-color: aqua;
+}
+.rowHead{
+  display: none;
+  
+}
+
+.rowBody{
+}
+
+.colBody{
+  background-color: #ddd;
+  cursor: pointer;
+  padding: 6px 6px 6px 10px;
+  border-bottom: solid #ccc 1px;
+  
+}
+.colBody:hover{
+  background-color: yellowgreen;
+}
+.colBody .col{
+  padding-bottom: 5px;
+  font-weight:bold;
+  font-size: 13px;
+}
+.hide{
+  display: none;
 }
 
 }
