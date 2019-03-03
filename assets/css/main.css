@@ -100,6 +100,14 @@ display: none;
   display: none;
 }
 
+.flag {
+  background-color: red;
+  color: white;
+  border-radius: 40%;
+  padding: 5px;
+  font-size: 14px;
+}
+
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
@@ -144,23 +152,26 @@ display: none;
   }
 
   #profile-menu{
-    background-color: rosybrown;
-    width: 170px;
+    /* background-color: rosybrown; */
+    width: 165px;
     height: 80px;
     cursor: pointer;
     position: fixed;
-    top: 60px; 
+    top: 60px;
     right: 40px;
+    color: #fff;
     display: none;
   }
  
   #profile-menu ul li{
     text-decoration: none;
     list-style: none;
-    background-color: aqua;
+    color: #fff;
+    background-color: #003399;
     height: 40px;
     line-height: 40px;
     padding-left: 20px;
+    
   }
   #profile-menu ul li:hover{
     text-decoration: none;
@@ -171,11 +182,13 @@ display: none;
     padding-left: 20px;
     transition-property: background-color;
     transition-duration: 0.55s;
+    color: #003399;
     /* transition-delay: 0.95s; */
     }
   
   #profile-menu ul li a{
     text-decoration: none;
+    color:#fff;
   }
 
   footer{
@@ -381,7 +394,6 @@ display: none;
 .rowBody{
   display: block;
   width: -webkit-fill-available;
-  
 }
 
 .colBody{
@@ -472,25 +484,27 @@ display: none;
     color: red;
     visibility: hidden;
   }
-
   #profile-menu{
-    background-color: rosybrown;
-    width: 170px;
+    /* background-color: rosybrown; */
+    width: 165px;
     height: 80px;
     cursor: pointer;
     position: fixed;
-    top: 60px; 
+    top: 60px;
     right: 40px;
+    color: #fff;
     display: none;
   }
  
   #profile-menu ul li{
     text-decoration: none;
     list-style: none;
-    background-color: aqua;
+    color: #fff;
+    background-color: #003399;
     height: 40px;
     line-height: 40px;
     padding-left: 20px;
+    
   }
   #profile-menu ul li:hover{
     text-decoration: none;
@@ -501,11 +515,13 @@ display: none;
     padding-left: 20px;
     transition-property: background-color;
     transition-duration: 0.55s;
+    color: #003399;
     /* transition-delay: 0.95s; */
     }
   
   #profile-menu ul li a{
     text-decoration: none;
+    color:#fff;
   }
 
   footer{
@@ -647,7 +663,7 @@ display: none;
     background-color: #99cc33;
     height: 4rem;
     line-height: 40px;
-    padding-left: 6rem;
+    padding-left: 4rem;
     padding-top: 1rem;
   }
   .sidebar-menu ul li:hover{
@@ -685,6 +701,48 @@ display: none;
     width: 80vw;
     height: 100vh;
     padding-left: 60px;
+  }
+  .divRowBody{
+    width: -webkit-fill-available;
+    background-color: aqua;
+  }
+  .rowHead{
+    display: block;
+    width: -webkit-fill-available;
+    
+  }
+  
+  .colHead{
+    background-color: red;
+    width: -webkit-fill-available;
+    display: flex;
+  }
+  .colHead h4{
+    flex: 1;
+    width: -webkit-fill-available;
+    float: left;
+    padding: 20px 20px 20px 40px;
+  }
+  
+  .rowBody{
+    display: block;
+    width: -webkit-fill-available;
+  }
+  
+  .colBody{
+    background-color: yellow;
+    width: -webkit-fill-available;
+    display: flex;
+    cursor: pointer;
+  }
+  .colBody:hover{
+    background-color: yellowgreen;
+  }
+  .colBody .col{
+    flex: 1;
+    width: -webkit-fill-available;
+    float: left;
+    padding: 20px 20px 20px 40px;
   }
 }
 
@@ -727,7 +785,7 @@ display: none;
    header{
     height: 40px;
     background-color: #ddd;
-    padding: 10px 40px 15px 40px;
+    padding: 10px 0px 15px 0px;
     text-align: left;
   }
   .header-left{
@@ -760,23 +818,26 @@ display: none;
   }
 
   #profile-menu{
-    background-color: rosybrown;
-    width: 170px;
+    /* background-color: rosybrown; */
+    width: 165px;
     height: 80px;
     cursor: pointer;
     position: fixed;
-    top: 60px; 
-    right: 40px;
+    top: 60px;
+    right: 0px;
+    color: #fff;
     display: none;
   }
  
   #profile-menu ul li{
     text-decoration: none;
     list-style: none;
-    background-color: aqua;
+    color: #fff;
+    background-color: #003399;
     height: 40px;
     line-height: 40px;
     padding-left: 20px;
+    
   }
   #profile-menu ul li:hover{
     text-decoration: none;
@@ -787,11 +848,13 @@ display: none;
     padding-left: 20px;
     transition-property: background-color;
     transition-duration: 0.55s;
+    color: #003399;
     /* transition-delay: 0.95s; */
     }
   
   #profile-menu ul li a{
     text-decoration: none;
+    color:#fff;
   }
 
   footer{
@@ -972,6 +1035,48 @@ display: none;
     height: 100vh;
     padding-left: 60px;
   }
+  .divRowBody{
+    width: -webkit-fill-available;
+    background-color: aqua;
+  }
+  .rowHead{
+    display: block;
+    width: -webkit-fill-available;
+    
+  }
+  
+  .colHead{
+    background-color: red;
+    width: -webkit-fill-available;
+    display: flex;
+  }
+  .colHead h4{
+    flex: 1;
+    width: -webkit-fill-available;
+    float: left;
+    padding: 20px 20px 20px 40px;
+  }
+  
+  .rowBody{
+    display: block;
+    width: -webkit-fill-available;
+  }
+  
+  .colBody{
+    background-color: yellow;
+    width: -webkit-fill-available;
+    display: flex;
+    cursor: pointer;
+  }
+  .colBody:hover{
+    background-color: yellowgreen;
+  }
+  .colBody .col{
+    flex: 1;
+    width: -webkit-fill-available;
+    float: left;
+    padding: 20px 20px 20px 40px;
+  }
 }
 
 /* 
@@ -1048,25 +1153,27 @@ display: none;
     color: red;
     visibility: hidden;
   }
-
   #profile-menu{
-    background-color: rosybrown;
-    width: 170px;
+    /* background-color: rosybrown; */
+    width: 165px;
     height: 80px;
     cursor: pointer;
     position: fixed;
-    top: 55px; 
-    right: 26px;
+    top: 60px;
+    right: 0px;
+    color: #fff;
     display: none;
   }
  
   #profile-menu ul li{
     text-decoration: none;
     list-style: none;
-    background-color: aqua;
+    color: #fff;
+    background-color: #003399;
     height: 40px;
     line-height: 40px;
     padding-left: 20px;
+    
   }
   #profile-menu ul li:hover{
     text-decoration: none;
@@ -1077,11 +1184,13 @@ display: none;
     padding-left: 20px;
     transition-property: background-color;
     transition-duration: 0.55s;
+    color: #003399;
     /* transition-delay: 0.95s; */
     }
   
   #profile-menu ul li a{
     text-decoration: none;
+    color:#fff;
   }
 
   footer{
@@ -1216,7 +1325,7 @@ display: none;
 
   /* SIDEBAR MENU */
   .sidebar-menu{
-    width: -webkit-fill-available
+    width: -webkit-fill-available;
     background-color: bisque;
    
   }
@@ -1226,7 +1335,7 @@ display: none;
     background-color: #99cc33;
     height: 4rem;
     line-height: 40px;
-    padding-left: 6rem;
+    padding-left: 2rem;
     padding-top: 1rem;
   }
   .sidebar-menu ul li:hover{
@@ -1303,6 +1412,48 @@ display: none;
 #menu{
   float: left;
   display: block;
+}
+.divRowBody{
+  width: -webkit-fill-available;
+  background-color: aqua;
+}
+.rowHead{
+  display: block;
+  width: -webkit-fill-available;
+  
+}
+
+.colHead{
+  background-color: red;
+  width: -webkit-fill-available;
+  display: flex;
+}
+.colHead h4{
+  flex: 1;
+  width: -webkit-fill-available;
+  float: left;
+  padding: 20px 20px 20px 40px;
+}
+
+.rowBody{
+  display: block;
+  width: -webkit-fill-available;
+}
+
+.colBody{
+  background-color: yellow;
+  width: -webkit-fill-available;
+  display: flex;
+  cursor: pointer;
+}
+.colBody:hover{
+  background-color: yellowgreen;
+}
+.colBody .col{
+  flex: 1;
+  width: -webkit-fill-available;
+  float: left;
+  padding: 20px 20px 20px 40px;
 }
 }
 
@@ -1621,6 +1772,48 @@ display: none;
 #menu{
   float: left;
   display: block;
+}
+.divRowBody{
+  width: -webkit-fill-available;
+  background-color: aqua;
+}
+.rowHead{
+  display: block;
+  width: -webkit-fill-available;
+  
+}
+
+.colHead{
+  background-color: red;
+  width: -webkit-fill-available;
+  display: flex;
+}
+.colHead h4{
+  flex: 1;
+  width: -webkit-fill-available;
+  float: left;
+  padding: 20px 20px 20px 40px;
+}
+
+.rowBody{
+  display: block;
+  width: -webkit-fill-available;
+}
+
+.colBody{
+  background-color: yellow;
+  width: -webkit-fill-available;
+  display: flex;
+  cursor: pointer;
+}
+.colBody:hover{
+  background-color: yellowgreen;
+}
+.colBody .col{
+  flex: 1;
+  width: -webkit-fill-available;
+  float: left;
+  padding: 20px 20px 20px 40px;
 }
 }
 
