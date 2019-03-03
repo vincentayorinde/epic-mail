@@ -380,7 +380,7 @@ display: none;
 }
 
 .colHead{
-  background-color: red;
+  background-color: #f9eeee;
   width: -webkit-fill-available;
   display: flex;
 }
@@ -397,13 +397,13 @@ display: none;
 }
 
 .colBody{
-  background-color: yellow;
+  background-color: #dcfbbd;
   width: -webkit-fill-available;
   display: flex;
   cursor: pointer;
 }
 .colBody:hover{
-  background-color: yellowgreen;
+  background-color: #cae6ad;
 }
 .colBody .col{
   flex: 1;
@@ -713,7 +713,7 @@ display: none;
   }
   
   .colHead{
-    background-color: red;
+    background-color: #f9eeee;
     width: -webkit-fill-available;
     display: flex;
   }
@@ -730,13 +730,13 @@ display: none;
   }
   
   .colBody{
-    background-color: yellow;
+    background-color: #dcfbbd;
     width: -webkit-fill-available;
     display: flex;
     cursor: pointer;
   }
   .colBody:hover{
-    background-color: yellowgreen;
+    background-color: #cae6ad;
   }
   .colBody .col{
     flex: 1;
@@ -1046,7 +1046,7 @@ display: none;
   }
   
   .colHead{
-    background-color: red;
+    background-color: #f9eeee;
     width: -webkit-fill-available;
     display: flex;
   }
@@ -1063,13 +1063,13 @@ display: none;
   }
   
   .colBody{
-    background-color: yellow;
+    background-color: #dcfbbd;
     width: -webkit-fill-available;
     display: flex;
     cursor: pointer;
   }
   .colBody:hover{
-    background-color: yellowgreen;
+    background-color: #cae6ad;
   }
   .colBody .col{
     flex: 1;
@@ -1424,7 +1424,7 @@ display: none;
 }
 
 .colHead{
-  background-color: red;
+  background-color: #f9eeee;
   width: -webkit-fill-available;
   display: flex;
 }
@@ -1441,13 +1441,13 @@ display: none;
 }
 
 .colBody{
-  background-color: yellow;
+  background-color: dcfbbd;
   width: -webkit-fill-available;
   display: flex;
   cursor: pointer;
 }
 .colBody:hover{
-  background-color: yellowgreen;
+  background-color: #cae6ad;
 }
 .colBody .col{
   flex: 1;
@@ -1784,7 +1784,7 @@ display: none;
 }
 
 .colHead{
-  background-color: red;
+  background-color: #f9eeee;
   width: -webkit-fill-available;
   display: flex;
 }
@@ -1801,13 +1801,13 @@ display: none;
 }
 
 .colBody{
-  background-color: yellow;
+  background-color: dcfbbd;
   width: -webkit-fill-available;
   display: flex;
   cursor: pointer;
 }
 .colBody:hover{
-  background-color: yellowgreen;
+  background-color: #cae6ad;
 }
 .colBody .col{
   flex: 1;
@@ -2158,14 +2158,14 @@ display: none;
 }
 
 .colBody{
-  background-color: #ddd;
+  background-color: #dcfbbd;
   cursor: pointer;
   padding: 6px 6px 6px 10px;
   border-bottom: solid #ccc 1px;
   
 }
 .colBody:hover{
-  background-color: yellowgreen;
+  background-color: #cae6ad;
 }
 .colBody .col{
   padding-bottom: 5px;
