@@ -303,7 +303,7 @@ display: none;
   .mailbox-sidebar{
     width: 20%;
     float: left;
-    background-color: white;
+    background-color: #99cc33;
     height: 100vh; 
   }
   .mailbox-content{
@@ -636,7 +636,7 @@ display: none;
   .mailbox-sidebar{
     width: 20%;
     float: left;
-    background-color: #fff;
+    background-color: #99cc33;
     height: 100vh; 
   }
   .mailbox-content{
@@ -672,7 +672,7 @@ display: none;
     background-color:#f9f9f9;
     height: 4rem;
     line-height: 40px;
-    padding-left: 6rem;
+    padding-left: 4rem;
     padding-top: 1rem;
     transition-property: background-color;
     transition-duration: 0.55s;
@@ -969,7 +969,7 @@ display: none;
   .mailbox-sidebar{
     width: 20%;
     float: left;
-    background-color: white;
+    background-color: #99cc33;
     height: 100vh; 
   }
   .mailbox-content{
@@ -1305,7 +1305,7 @@ display: none;
   .mailbox-sidebar{
     width: 20%;
     float: left;
-    background-color: white;
+    background-color: #99cc33;
     height: 100vh; 
   }
   .mailbox-content{
@@ -1343,7 +1343,7 @@ display: none;
     background-color:#f9f9f9;
     height: 4rem;
     line-height: 40px;
-    padding-left: 6rem;
+    padding-left: 2rem;
     padding-top: 1rem;
     transition-property: background-color;
     transition-duration: 0.55s;
@@ -1380,7 +1380,7 @@ display: none;
     z-index: 1; 
     top: 0; 
     left: 0;
-    background-color: #003399; 
+    background-color: #629006; 
     overflow-x: hidden;
     padding-top: 30px;
     transition: 0.5s; 
@@ -1660,10 +1660,6 @@ display: none;
     clear: both;
   }
   .mailbox-sidebar{
-    width: 20%;
-    float: left;
-    background-color: white;
-    height: 100vh; 
     display: none;
   }
   .mailbox-content{
@@ -1739,7 +1735,7 @@ display: none;
     z-index: 1; 
     top: 0; 
     left: 0;
-    background-color: #003399; 
+    background-color: #629006; 
     overflow-x: hidden;
     padding-top: 30px;
     transition: 0.5s; 
@@ -2032,10 +2028,6 @@ display: none;
     clear: both;
   }
   .mailbox-sidebar{
-    width: 20%;
-    float: left;
-    background-color: white;
-    height: 100vh; 
     display: none;
   }
   .mailbox-content{
@@ -2110,7 +2102,7 @@ display: none;
     z-index: 1; 
     top: 0; 
     left: 0;
-    background-color: #003399; 
+    background-color: #629006; 
     overflow-x: hidden;
     padding-top: 30px;
     transition: 0.5s; 
