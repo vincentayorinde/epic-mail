@@ -206,7 +206,7 @@ display: none;
     clear: both;
   }
   .index-page-image{
-    background-image: url('../img/index-img.jpg');
+    background-image: url('../img/index-bg.jpg');
     background-position: center;
     width: 50%;
     float: left;
@@ -539,7 +539,7 @@ display: none;
     clear: both;
   }
   .index-page-image{
-    background-image: url('../img/index-img.jpg');
+    background-image: url('../img/index-bg.jpg');
     background-position: center;
     width: 50vw;
     float: left;
@@ -872,7 +872,7 @@ display: none;
     clear: both;
   }
   .index-page-image{
-    background-image: url('../img/index-img.jpg');
+    background-image: url('../img/index-bg.jpg');
     background-position: center;
     width: 50%;
     float: left;
@@ -1208,7 +1208,7 @@ display: none;
     clear: both;
   }
   .index-page-image{
-    background-image: url('../img/index-img.jpg');
+    background-image: url('../img/index-bg.jpg');
     background-position: center;
     width: 50%;
     float: left;
@@ -1564,7 +1564,7 @@ display: none;
     float: left;
   }
   .index-page-image{
-    background-image: url('../img/index-img.jpg');
+    background-image: url('../img/index-bg.jpg');
     background-position: center;
     width: 50vw;
     float: left;
@@ -1933,7 +1933,7 @@ display: none;
     clear: both;
   }
   .index-page-image{
-    background-image: url('../img/index-img.jpg');
+    background-image: url('../img/index-bg.jpg');
     background-position: center;
     width: 50vw;
     float: left;
