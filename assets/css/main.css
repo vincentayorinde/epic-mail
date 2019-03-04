@@ -287,10 +287,21 @@ display: none;
   #sign-up-form > button{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 31vw;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
+  }
+  #sign-up-form > button:hover{
+    padding: 10px;
+    margin: 10px;
+    width: 31vw;
+    background-color: #003399;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    transition-property: background-color;
+    transition-duration: 1s;
+    transition-delay: 0.14s;
   }
 
   /* MAIL BOX PAGE */
