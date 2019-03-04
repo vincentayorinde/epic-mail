@@ -233,14 +233,14 @@ display: none;
   input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
   }
   
   #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 31.5vw;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -280,7 +280,7 @@ display: none;
   button{
     padding: 10px;
     margin: 10px;
-    width:-webkit-fill-available;
+    width:100%;
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -899,14 +899,14 @@ display: none;
   input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
   }
   
   #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 32vw;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -917,7 +917,7 @@ display: none;
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: 420px;
+    width: 32vw;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -946,7 +946,7 @@ display: none;
   button{
     padding: 10px;
     margin: 10px;
-    width:-webkit-fill-available;
+    width:100%;
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -1592,14 +1592,14 @@ display: none;
   input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
   }
   
   #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 74vw;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -1610,7 +1610,7 @@ display: none;
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 74vw;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -1639,7 +1639,7 @@ display: none;
   button{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -1960,14 +1960,14 @@ display: none;
   input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 86vw;
     font-family: 'Montserrat', sans-serif;
   }
   
   #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 92vw;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -1978,7 +1978,7 @@ display: none;
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 92vw;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -2007,14 +2007,14 @@ display: none;
   button{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 86vw;
     font-family: 'Montserrat', sans-serif;
   }
 
   #sign-up-form > button{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 92vw;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
