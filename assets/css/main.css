@@ -251,7 +251,7 @@ display: none;
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 31.5vw;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
