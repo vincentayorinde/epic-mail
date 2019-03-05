@@ -201,22 +201,17 @@ display: none;
 
    /* INDEX/ LOGIN PAGE */
    .index-page {
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     clear: both;
+    background-image: url('../img/bg-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left top;
   }
-  .index-page-image{
-    background-image: url('../img/index-bg.jpg');
-    background-position: center;
-    width: 50%;
-    float: left;
-    background-color: gray;
-    height: 100vh; 
-  }
+
   .index-login-form{
-    width: 50vw;
-    float: left;
-    background-color: white;
+    width: 100vw;
   }
 
 
@@ -235,6 +230,8 @@ display: none;
     margin: 10px;
     width: 100%;
     font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
   #login-form > input[type='submit']{
@@ -457,7 +454,7 @@ display: none;
   .index-login-form{
     width: 50vw;
     float: left;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     height: 100vh;
   }
    /* HEADER STYLE */
@@ -545,22 +542,17 @@ display: none;
 
    /* INDEX/ LOGIN PAGE */
    .index-page {
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     clear: both;
+    background-image: url('../img/bg-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left top;
   }
-  .index-page-image{
-    background-image: url('../img/index-bg.jpg');
-    background-position: center;
-    width: 50vw;
-    float: left;
-    background-color: gray;
-    height: 100vh; 
-  }
+
   .index-login-form{
-    width: 50vw;
-    float: left;
-    background-color: white;
+    width: 100vw;
   }
 
 
@@ -568,7 +560,7 @@ display: none;
     padding-top:10px;
     margin: auto;
     height: 400px;
-    width: 40vw;
+    width: 30vw;
     
   }
   #login-form >
@@ -577,8 +569,10 @@ display: none;
   input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 400px;
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
   #login-form > input[type='submit']{
@@ -789,7 +783,7 @@ display: none;
   .index-login-form{
     width: 50vw;
     float: left;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     height: 100vh;
   }
    /* HEADER STYLE */
@@ -878,22 +872,17 @@ display: none;
 
    /* INDEX/ LOGIN PAGE */
    .index-page {
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     clear: both;
+    background-image: url('../img/bg-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left top;
   }
-  .index-page-image{
-    background-image: url('../img/index-bg.jpg');
-    background-position: center;
-    width: 50%;
-    float: left;
-    background-color: gray;
-    height: 100vh; 
-  }
+
   .index-login-form{
-    width: 50vw;
-    float: left;
-    background-color: white;
+    width: 100vw;
   }
 
 
@@ -901,7 +890,7 @@ display: none;
     padding-top:10px;
     margin: auto;
     height: 400px;
-    width: 40vw;
+    width: 30vw;
     
   }
   #login-form >
@@ -912,12 +901,13 @@ display: none;
     margin: 10px;
     width: 100%;
     font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
-  
   #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 32vw;
+    width: 100%;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -928,7 +918,7 @@ display: none;
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: 32vw;
+    width: 100%;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -1214,22 +1204,17 @@ display: none;
 
    /* INDEX/ LOGIN PAGE */
    .index-page {
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     clear: both;
+    background-image: url('../img/bg-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left top;
   }
-  .index-page-image{
-    background-image: url('../img/index-bg.jpg');
-    background-position: center;
-    width: 50%;
-    float: left;
-    background-color: gray;
-    height: 100vh; 
-  }
+
   .index-login-form{
-    width: 50vw;
-    float: left;
-    background-color: white;
+    width: 100vw;
   }
 
 
@@ -1246,10 +1231,11 @@ display: none;
   input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
-  
   #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
@@ -1574,19 +1560,19 @@ display: none;
     background-color: beige;
     float: left;
   }
-  .index-page-image{
-    background-image: url('../img/index-bg.jpg');
-    background-position: center;
-    width: 50vw;
-    float: left;
-    background-color: gray;
-    height: 100vh; 
+  /* INDEX/ LOGIN PAGE */
+  .index-page {
+    height: 100vh;
+    width: 100vw;
+    clear: both;
+    background-image: url('../img/bg-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left top;
   }
+
   .index-login-form{
     width: 100vw;
-    float: left;
-    background-color: white;
-    margin: auto;
   }
 
 
@@ -1594,7 +1580,7 @@ display: none;
     padding-top:10px;
     margin: auto;
     height: 400px;
-    width: 70vw;
+    width: 30vw;
     
   }
   #login-form >
@@ -1605,18 +1591,8 @@ display: none;
     margin: 10px;
     width: 100%;
     font-family: 'Montserrat', sans-serif;
-  }
-  
-  #login-form > input[type='submit']{
-    padding: 10px;
-    margin: 10px;
-    width: 74vw;
-    background-color: #99cc33;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    transition-property: background-color;
-    transition-duration: 1s;
-    transition-delay: 0.14s;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   #login-form > input[type='submit']:hover{
     padding: 10px;
@@ -1845,7 +1821,7 @@ display: none;
   .index-login-form{
     width: 100vw;
     /* float: left; */
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     height: 100vh;
   }
    /* HEADER STYLE */
@@ -1939,23 +1915,18 @@ display: none;
 
    /* INDEX/ LOGIN PAGE */
    .index-page {
-    height: 100vw;
+    /* height: 100vh; */
     width: 100vw;
     clear: both;
+    background-image: url('../img/bg-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left top;
   }
-  .index-page-image{
-    background-image: url('../img/index-bg.jpg');
-    background-position: center;
-    width: 50vw;
-    float: left;
-    background-color: gray;
-    height: 100vh; 
-  }
-  .index-login-form{
+
+  /* .index-login-form{
     width: 100vw;
-    float: left;
-    background-color: white;
-  }
+  } */
 
 
   #login-form{
@@ -1967,24 +1938,23 @@ display: none;
   }
   #login-form >
   input[type='email'],
-  input[type='password'],
-  input[type='submit']{
+  input[type='password']{
     padding: 10px;
     margin: 10px;
     width: 86vw;
     font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
-  
-  #login-form > input[type='submit']{
+  #login-form >
+  input[type='submit']{
     padding: 10px;
     margin: 10px;
     width: 92vw;
     background-color: #99cc33;
-    color: white;
     font-family: 'Montserrat', sans-serif;
-    transition-property: background-color;
-    transition-duration: 1s;
-    transition-delay: 0.14s;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   #login-form > input[type='submit']:hover{
     padding: 10px;
