@@ -8,38 +8,31 @@
   <title>Groups</title>
 </head>
 <body><h1>All Groups</h1>
-  <div id="group-content"></div>
-  <br>
-  <table>
-    <button id="rec-del">Delete</button>
-    <thead>
-      <tr>
-          <th><input type="checkbox" /></th>
-          <th>Group Name</th>
-          <th>Group Mail</th>
-          <th>Description</th>
-          <th>Date Created</th>
-      </tr>      
-    </thead>
-    <tbody>
-      <tr>
-          <td><input type="checkbox" /></td>
-          <td>Managers</td>
-          <td>managers@epicmail.com</td>
-          <td>All users in managers group</td>
-          <td>14 Feb, 2019</td>
-      </tr>
-      <tr>
-          <td><input type="checkbox" /></td>
-          <td>Sales team</td>
-          <td>sales@epicmail.com</td>
-          <td>All employees in sales</td>
-          <td>10 Feb, 2019</td>
-      </tr>
-
-    </tbody>
-  </table>
-</div>
+ 
+  <div class="divRowBody">
+      <div class="rowHead">
+        <div class="colHead">
+            <h4><input type="checkbox" /></h4>
+            <h4>Group Name</h4>
+            <h4>Description</h4>
+            <h4>Date</h4>
+        </div>
+      </div>
+      <div class="rowBody">
+          <div class="colBody">
+              <div class="col hide"><input type="checkbox" /></div>
+              <div class="col">Manager</div>
+              <div class="col">Contains all managers</div>
+              <div class="col">23 Feb, 2019</div>
+          </div>
+          <div class="colBody">
+              <div class="col hide"><input type="checkbox" /></div>
+              <div class="col">Front Desk</div>
+              <div class="col">All employees to be informed a message before Dec</div>
+              <div class="col">20 Jan, 2019</div>
+          </div>
+      </div>
+  </div>
   
 </body>
 </html>
