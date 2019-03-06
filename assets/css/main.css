@@ -219,13 +219,12 @@ display: none;
     padding-top:10px;
     margin: auto;
     height: 400px;
-    width: 30vw;
+    width: 400px;
     
   }
   #login-form >
   input[type='email'],
-  input[type='password'],
-  input[type='submit']{
+  input[type='password']{
     padding: 10px;
     margin: 10px;
     width: 100%;
@@ -237,18 +236,20 @@ display: none;
   #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 31.5vw;
+    width: 105%;
     background-color: #99cc33;
     color: white;
+    border: 0px;
     font-family: 'Montserrat', sans-serif;
     transition-property: background-color;
     transition-duration: 1s;
     transition-delay: 0.14s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: 31.5vw;
+    width: 105%;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -261,7 +262,6 @@ display: none;
   .sign-up-page{
     width: 100vw;
     float: left;
-    background-color: white;
   }
 
   #sign-up-form{
@@ -279,12 +279,14 @@ display: none;
     margin: 10px;
     width:100%;
     font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   #sign-up-form > button{
     padding: 10px;
     margin: 10px;
-    width: 31vw;
+    width: 105%;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -292,7 +294,7 @@ display: none;
   #sign-up-form > button:hover{
     padding: 10px;
     margin: 10px;
-    width: 31vw;
+    width: 105%;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -1921,7 +1923,7 @@ display: none;
     background-image: url('../img/bg-home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: left top;
+    background-position: top center;
   }
 
   /* .index-login-form{
@@ -1941,7 +1943,7 @@ display: none;
   input[type='password']{
     padding: 10px;
     margin: 10px;
-    width: 86vw;
+    width: 90%;
     font-family: 'Montserrat', sans-serif;
     border: 0px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -1950,7 +1952,7 @@ display: none;
   input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 92vw;
+    width: 95%;
     background-color: #99cc33;
     font-family: 'Montserrat', sans-serif;
     border: 0px;
@@ -1959,20 +1961,20 @@ display: none;
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: 92vw;
+    width: 95%;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
     transition-property: background-color;
     transition-duration: 1s;
     transition-delay: 0.14s;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   /* SIGN UP PAGE  */
   .sign-up-page{
     width: 100vw;
-    float: left;
-    background-color: white;
   }
 
   #sign-up-form{
@@ -1984,22 +1986,40 @@ display: none;
   #sign-up-form >
   input[type='email'],
   input[type='password'],
-  input[type='text'],
-  button{
+  input[type='text']{
     padding: 10px;
     margin: 10px;
-    width: 86vw;
+    width: 90%;
     font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   #sign-up-form > button{
     padding: 10px;
     margin: 10px;
-    width: 92vw;
+    width: 95%;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
+  #sign-up-form > button:hover{
+    padding: 10px;
+    margin: 10px;
+    width: 95%;
+    background-color: #003399;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    transition-property: background-color;
+    transition-duration: 1s;
+    transition-delay: 0.14s;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+
 
   /* MAIL BOX PAGE */
   
