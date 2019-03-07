@@ -100,6 +100,14 @@ display: none;
   display: none;
 }
 
+.flag {
+  background-color: red;
+  color: white;
+  border-radius: 40%;
+  padding: 5px;
+  font-size: 14px;
+}
+
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
@@ -144,23 +152,26 @@ display: none;
   }
 
   #profile-menu{
-    background-color: rosybrown;
-    width: 170px;
+    /* background-color: rosybrown; */
+    width: 165px;
     height: 80px;
     cursor: pointer;
     position: fixed;
-    top: 60px; 
+    top: 60px;
     right: 40px;
+    color: #fff;
     display: none;
   }
  
   #profile-menu ul li{
     text-decoration: none;
     list-style: none;
-    background-color: aqua;
+    color: #fff;
+    background-color: #003399;
     height: 40px;
     line-height: 40px;
     padding-left: 20px;
+    
   }
   #profile-menu ul li:hover{
     text-decoration: none;
@@ -171,11 +182,13 @@ display: none;
     padding-left: 20px;
     transition-property: background-color;
     transition-duration: 0.55s;
+    color: #003399;
     /* transition-delay: 0.95s; */
     }
   
   #profile-menu ul li a{
     text-decoration: none;
+    color:#fff;
   }
 
   footer{
@@ -188,22 +201,17 @@ display: none;
 
    /* INDEX/ LOGIN PAGE */
    .index-page {
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     clear: both;
+    background-image: url('../img/bg-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left top;
   }
-  .index-page-image{
-    background-image: url('../img/index-img.jpg');
-    background-position: center;
-    width: 50%;
-    float: left;
-    background-color: gray;
-    height: 100vh; 
-  }
+
   .index-login-form{
-    width: 50vw;
-    float: left;
-    background-color: white;
+    width: 100vw;
   }
 
 
@@ -211,34 +219,37 @@ display: none;
     padding-top:10px;
     margin: auto;
     height: 400px;
-    width: 30vw;
+    width: 400px;
     
   }
   #login-form >
   input[type='email'],
-  input[type='password'],
-  input[type='submit']{
+  input[type='password']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
   #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 105%;
     background-color: #99cc33;
     color: white;
+    border: 0px;
     font-family: 'Montserrat', sans-serif;
     transition-property: background-color;
     transition-duration: 1s;
     transition-delay: 0.14s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 105%;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -251,7 +262,6 @@ display: none;
   .sign-up-page{
     width: 100vw;
     float: left;
-    background-color: white;
   }
 
   #sign-up-form{
@@ -267,17 +277,30 @@ display: none;
   button{
     padding: 10px;
     margin: 10px;
-    width:-webkit-fill-available;
+    width:100%;
     font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   #sign-up-form > button{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 105%;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
+  }
+  #sign-up-form > button:hover{
+    padding: 10px;
+    margin: 10px;
+    width: 105%;
+    background-color: #003399;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    transition-property: background-color;
+    transition-duration: 1s;
+    transition-delay: 0.14s;
   }
 
   /* MAIL BOX PAGE */
@@ -290,27 +313,23 @@ display: none;
   .mailbox-sidebar{
     width: 20%;
     float: left;
-    background-color: white;
+    background-color: #99cc33;
     height: 100vh; 
   }
   .mailbox-content{
-    width: 80%;
+    width: webkit-fill-available;
     float: left;
-    background-color:greenyellow;
+    background-color:white;
     height: 100vh;
   }
-  .mailbox-content .content {
-    display: none;
-    background-color: green;
-  }
   .mailbox-content .content{
-    width: 70%;
+    width: -webkit-fill-available;
     height: 100%;
   }
 
   /* SIDEBAR MENU */
   .sidebar-menu{
-    width: 100vw;
+    width: -webkit-fill-available;
     background-color: bisque;
    
   }
@@ -349,17 +368,57 @@ display: none;
 
   }
   /* COMPOSE PAGE */
-  /* .compose-page{
-    
-  } */
+
   
   object{
     background-color:white;
-    width: 100vw;
+    width: 74vw;
     height: 100vh;
-    padding-left: 60px;
+    padding-left: 20px;
   }
+  
+.divRowBody{
+  width: -webkit-fill-available;
+  background-color: #dcfbbd;
+}
+.rowHead{
+  display: block;
+  width: -webkit-fill-available;
+  
+}
 
+.colHead{
+  background-color: #f9eeee;
+  width: -webkit-fill-available;
+  display: flex;
+}
+.colHead h4{
+  flex: 1;
+  width: -webkit-fill-available;
+  float: left;
+  padding: 20px 20px 20px 40px;
+}
+
+.rowBody{
+  display: block;
+  width: -webkit-fill-available;
+}
+
+.colBody{
+  background-color: #dcfbbd;
+  width: -webkit-fill-available;
+  display: flex;
+  cursor: pointer;
+}
+.colBody:hover{
+  background-color: #cae6ad;
+}
+.colBody .col{
+  flex: 1;
+  width: -webkit-fill-available;
+  float: left;
+  padding: 20px 20px 20px 40px;
+}
 }
 
 /* 
@@ -395,7 +454,7 @@ display: none;
   .index-login-form{
     width: 50vw;
     float: left;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     height: 100vh;
   }
    /* HEADER STYLE */
@@ -414,7 +473,7 @@ display: none;
     padding: 0px 10px 5px 10px;
   }
   .header-right:hover{
-    background-color: #f0f0f0;
+    background-color: #c01515;
   }
 
   .profile-pic{
@@ -433,25 +492,27 @@ display: none;
     color: red;
     visibility: hidden;
   }
-
   #profile-menu{
-    background-color: rosybrown;
-    width: 170px;
+    /* background-color: rosybrown; */
+    width: 165px;
     height: 80px;
     cursor: pointer;
     position: fixed;
-    top: 60px; 
+    top: 60px;
     right: 40px;
+    color: #fff;
     display: none;
   }
  
   #profile-menu ul li{
     text-decoration: none;
     list-style: none;
-    background-color: aqua;
+    color: #fff;
+    background-color: #003399;
     height: 40px;
     line-height: 40px;
     padding-left: 20px;
+    
   }
   #profile-menu ul li:hover{
     text-decoration: none;
@@ -462,11 +523,13 @@ display: none;
     padding-left: 20px;
     transition-property: background-color;
     transition-duration: 0.55s;
+    color: #003399;
     /* transition-delay: 0.95s; */
     }
   
   #profile-menu ul li a{
     text-decoration: none;
+    color:#fff;
   }
 
   footer{
@@ -479,22 +542,17 @@ display: none;
 
    /* INDEX/ LOGIN PAGE */
    .index-page {
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     clear: both;
+    background-image: url('../img/bg-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left top;
   }
-  .index-page-image{
-    background-image: url('../img/index-img.jpg');
-    background-position: center;
-    width: 50vw;
-    float: left;
-    background-color: gray;
-    height: 100vh; 
-  }
+
   .index-login-form{
-    width: 50vw;
-    float: left;
-    background-color: white;
+    width: 100vw;
   }
 
 
@@ -502,40 +560,45 @@ display: none;
     padding-top:10px;
     margin: auto;
     height: 400px;
-    width: 40vw;
+    width: 35vw;
     
   }
   #login-form >
   input[type='email'],
-  input[type='password'],
-  input[type='submit']{
+  input[type='password']{
     padding: 10px;
     margin: 10px;
-    width: 400px;
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
   #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: 420px;
+    width: 105%;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
     transition-property: background-color;
     transition-duration: 1s;
     transition-delay: 0.14s;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: 420px;
+    width: 105%;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
     transition-property: background-color;
     transition-duration: 1s;
     transition-delay: 0.14s;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   /* SIGN UP PAGE  */
@@ -581,27 +644,24 @@ display: none;
   .mailbox-sidebar{
     width: 20%;
     float: left;
-    background-color: white;
+    background-color: #99cc33;
     height: 100vh; 
   }
   .mailbox-content{
-    width: 80%;
+    width: 75vw;
     float: left;
-    background-color:greenyellow;
+    background-color:#fff;
     height: 100vh;
   }
-  .mailbox-content .content {
-    display: none;
-    background-color: green;
-  }
+  
   .mailbox-content .content{
-    width: 70%;
+    width: -webkit-fill-available;
     height: 100%;
   }
 
   /* SIDEBAR MENU */
   .sidebar-menu{
-    width: 100vw;
+    width: -webkit-fill-available;
     background-color: bisque;
    
   }
@@ -611,7 +671,7 @@ display: none;
     background-color: #99cc33;
     height: 4rem;
     line-height: 40px;
-    padding-left: 6rem;
+    padding-left: 4rem;
     padding-top: 1rem;
   }
   .sidebar-menu ul li:hover{
@@ -620,7 +680,7 @@ display: none;
     background-color:#f9f9f9;
     height: 4rem;
     line-height: 40px;
-    padding-left: 6rem;
+    padding-left: 4rem;
     padding-top: 1rem;
     transition-property: background-color;
     transition-duration: 0.55s;
@@ -646,9 +706,51 @@ display: none;
   
   object{
     background-color:white;
-    width: 100vw;
+    width: 80vw;
     height: 100vh;
     padding-left: 60px;
+  }
+  .divRowBody{
+    width: -webkit-fill-available;
+    background-color: aqua;
+  }
+  .rowHead{
+    display: block;
+    width: -webkit-fill-available;
+    
+  }
+  
+  .colHead{
+    background-color: #f9eeee;
+    width: -webkit-fill-available;
+    display: flex;
+  }
+  .colHead h4{
+    flex: 1;
+    width: -webkit-fill-available;
+    float: left;
+    padding: 20px 20px 20px 40px;
+  }
+  
+  .rowBody{
+    display: block;
+    width: -webkit-fill-available;
+  }
+  
+  .colBody{
+    background-color: #dcfbbd;
+    width: -webkit-fill-available;
+    display: flex;
+    cursor: pointer;
+  }
+  .colBody:hover{
+    background-color: #cae6ad;
+  }
+  .colBody .col{
+    flex: 1;
+    width: -webkit-fill-available;
+    float: left;
+    padding: 20px 20px 20px 40px;
   }
 }
 
@@ -684,14 +786,14 @@ display: none;
   .index-login-form{
     width: 50vw;
     float: left;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     height: 100vh;
   }
    /* HEADER STYLE */
    header{
     height: 40px;
     background-color: #ddd;
-    padding: 10px 40px 15px 40px;
+    padding: 10px 0px 15px 0px;
     text-align: left;
   }
   .header-left{
@@ -724,23 +826,26 @@ display: none;
   }
 
   #profile-menu{
-    background-color: rosybrown;
-    width: 170px;
+    /* background-color: rosybrown; */
+    width: 165px;
     height: 80px;
     cursor: pointer;
     position: fixed;
-    top: 60px; 
-    right: 40px;
+    top: 60px;
+    right: 0px;
+    color: #fff;
     display: none;
   }
  
   #profile-menu ul li{
     text-decoration: none;
     list-style: none;
-    background-color: aqua;
+    color: #fff;
+    background-color: #003399;
     height: 40px;
     line-height: 40px;
     padding-left: 20px;
+    
   }
   #profile-menu ul li:hover{
     text-decoration: none;
@@ -751,11 +856,13 @@ display: none;
     padding-left: 20px;
     transition-property: background-color;
     transition-duration: 0.55s;
+    color: #003399;
     /* transition-delay: 0.95s; */
     }
   
   #profile-menu ul li a{
     text-decoration: none;
+    color:#fff;
   }
 
   footer{
@@ -768,22 +875,17 @@ display: none;
 
    /* INDEX/ LOGIN PAGE */
    .index-page {
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     clear: both;
+    background-image: url('../img/bg-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left top;
   }
-  .index-page-image{
-    background-image: url('../img/index-img.jpg');
-    background-position: center;
-    width: 50%;
-    float: left;
-    background-color: gray;
-    height: 100vh; 
-  }
+
   .index-login-form{
-    width: 50vw;
-    float: left;
-    background-color: white;
+    width: 100vw;
   }
 
 
@@ -791,23 +893,23 @@ display: none;
     padding-top:10px;
     margin: auto;
     height: 400px;
-    width: 40vw;
+    width: 50vw;
     
   }
   #login-form >
   input[type='email'],
-  input[type='password'],
-  input[type='submit']{
+  input[type='password']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
-  
   #login-form > input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 100%;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -818,7 +920,7 @@ display: none;
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: 420px;
+    width: 100%;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -830,15 +932,13 @@ display: none;
   /* SIGN UP PAGE  */
   .sign-up-page{
     width: 100vw;
-    float: left;
-    background-color: white;
   }
 
   #sign-up-form{
       padding-top:10px;
       margin: auto;
       height: 400px;
-      width: 50vw;
+      width: 40vw;
   }
   #sign-up-form >
   input[type='email'],
@@ -847,14 +947,14 @@ display: none;
   button{
     padding: 10px;
     margin: 10px;
-    width:-webkit-fill-available;
+    width:100%;
     font-family: 'Montserrat', sans-serif;
   }
 
   #sign-up-form > button{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 100%;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -870,27 +970,24 @@ display: none;
   .mailbox-sidebar{
     width: 20%;
     float: left;
-    background-color: white;
+    background-color: #99cc33;
     height: 100vh; 
   }
   .mailbox-content{
-    width: 80%;
+    width: 75vw;
     float: left;
-    background-color:greenyellow;
+    background-color:white;
     height: 100vh;
   }
-  .mailbox-content .content {
-    display: none;
-    background-color: green;
-  }
+ 
   .mailbox-content .content{
-    width: 70%;
+    width: -webkit-fill-available;
     height: 100%;
   }
 
   /* SIDEBAR MENU */
   .sidebar-menu{
-    width: 100vw;
+    width: -webkit-fill-available;
     background-color: bisque;
    
   }
@@ -900,7 +997,7 @@ display: none;
     background-color: #99cc33;
     height: 4rem;
     line-height: 40px;
-    padding-left: 6rem;
+    padding-left: 2rem;
     padding-top: 1rem;
   }
   .sidebar-menu ul li:hover{
@@ -909,7 +1006,7 @@ display: none;
     background-color:#f9f9f9;
     height: 4rem;
     line-height: 40px;
-    padding-left: 6rem;
+    padding-left: 2rem;
     padding-top: 1rem;
     transition-property: background-color;
     transition-duration: 0.55s;
@@ -935,9 +1032,51 @@ display: none;
   
   object{
     background-color:white;
-    width: 100vw;
+    width: -webkit-fill-available;
     height: 100vh;
     padding-left: 60px;
+  }
+  .divRowBody{
+    width: -webkit-fill-available;
+    background-color: aqua;
+  }
+  .rowHead{
+    display: block;
+    width: -webkit-fill-available;
+    
+  }
+  
+  .colHead{
+    background-color: #f9eeee;
+    width: -webkit-fill-available;
+    display: flex;
+  }
+  .colHead h4{
+    flex: 1;
+    width: -webkit-fill-available;
+    float: left;
+    padding: 20px 20px 20px 40px;
+  }
+  
+  .rowBody{
+    display: block;
+    width: -webkit-fill-available;
+  }
+  
+  .colBody{
+    background-color: #dcfbbd;
+    width: -webkit-fill-available;
+    display: flex;
+    cursor: pointer;
+  }
+  .colBody:hover{
+    background-color: #cae6ad;
+  }
+  .colBody .col{
+    flex: 1;
+    width: -webkit-fill-available;
+    float: left;
+    padding: 20px 20px 20px 40px;
   }
 }
 
@@ -947,11 +1086,6 @@ display: none;
 */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .index-page {
-    height: 100%;
-    width: 100vw;
-    clear: both;
-  }
   header{
     width: 100vw;
     height: 30px;
@@ -963,42 +1097,44 @@ display: none;
     background-color: beige;
     float: left;
   }
-  .index-page-image{
-    width: 50vw;
-    float: left;
-    background-color: aqua;
-    height: 100vh;
-    
-  }
- 
-   /* HEADER STYLE */
-   header{
-    height: 40px;
+  /* HEADER STYLE */
+  header{
+    height: 50px;
     background-color: #ddd;
-    padding: 10px 40px 15px 40px;
-    text-align: left;
+    padding: 2px 5px 5px 5px;
+    /* text-align: left; */
   }
   .header-left{
-    float: left;
+    text-align: center;
+  }
+  .header-left img{
+    margin-top: 4px;
+    width: 170px;
+    height: 35px;
+    
   }
   .header-right{
-    float: right;
-    cursor: pointer;
-    padding: 0px 10px 5px 10px;
+    display: none;
+  }
+  .header-right-m{
+    display: block;
+    margin-bottom: 50px;
+    padding-left: 10px;
   }
   .header-right:hover{
     background-color: #f0f0f0;
   }
 
-  .profile-pic{
+  .profile-pic-m{
     border-radius: 50%;
     height: 45px;
     width: 45px;
     float: left;
   }
-  .profile-name{
-   padding: 12px 10px 14px 0px;
+  .profile-name-m{
+   padding: 12px 10px 14px 10px;
    float: left;
+   color: white;
 
   }
 
@@ -1006,25 +1142,27 @@ display: none;
     color: red;
     visibility: hidden;
   }
-
   #profile-menu{
-    background-color: rosybrown;
-    width: 170px;
+    /* background-color: rosybrown; */
+    width: 165px;
     height: 80px;
     cursor: pointer;
     position: fixed;
-    top: 55px; 
-    right: 26px;
+    top: 60px;
+    right: 0px;
+    color: #fff;
     display: none;
   }
  
   #profile-menu ul li{
     text-decoration: none;
     list-style: none;
-    background-color: aqua;
+    color: #fff;
+    background-color: #003399;
     height: 40px;
     line-height: 40px;
     padding-left: 20px;
+    
   }
   #profile-menu ul li:hover{
     text-decoration: none;
@@ -1035,11 +1173,13 @@ display: none;
     padding-left: 20px;
     transition-property: background-color;
     transition-duration: 0.55s;
+    color: #003399;
     /* transition-delay: 0.95s; */
     }
   
   #profile-menu ul li a{
     text-decoration: none;
+    color:#fff;
   }
 
   footer{
@@ -1052,97 +1192,107 @@ display: none;
 
    /* INDEX/ LOGIN PAGE */
    .index-page {
-    height: 100%;
+    /* height: 100vh; */
     width: 100vw;
     clear: both;
+    background-image: url('../img/bg-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
   }
-  .index-page-image{
-    background-image: url('../img/index-img.jpg');
-    background-position: center;
-    width: 50%;
-    float: left;
-    background-color: gray;
-    height: 100vh; 
-  }
-  .index-login-form{
-    width: 50vw;
-    float: left;
-    background-color: white;
-  }
+
+  /* .index-login-form{
+    width: 100vw;
+  } */
 
 
   #login-form{
     padding-top:10px;
     margin: auto;
     height: 400px;
-    width: 30vw;
+    width: 100vw;
     
   }
   #login-form >
   input[type='email'],
-  input[type='password'],
+  input[type='password']{
+    padding: 10px;
+    margin: 10px;
+    width: 90%;
+    font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  #login-form >
   input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  #login-form > input[type='submit']{
-    padding: 10px;
-    margin: 10px;
-    width: -webkit-fill-available;
+    width: 93%;
     background-color: #99cc33;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    transition-property: background-color;
-    transition-duration: 1s;
-    transition-delay: 0.14s;
+    font-family:3 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 93%;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
     transition-property: background-color;
     transition-duration: 1s;
     transition-delay: 0.14s;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
+/* SIGN UP PAGE  */
+.sign-up-page{
+  width: 100vw;
+}
 
-  /* SIGN UP PAGE  */
-  .sign-up-page{
+#sign-up-form{
+    padding-top:10px;
+    /* margin: auto; */
+    height: 400px;
     width: 100vw;
-    float: left;
-    background-color: white;
-  }
+}
+#sign-up-form >
+input[type='email'],
+input[type='password'],
+input[type='text']{
+  padding: 10px;
+  margin: 10px;
+  width: 90%;
+  font-family: 'Montserrat', sans-serif;
+  border: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
-  #sign-up-form{
-      padding-top:10px;
-      margin: auto;
-      height: 400px;
-      width: 50vw;
-  }
-  #sign-up-form >
-  input[type='email'],
-  input[type='password'],
-  input[type='text'],
-  button{
-    padding: 10px;
-    margin: 10px;
-    width: -webkit-fill-available;
-    font-family: 'Montserrat', sans-serif;
-  }
+#sign-up-form > button{
+  padding: 10px;
+  margin: 10px;
+  width: 95%;
+  background-color: #99cc33;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  border: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#sign-up-form > button:hover{
+  padding: 10px;
+  margin: 10px;
+  width: 95%;
+  background-color: #003399;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  transition-property: background-color;
+  transition-duration: 1s;
+  transition-delay: 0.14s;
+  border: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
-  #sign-up-form > button{
-    padding: 10px;
-    margin: 10px;
-    width: -webkit-fill-available;
-    background-color: #99cc33;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-  }
 
   /* MAIL BOX PAGE */
   
@@ -1154,27 +1304,26 @@ display: none;
   .mailbox-sidebar{
     width: 20%;
     float: left;
-    background-color: white;
+    background-color: #99cc33;
     height: 100vh; 
   }
   .mailbox-content{
-    width: 80%;
+    width: 75vw;
     float: left;
-    background-color:greenyellow;
+    background-color:white;
     height: 100vh;
   }
   .mailbox-content .content {
     display: none;
-    background-color: green;
   }
   .mailbox-content .content{
-    width: 70%;
+    width: -webkit-fill-available;
     height: 100%;
   }
 
   /* SIDEBAR MENU */
   .sidebar-menu{
-    width: 100vw;
+    width: -webkit-fill-available;
     background-color: bisque;
    
   }
@@ -1184,7 +1333,7 @@ display: none;
     background-color: #99cc33;
     height: 4rem;
     line-height: 40px;
-    padding-left: 6rem;
+    padding-left: 2rem;
     padding-top: 1rem;
   }
   .sidebar-menu ul li:hover{
@@ -1193,7 +1342,7 @@ display: none;
     background-color:#f9f9f9;
     height: 4rem;
     line-height: 40px;
-    padding-left: 6rem;
+    padding-left: 2rem;
     padding-top: 1rem;
     transition-property: background-color;
     transition-duration: 0.55s;
@@ -1219,10 +1368,91 @@ display: none;
   
   object{
     background-color:white;
-    width: 100vw;
+    width: -webkit-fill-available;
     height: 100vh;
     padding-left: 60px;
   }
+  .sidenav {
+    height: 100%;
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: #629006; 
+    overflow-x: hidden;
+    padding-top: 30px;
+    transition: 0.5s; 
+    display: block;
+  }
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  display: inline;
+}
+
+#menu{
+  float: left;
+  display: block;
+}
+.divRowBody{
+  width: -webkit-fill-available;
+  background-color: aqua;
+}
+.rowHead{
+  display: block;
+  width: -webkit-fill-available;
+  
+}
+
+.colHead{
+  background-color: #f9eeee;
+  width: -webkit-fill-available;
+  display: flex;
+}
+.colHead h4{
+  flex: 1;
+  width: -webkit-fill-available;
+  float: left;
+  padding: 20px 20px 20px 40px;
+}
+
+.rowBody{
+  display: block;
+  width: -webkit-fill-available;
+}
+
+.colBody{
+  background-color: #dcfbbd;
+  width: -webkit-fill-available;
+  display: flex;
+  cursor: pointer;
+}
+.colBody:hover{
+  background-color: #cae6ad;
+}
+.colBody .col{
+  flex: 1;
+  width: -webkit-fill-available;
+  float: left;
+  padding: 20px 20px 20px 40px;
+}
 }
 
 /* 
@@ -1243,38 +1473,44 @@ display: none;
     background-color: beige;
     float: left;
   }
-  .index-page-image{
-    display: none;
-    
-  }
-    /* HEADER STYLE */
+  /* HEADER STYLE */
   header{
-    height: 40px;
+    height: 50px;
     background-color: #ddd;
     padding: 2px 5px 5px 5px;
-    text-align: left;
+    /* text-align: left; */
   }
   .header-left{
-    float: left;
+    text-align: center;
+  }
+  .header-left img{
+    margin-top: 4px;
+    width: 170px;
+    height: 35px;
+    
   }
   .header-right{
-    float: right;
-    cursor: pointer;
-    padding: 0px 10px 5px 10px;
+    display: none;
+  }
+  .header-right-m{
+    display: block;
+    margin-bottom: 50px;
+    padding-left: 10px;
   }
   .header-right:hover{
     background-color: #f0f0f0;
   }
 
-  .profile-pic{
+  .profile-pic-m{
     border-radius: 50%;
     height: 45px;
     width: 45px;
     float: left;
   }
-  .profile-name{
-   padding: 12px 10px 14px 0px;
+  .profile-name-m{
+   padding: 12px 10px 14px 10px;
    float: left;
+   color: white;
 
   }
 
@@ -1322,94 +1558,108 @@ display: none;
     background-color: beige;
     float: left;
   }
-  .index-page-image{
-    background-image: url('../img/index-img.jpg');
-    background-position: center;
-    width: 50vw;
-    float: left;
-    background-color: gray;
-    height: 100vh; 
-  }
-  .index-login-form{
+   /* INDEX/ LOGIN PAGE */
+   .index-page {
+    /* height: 100vh; */
     width: 100vw;
-    float: left;
-    background-color: white;
-    margin: auto;
+    clear: both;
+    background-image: url('../img/bg-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
   }
+
+  /* .index-login-form{
+    width: 100vw;
+  } */
 
 
   #login-form{
     padding-top:10px;
     margin: auto;
     height: 400px;
-    width: 70vw;
+    width: 100vw;
     
   }
   #login-form >
   input[type='email'],
-  input[type='password'],
+  input[type='password']{
+    padding: 10px;
+    margin: 10px;
+    width: 90%;
+    font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  #login-form >
   input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  #login-form > input[type='submit']{
-    padding: 10px;
-    margin: 10px;
-    width: -webkit-fill-available;
+    width: 93%;
     background-color: #99cc33;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    transition-property: background-color;
-    transition-duration: 1s;
-    transition-delay: 0.14s;
+    font-family:3 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 93%;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
     transition-property: background-color;
     transition-duration: 1s;
     transition-delay: 0.14s;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
+/* SIGN UP PAGE  */
+.sign-up-page{
+  width: 100vw;
+}
 
-  /* SIGN UP PAGE  */
-  .sign-up-page{
+#sign-up-form{
+    padding-top:10px;
+    /* margin: auto; */
+    height: 400px;
     width: 100vw;
-    float: left;
-    background-color: white;
-  }
+}
+#sign-up-form >
+input[type='email'],
+input[type='password'],
+input[type='text']{
+  padding: 10px;
+  margin: 10px;
+  width: 90%;
+  font-family: 'Montserrat', sans-serif;
+  border: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
-  #sign-up-form{
-      padding-top:10px;
-      margin: auto;
-      height: 400px;
-      width: 60vw;
-  }
-  #sign-up-form >
-  input[type='email'],
-  input[type='password'],
-  input[type='text'],
-  button{
-    padding: 10px;
-    margin: 10px;
-    width: -webkit-fill-available;
-    font-family: 'Montserrat', sans-serif;
-  }
-
-  #sign-up-form > button{
-    padding: 10px;
-    margin: 10px;
-    width: -webkit-fill-available;
-    background-color: #99cc33;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-  }
+#sign-up-form > button{
+  padding: 10px;
+  margin: 10px;
+  width: 95%;
+  background-color: #99cc33;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  border: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#sign-up-form > button:hover{
+  padding: 10px;
+  margin: 10px;
+  width: 95%;
+  background-color: #003399;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  transition-property: background-color;
+  transition-duration: 1s;
+  transition-delay: 0.14s;
+  border: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
   /* MAIL BOX PAGE */
   
@@ -1419,31 +1669,26 @@ display: none;
     clear: both;
   }
   .mailbox-sidebar{
-    width: 20%;
-    float: left;
-    background-color: white;
-    height: 100vh; 
     display: none;
   }
   .mailbox-content{
-    width: 80%;
+    width: 75vw;
     float: left;
-    background-color:greenyellow;
+    background-color:white;
     height: 100vh;
   }
   .mailbox-content .content {
     display: none;
-    background-color: green;
   }
   .mailbox-content .content{
-    width: 70%;
+    width: -webkit-fill-available;
     height: 100%;
   }
 
  /* SIDEBAR MENU */
  .sidebar-menu{
   visibility: hidden;
-  width: 100vw;
+  width: -webkit-fill-available;
   background-color: bisque;
   display: none;
  }
@@ -1488,10 +1733,91 @@ display: none;
   
   object{
     background-color:white;
-    width: 100vw;
+    width: -webkit-fill-available;
     height: 100vh;
     padding-left: 60px;
   } 
+  .sidenav {
+    height: 100%;
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-color: #629006; 
+    overflow-x: hidden;
+    padding-top: 30px;
+    transition: 0.5s; 
+    display: block;
+  }
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  display: inline;
+}
+
+#menu{
+  float: left;
+  display: block;
+}
+.divRowBody{
+  width: -webkit-fill-available;
+  background-color: aqua;
+}
+.rowHead{
+  display: block;
+  width: -webkit-fill-available;
+  
+}
+
+.colHead{
+  background-color: #f9eeee;
+  width: -webkit-fill-available;
+  display: flex;
+}
+.colHead h4{
+  flex: 1;
+  width: -webkit-fill-available;
+  float: left;
+  padding: 20px 20px 20px 40px;
+}
+
+.rowBody{
+  display: block;
+  width: -webkit-fill-available;
+}
+
+.colBody{
+  background-color: #dcfbbd;
+  width: -webkit-fill-available;
+  display: flex;
+  cursor: pointer;
+}
+.colBody:hover{
+  background-color: #cae6ad;
+}
+.colBody .col{
+  flex: 1;
+  width: -webkit-fill-available;
+  float: left;
+  padding: 20px 20px 20px 40px;
+}
 }
 
 /* 
@@ -1517,7 +1843,7 @@ display: none;
   .index-login-form{
     width: 100vw;
     /* float: left; */
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     height: 100vh;
   }
    /* HEADER STYLE */
@@ -1611,23 +1937,18 @@ display: none;
 
    /* INDEX/ LOGIN PAGE */
    .index-page {
-    height: 100vw;
+    /* height: 100vh; */
     width: 100vw;
     clear: both;
+    background-image: url('../img/bg-home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
   }
-  .index-page-image{
-    background-image: url('../img/index-img.jpg');
-    background-position: center;
-    width: 50vw;
-    float: left;
-    background-color: gray;
-    height: 100vh; 
-  }
-  .index-login-form{
+
+  /* .index-login-form{
     width: 100vw;
-    float: left;
-    background-color: white;
-  }
+  } */
 
 
   #login-form{
@@ -1639,42 +1960,41 @@ display: none;
   }
   #login-form >
   input[type='email'],
-  input[type='password'],
+  input[type='password']{
+    padding: 10px;
+    margin: 10px;
+    width: 90%;
+    font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  #login-form >
   input[type='submit']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  #login-form > input[type='submit']{
-    padding: 10px;
-    margin: 10px;
-    width: -webkit-fill-available;
+    width: 95%;
     background-color: #99cc33;
-    color: white;
     font-family: 'Montserrat', sans-serif;
-    transition-property: background-color;
-    transition-duration: 1s;
-    transition-delay: 0.14s;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   #login-form > input[type='submit']:hover{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 95%;
     background-color: #003399;
     color: white;
     font-family: 'Montserrat', sans-serif;
     transition-property: background-color;
     transition-duration: 1s;
     transition-delay: 0.14s;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   /* SIGN UP PAGE  */
   .sign-up-page{
     width: 100vw;
-    float: left;
-    background-color: white;
   }
 
   #sign-up-form{
@@ -1686,22 +2006,40 @@ display: none;
   #sign-up-form >
   input[type='email'],
   input[type='password'],
-  input[type='text'],
-  button{
+  input[type='text']{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 90%;
     font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   #sign-up-form > button{
     padding: 10px;
     margin: 10px;
-    width: -webkit-fill-available;
+    width: 95%;
     background-color: #99cc33;
     color: white;
     font-family: 'Montserrat', sans-serif;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
+  #sign-up-form > button:hover{
+    padding: 10px;
+    margin: 10px;
+    width: 95%;
+    background-color: #003399;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    transition-property: background-color;
+    transition-duration: 1s;
+    transition-delay: 0.14s;
+    border: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+
 
   /* MAIL BOX PAGE */
   
@@ -1711,31 +2049,24 @@ display: none;
     clear: both;
   }
   .mailbox-sidebar{
-    width: 20%;
-    float: left;
-    background-color: white;
-    height: 100vh; 
     display: none;
   }
   .mailbox-content{
-    width: 80%;
+    width: -webkit-fill-available;
     float: left;
-    background-color:greenyellow;
+    background-color:white;
     height: 100vh;
   }
-  .mailbox-content .content {
-    display: none;
-    background-color: green;
-  }
+ 
   .mailbox-content .content{
-    width: 70%;
+    width: -webkit-fill-available;
     height: 100%;
   }
 
   /* SIDEBAR MENU */
   .sidebar-menu{
     visibility: hidden;
-    width: 100vw;
+    width: -webkit-fill-available;
     background-color: bisque;
     display: none;
    
@@ -1781,9 +2112,9 @@ display: none;
   
   object{
     background-color:white;
-    width: 100vw;
+    width: -webkit-fill-available;
     height: 100vh;
-    padding-left: 10px;
+    padding-left: 0px;
   }
   .sidenav {
     height: 100%;
@@ -1792,7 +2123,7 @@ display: none;
     z-index: 1; 
     top: 0; 
     left: 0;
-    background-color: #003399; 
+    background-color: #629006; 
     overflow-x: hidden;
     padding-top: 30px;
     transition: 0.5s; 
@@ -1823,6 +2154,37 @@ display: none;
 #menu{
   float: left;
   display: block;
+}
+
+.divRowBody{
+  width: -webkit-fill-available;
+  background-color: aqua;
+}
+.rowHead{
+  display: none;
+  
+}
+
+.rowBody{
+}
+
+.colBody{
+  background-color: #dcfbbd;
+  cursor: pointer;
+  padding: 6px 6px 6px 10px;
+  border-bottom: solid #ccc 1px;
+  
+}
+.colBody:hover{
+  background-color: #cae6ad;
+}
+.colBody .col{
+  padding-bottom: 5px;
+  font-weight:bold;
+  font-size: 13px;
+}
+.hide{
+  display: none;
 }
 
 }
