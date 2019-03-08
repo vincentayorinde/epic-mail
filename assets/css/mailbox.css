@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+@media (min-width:468px){
+
+  .container-1{
+    display: flex;
+    align-items: stretch;
+  }
+  .container-2{
+    display: flex;
+    align-items: stretch;
+  }
+  
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #f4f7f9;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container-1 div{
+  flex-direction: column;
+  padding:20px 20px 20px 20px;
+}
+
+.container-2 div{
+  flex-direction: column;
+  padding:20px 0px 20px 20px;
+}
+
+.box-1 {
+  flex: 1;
+  background-color: #02c386;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: -10px 1px 30px 1px #ccc;
+}
+.box-1:hover {
+  flex: 1;
+  background-color: #09b57e;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: -10px 1px 30px 1px #ccc;
+  transition-duration: 0.55s;
+}
+.box-1 .fas{
+  margin-right: 5px;
+  font-size: 15px;
+  
+}
+.box-1 button{
+  background-color: transparent;
+  border: 0px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.box-2{
+  flex: 2;
+  cursor: pointer;
+}
+.box-2 span{
+  color:#b5bfc8;
+  font-weight: bold;
+}
+.box-2 p{
+  color: #abafb2;
+  font-weight: bold;
+}
+.box-2 .fas{
+  margin-bottom: 3px;
+  
+}
+.box-3{
+  flex: 4;
+}
+.box-3 span{
+  margin-left: 60px;
+}
+.box-3 input[type='text']{
+  border: 0px;
+  color: #b0b3b6;
+  background-color: #f4f7f9;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+.box-3 .fas{
+  margin: 0px 50px 10px 0px;
+  color: #a3adbb;
+  cursor: pointer;
+}
+.box-3 .fas:hover{
+  margin: 0px 50px 10px 0px;
+  color: #999;
+  cursor: pointer;
+  transition-duration: 0.55s;
+}
+
+.box-4 {
+  flex: 2;
+}
+.box-4 ul li{
+  text-decoration: none;
+  list-style: none;
+  color: #97a5b0;
+  background-color: #f4f7f9;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.box-4 ul li:hover{
+  text-decoration: none;
+  list-style: none;
+  color: black;
+  background-color: #f4f7f9;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition-duration: 0.95s;
+}
+.box-5{
+  flex: 4;
+}
+.box-5 .record{
+  padding-top: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.box-5 .record:hover{
+  padding-top: 20px;
+  box-shadow: -10px 0 30px 1px #e7ecf0;
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition-duration: 0.35s;
+}
+.box-5 .record h3{
+  color: #65686a;
+  margin: 5px 0px 5px 0px;
+}
+.box-5 .record h4{
+  color: #b0b3b6;
+  margin: 5px 0px 5px 0px;
+}
+.box-5 .fas{
+  color: #528eff;
+  font-size: 12px;
+}
+.box-5 .record-hover{
+  padding-top: 20px;
+  box-shadow: -10px 0 30px 1px #e7ecf0;
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.box-5 .record-hover h4{
+  color: #b0b3b6;
+  margin: 5px 0px 5px 0px;
+}
+.box-6{
+  flex: 1;
+  background-color: #fff;
+}
+.box-6 img{
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+.box-7{
+  flex: 7;
+  background-color: #fff;
+}
+.box-7 p{
+  margin: 20px; 
+}
+.box-7 .hr {
+  border-top: 1px solid #e9eef2;
+}
+.box-7 button{
+  background-color: #02c386;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px;
+  box-shadow: -10px 1px 30px 1px #ccc;
+}
+.box-7 button:hover {
+  background-color: #09b57e;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px;
+  box-shadow: -10px 1px 30px 1px #ccc;
+  transition-duration: 0.55s;
+}
+
+.box-7 .reply-icons .fas{
+  margin: 0px 30px 10px 0px;
+  color: #a3adbb;
+  cursor: pointer;
+}
+.box-7 .reply-icons .fas{
+  margin: 0px 30px 10px 0px;
+  color: #999;
+  cursor: pointer;
+  transition-duration: 0.55s;
+}
