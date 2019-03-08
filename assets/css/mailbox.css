@@ -103,7 +103,7 @@ html, body {
 .box-4 {
   flex: 2;
 }
-.box-4 ul li{
+.box-4 ul li.link{
   text-decoration: none;
   list-style: none;
   color: #97a5b0;
@@ -125,6 +125,22 @@ html, body {
   font-weight: bold;
   cursor: pointer;
   transition-duration: 0.95s;
+}
+.box-4 ul li.active{
+  text-decoration: none;
+  list-style: none;
+  color: #000;
+  background-color: #f4f7f9;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.box-4 ul li .notification{
+  color: #528eff;
+  font-size: 14px;
+  font-weight: bold;
 }
 .box-5{
   flex: 4;
