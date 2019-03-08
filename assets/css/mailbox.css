@@ -210,6 +210,16 @@ html, body {
 .box-7 .hr {
   border-top: 1px solid #e9eef2;
 }
+.box-7 textarea{
+  border: 0px;
+  width: 90%;
+  color: #b0b3b6;
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc; 
+  margin-bottom: 10px;
+}
 .box-7 button{
   background-color: #02c386;
   color: #fff;
