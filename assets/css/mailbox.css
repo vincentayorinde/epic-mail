@@ -39,6 +39,24 @@
    .box-9{
     flex: 1;
   }
+  .box-9 #searchMobile{
+    visibility: hidden;
+    padding: 0px !important;
+  }
+  .box-9 #searchMobile .fas{
+    transition-duration: 0s !important;
+    margin-left: 5px;
+    font-size: 20px;
+  }
+   .box-9 input[type='text']{
+    width: 90%;
+    border: 0px;
+    color: #b0b3b6;
+    background-color: #e9ebef;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 20px;
+    padding: 7px;    
+  }
   .box-9 img{
     border-radius: 50%;
     height: 40px;
@@ -51,6 +69,7 @@
     cursor: pointer;
     display: flex;
     border-bottom: 1px #e7ecf0 solid;
+    box-shadow: -1px 0 10px 1px #e7ecf0;
   }
   .box-9 .pic{
     flex: 1;
