@@ -116,7 +116,7 @@ html, body {
 }
 .box-4 ul li.link a{
   text-decoration: none;
-  color:#a3adbb;
+  color: #a3adbb;
 }
 .box-4 ul li:hover{
   text-decoration: none;
@@ -131,7 +131,6 @@ html, body {
   transition-duration: 0.95s;
 }
 .box-4 ul li.active{
-  text-decoration: none;
   list-style: none;
   color: #000;
   background-color: #f4f7f9;
