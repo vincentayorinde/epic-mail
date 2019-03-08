@@ -150,68 +150,23 @@ html, body {
   font-weight: bold;
 }
 .box-5{
-  flex: 4;
+  flex: 12;
+  margin-right: 40px;
 }
-.box-5 .record{
-  padding-top: 20px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.box-5 .record:hover{
-  padding-top: 20px;
-  box-shadow: -10px 0 30px 1px #e7ecf0;
-  background-color: #fff;
-  border-radius: 10px;
-  cursor: pointer;
-  transition-duration: 0.35s;
-}
-.box-5 .record h3{
-  color: #65686a;
-  margin: 5px 0px 5px 0px;
-}
-.box-5 .record h4{
+.box-5 
+input[type='text'],
+textarea{
+  border: 0px;
+  width: 40%;
   color: #b0b3b6;
-  margin: 5px 0px 5px 0px;
+  background-color: #f4f7f9;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc; 
+  margin-bottom: 10px;
 }
-.box-5 .fas{
-  color: #528eff;
-  font-size: 12px;
-}
-.box-5 .record-hover{
-  padding-top: 20px;
-  box-shadow: -10px 0 30px 1px #e7ecf0;
-  background-color: #fff;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.box-5 .record-hover h4{
-  color: #b0b3b6;
-  margin: 5px 0px 5px 0px;
-}
-.box-6{
-  flex: 1;
-  background-color: #fff;
-  visibility: hidden;
-}
-.box-6 img{
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  margin-left: 50px;
-  margin-top: 20px;
-}
-.box-7{
-  flex: 7;
-  background-color: #fff;
-  visibility: hidden;
-}
-.box-7 p{
-  margin: 20px; 
-}
-.box-7 .hr {
-  border-top: 1px solid #e9eef2;
-}
-.box-7 button{
+
+.box-5 button{
   background-color: #02c386;
   color: #fff;
   cursor: pointer;
@@ -220,7 +175,7 @@ html, body {
   padding: 15px;
   box-shadow: -10px 1px 30px 1px #ccc;
 }
-.box-7 button:hover {
+.box-5 button:hover {
   background-color: #09b57e;
   color: #fff;
   cursor: pointer;
@@ -231,14 +186,3 @@ html, body {
   transition-duration: 0.55s;
 }
 
-.box-7 .reply-icons .fas{
-  margin: 0px 30px 10px 0px;
-  color: #a3adbb;
-  cursor: pointer;
-}
-.box-7 .reply-icons .fas{
-  margin: 0px 30px 10px 0px;
-  color: #999;
-  cursor: pointer;
-  transition-duration: 0.55s;
-}
