@@ -58,6 +58,11 @@ html, body {
   color: #fff;
   font-family: 'Montserrat', sans-serif;
 }
+.box-1 button a{
+  text-decoration: none;
+  color: #fff;
+}
+
 
 .box-2{
   flex: 2;
@@ -187,6 +192,7 @@ html, body {
 .box-6{
   flex: 1;
   background-color: #fff;
+  visibility: hidden;
 }
 .box-6 img{
   border-radius: 50%;
@@ -198,6 +204,7 @@ html, body {
 .box-7{
   flex: 7;
   background-color: #fff;
+  visibility: hidden;
 }
 .box-7 p{
   margin: 20px; 

@@ -58,6 +58,10 @@ html, body {
   color: #fff;
   font-family: 'Montserrat', sans-serif;
 }
+.box-1 button a{
+  text-decoration: none;
+  color: #fff;
+}
 
 .box-2{
   flex: 2;

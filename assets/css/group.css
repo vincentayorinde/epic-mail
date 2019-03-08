@@ -39,6 +39,7 @@ html, body {
   cursor: pointer;
   box-shadow: -10px 1px 30px 1px #ccc;
 }
+
 .box-1:hover {
   flex: 1;
   background-color: #09b57e;
@@ -57,6 +58,10 @@ html, body {
   border: 0px;
   color: #fff;
   font-family: 'Montserrat', sans-serif;
+}
+.box-1 button a{
+  text-decoration: none;
+  color: #fff;
 }
 
 .box-2{
