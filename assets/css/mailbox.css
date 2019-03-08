@@ -46,6 +46,7 @@
     border-radius: 10px;
     cursor: pointer;
     display: flex;
+    border-bottom: 1px #e7ecf0 solid;
   }
   .box-9 .pic{
     flex: 1;
