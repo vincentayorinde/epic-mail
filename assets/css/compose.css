@@ -187,3 +187,26 @@ textarea{
   transition-duration: 0.55s;
 }
 
+.show {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+.hide {
+  opacity: 0;
+  transition: opacity 1000ms;
+}
+
+.box-5 #notify{
+  color: #fff;
+  margin-left: 100px; 
+  padding: 20px;
+  box-shadow: -10px 0 30px 1px #e7ecf0;
+  background-color: #02c386;
+  border-radius: 10px;
+  transition-duration: 5.99s;
+  z-index: 3;
+  position: absolute;
+  top: 50px;
+  display: none;
+}

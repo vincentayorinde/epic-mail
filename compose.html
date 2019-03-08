@@ -37,21 +37,25 @@
         </ul>
       </div>
       <div class="box-5">
+        <div id="notify">Message sent successfully!</div>
+        <form action="#" method="post" onsubmit="fadeIn(); return false;">
         <div>
-           <input type="text" placeholder="To" />
+           <input type="text" required placeholder="To" />
         </div>
         <div>
-            <input type="text" placeholder="Subject" />
+            <input type="text" required placeholder="Subject" />
         </div>
         <div>
-        <textarea rows="10"></textarea>
+        <textarea rows="10" required></textarea>
         </div>
-        <button>Send</button>
+        <button  id="compose">Send</button>
+      </form>
+      
       </div>
     
         
       </div>
    </div>
-
+<script src="assets/js/compose.js"></script>
 </body>
 </html>
