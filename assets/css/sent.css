@@ -97,6 +97,7 @@ html, body {
   margin: 0px 50px 10px 0px;
   color: #a3adbb;
   cursor: pointer;
+  transition-duration: 0.55s;
 }
 .box-3 .fas:hover{
   margin: 0px 50px 10px 0px;
