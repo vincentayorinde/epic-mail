@@ -1,16 +1,106 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-
-@media (min-width:468px){
+@media (min-width: 200px) and (max-width: 480px) {
+  .container-1{
+    display: none;
+    flex-direction: row;
+  }
+  .container-2{
+    display: none;
+    align-items: stretch;
+  }
+  .container-mobile{
+    display: flex;
+    flex-direction: column
+  }
+  .container-mobile div{
+    padding:0px 15px 5px 15px;
+  }
+  .box-8{
+    display: flex;
+    margin-top: 20px;
+    flex-direction: row;
+  }
+  .box-8 h1{
+    flex: 2;
+    text-align: center;
+  }
+  .box-8 .fa-bars{
+    flex: 2;
+    font-size: 20px;
+  }
+  .box-8 .fa-search{
+    flex: 2;
+    font-size: 20px;
+  }
+   .box-9{
+    flex: 1;
+  }
+  .box-9 img{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+  }
+  .box-9 .record{
+    padding-top: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+  }
+  .box-9 .pic{
+    flex: 1;
+    padding: 0px;
+  }
+  .box-9 .record-inner{
+    flex: 12;
+    font-size: 10px;
+  }
+  .box-9 .record:hover{
+    padding-top: 10px;
+    box-shadow: -10px 0 30px 1px #e7ecf0;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition-duration: 0.35s;
+  }
+  .box-9 .record h3{
+    color: #65686a;
+    margin: 5px 0px 5px 0px;
+  }
+  .box-9 .record h4{
+    color: #b0b3b6;
+    margin: 5px 0px 5px 0px;
+  }
+  .box-9 .fas{
+    color: #528eff;
+    font-size: 12px;
+  }
+  .box-9 .record-hover{
+    padding-top: 20px;
+    box-shadow: -10px 0 30px 1px #e7ecf0;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .box-9 .record-hover h4{
+    color: #b0b3b6;
+    margin: 5px 0px 5px 0px;
+  }
+}
+@media (min-width:481px){
 
   .container-1{
     display: flex;
-    align-items: stretch;
+    flex-direction: row;
   }
   .container-2{
     display: flex;
     align-items: stretch;
   }
-  
+  .container-mobile{
+    display: flex;
+    align-items: stretch;
+  }
 }
 * {
   margin: 0;
