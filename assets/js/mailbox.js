@@ -10,9 +10,15 @@ const closeNav = () => {
 closeNav();
 
 const showSearchMobile = () => {
-  document.getElementById('searchMobile').style.visibility = 'visible';
-  document.getElementById('searchMobile').style.transition = '1s';
-};
-const closeSearchMobile = () => {
-  document.getElementById('searchMobile').style.visibility = 'hidden';
+  const value = document.getElementById('searchMobile').style.visibility;
+  if(value === 'hidden'){
+    document.getElementById('searchMobile').style.visibility = 'visible';
+    const icon = document.getElementById("searchIcon");
+icon.className = "fas fa-times";
+  }else{
+    document.getElementById('searchMobile').style.visibility = 'hidden';
+    const icon = document.getElementById("searchIcon");
+icon.className = "fas fa-search";
+  }
+
 };

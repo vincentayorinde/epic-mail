@@ -30,7 +30,7 @@
     padding-left: 10px;
     color: #528eff;
   }
-  .box-8 .fa-search{
+  .box-8 .fa-search, .box-8 .fa-times{
     flex: 2;
     font-size: 25px;
     padding-right: 10px;
@@ -42,14 +42,11 @@
   .box-9 #searchMobile{
     visibility: hidden;
     padding: 0px !important;
+    align-content: center;
   }
-  .box-9 #searchMobile .fas{
-    transition-duration: 0s !important;
-    margin-left: 5px;
-    font-size: 20px;
-  }
+  
    .box-9 input[type='text']{
-    width: 90%;
+    width: 95%;
     border: 0px;
     color: #b0b3b6;
     background-color: #e9ebef;
@@ -109,6 +106,12 @@
   .box-9 .record-hover h4{
     color: #b0b3b6;
     margin: 5px 0px 5px 0px;
+  }
+  .box-9 #composeNew{
+    font-size: 50px;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
   }
   .box-10 {
     background-color: #f4f7f9;
