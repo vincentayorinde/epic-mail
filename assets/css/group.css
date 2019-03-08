@@ -159,6 +159,9 @@ html, body {
   border-radius: 10px;
   cursor: pointer;
 }
+.box-5 .record span{
+  font-size: 12px;
+}
 .box-5 .record:hover{
   padding-top: 20px;
   box-shadow: -10px 0 30px 1px #e7ecf0;
@@ -191,27 +194,24 @@ html, body {
   margin: 5px 0px 5px 0px;
 }
 .box-6{
-  flex: 1;
-  background-color: #fff;
-}
-.box-6 img{
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  margin-left: 50px;
-  margin-top: 20px;
-}
-.box-7{
   flex: 7;
   background-color: #fff;
 }
-.box-7 p{
-  margin: 20px; 
+.box-6 
+input[type='text'],
+input[type='email'],
+textarea{
+  border: 0px;
+  width: 40%;
+  color: #b0b3b6;
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc; 
+  margin-bottom: 10px;
 }
-.box-7 .hr {
-  border-top: 1px solid #e9eef2;
-}
-.box-7 button{
+
+.box-6 button{
   background-color: #02c386;
   color: #fff;
   cursor: pointer;
@@ -220,7 +220,7 @@ html, body {
   padding: 15px;
   box-shadow: -10px 1px 30px 1px #ccc;
 }
-.box-7 button:hover {
+.box-6 button:hover {
   background-color: #09b57e;
   color: #fff;
   cursor: pointer;
@@ -231,14 +231,16 @@ html, body {
   transition-duration: 0.55s;
 }
 
-.box-7 .reply-icons .fas{
-  margin: 0px 30px 10px 0px;
-  color: #a3adbb;
-  cursor: pointer;
-}
-.box-7 .reply-icons .fas{
-  margin: 0px 30px 10px 0px;
-  color: #999;
-  cursor: pointer;
-  transition-duration: 0.55s;
+.box-6 #notify{
+  color: #fff;
+  margin-left: 100px; 
+  padding: 20px;
+  box-shadow: -10px 0 30px 1px #e7ecf0;
+  background-color: #02c386;
+  border-radius: 10px;
+  transition-duration: 5.99s;
+  z-index: 3;
+  position: absolute;
+  top: 50px;
+  display: none;
 }
