@@ -13,7 +13,7 @@
     flex-direction: column
   }
   .container-mobile div{
-    padding:0px 15px 5px 15px;
+    padding:15px 15px 5px 10px;
   }
   .box-8{
     display: flex;
@@ -26,11 +26,15 @@
   }
   .box-8 .fa-bars{
     flex: 2;
-    font-size: 20px;
+    font-size: 25px;
+    padding-left: 10px;
+    color: #528eff;
   }
   .box-8 .fa-search{
     flex: 2;
-    font-size: 20px;
+    font-size: 25px;
+    padding-right: 10px;
+    color: #b0b3b6;
   }
    .box-9{
     flex: 1;
@@ -87,6 +91,79 @@
     color: #b0b3b6;
     margin: 5px 0px 5px 0px;
   }
+  .box-10 {
+    background-color: #f4f7f9;
+    width: 0;
+    position: fixed;
+    z-index: 99 !important;
+    top: 0; 
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 60px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    display: block;
+    height: 100%;
+    transition-duration: 0.55s;
+    box-shadow: -10px 1px 30px 1px #ccc;
+  }
+  .box-10 ul{
+    background-color: #f4f7f9;
+  }
+  .box-10 ul li.link{
+    text-decoration: none;
+    list-style: none;
+    color: #97a5b0;
+    background-color: #f4f7f9;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .box-10 ul li.link a{
+    text-decoration: none;
+    color: #a3adbb;
+  }
+  .box-10 ul li:hover{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    background-color: #f4f7f9;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition-duration: 0.95s;
+  }
+  .box-10 ul li.active{
+    list-style: none;
+    color: #000;
+    background-color: #f4f7f9;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .box-10 ul li .notification{
+    color: #528eff;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+.box-10 .closebtn {
+  position: absolute;
+  color: #b0b3b6;
+  top: 0;
+  right: 25px;
+  font-size: 26px;
+  margin-left: 50px;
+  display: inline;
+  padding-top: 30px;
+}
+
 }
 @media (min-width:481px){
 
@@ -101,6 +178,10 @@
   .container-mobile{
     display: flex;
     align-items: stretch;
+  }
+  .container-mobile{
+    display: none;
+    flex-direction: column
   }
 }
 * {
@@ -343,3 +424,15 @@ html, body {
   cursor: pointer;
   transition-duration: 0.55s;
 }
+
+
+/* .sidenav {
+  display: none;
+}
+.sidenav a {
+display: none;
+}
+
+.sidenav .closebtn {
+display: none;
+} */
