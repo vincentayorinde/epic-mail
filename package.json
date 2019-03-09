@@ -1,0 +1,34 @@
+{
+  "name": "epic-mail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "babel-upgrade": "^0.0.24",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "gh-pages": "^2.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^6.0.2"
+  },
+  "scripts": {
+    "test": "mocha",
+    "deploy": "gh-pages -d ui"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincentayorinde/epic-mail.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vincentayorinde/epic-mail/issues"
+  },
+  "homepage": "https://github.com/vincentayorinde/epic-mail#readme"
+}

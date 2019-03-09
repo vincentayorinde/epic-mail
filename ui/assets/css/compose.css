@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+@media (min-width: 200px) and (max-width: 790px) {
+  .container-1{
+    display: none;
+    flex-direction: row;
+  }
+  .container-2{
+    display: none;
+    align-items: stretch;
+  }
+  .container-mobile{
+    display: flex;
+    flex-direction: column
+  }
+  .container-mobile div{
+    padding:15px 15px 5px 10px;
+  }
+  .box-6{
+    display: flex;
+    margin-top: 20px;
+    flex-direction: row;
+  }
+  .box-6 h1{
+    flex: 2;
+    text-align: center;
+  }
+  .box-6 .fa-chevron-left{
+    flex: 2;
+    font-size: 25px;
+    padding-left: 10px;
+    color: #528eff;
+    cursor: pointer;
+  }
+  
+.box-7{
+  flex: 12;
+}
+.box-7 
+input[type='text'],
+input[type='email'],
+textarea{
+  border: 0px;
+  width: 100% !important;
+  color: #b0b3b6;
+  background-color: #f4f7f9;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc; 
+  margin-bottom: 10px;
+}
+
+.box-7 button{
+  background-color: #02c386;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px;
+  box-shadow: -10px 1px 30px 1px #ccc;  
+  margin-left: 10px !important;
+}
+.box-7 button:hover {
+  background-color: #09b57e;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px;
+  box-shadow: -10px 1px 30px 1px #ccc;
+  transition-duration: 0.55s;
+  margin-left: 10px !important;
+}
+
+
+.box-7 #notifyMobile{
+  color: #fff;
+  margin-left:30px;
+  padding: 10px;
+  box-shadow: -10px 0 30px 1px #e7ecf0;
+  background-color: #02c386;
+  border-radius: 10px;
+  transition-duration: 0.55s;
+  z-index: 3;
+  position: absolute;
+  top: 50px;
+  display: none;
+}
+}
+@media (min-width:481px){
+
+  .container-1{
+    display: flex;
+    flex-direction: row;
+  }
+  .container-2{
+    display: flex;
+    align-items: stretch;
+  }
+  .container-mobile{
+    display: flex;
+    align-items: stretch;
+  }
+  .container-mobile{
+    display: none;
+    flex-direction: column
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #f4f7f9;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container-1 div{
+  flex-direction: column;
+  padding:20px 20px 20px 20px;
+}
+
+.container-2 div{
+  flex-direction: column;
+  padding:20px 0px 20px 20px;
+}
+
+.box-1 {
+  flex: 1;
+  background-color: #02c386;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: -10px 1px 30px 1px #ccc;
+}
+.box-1:hover {
+  flex: 1;
+  background-color: #09b57e;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: -10px 1px 30px 1px #ccc;
+  transition-duration: 0.55s;
+}
+.box-1 .fas{
+  margin-right: 5px;
+  font-size: 15px;
+  
+}
+.box-1 button{
+  background-color: transparent;
+  border: 0px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+.box-1 button a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.box-2{
+  flex: 2;
+  cursor: pointer;
+}
+.box-2 span{
+  color:#b5bfc8;
+  font-weight: bold;
+}
+.box-2 p{
+  color: #abafb2;
+  font-weight: bold;
+}
+.box-2 .fas{
+  margin-bottom: 3px;
+  
+}
+.box-3{
+  flex: 4;
+}
+.box-3 span{
+  margin-left: 60px;
+}
+.box-3 input[type='text']{
+  border: 0px;
+  color: #b0b3b6;
+  background-color: #f4f7f9;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+.box-3 .fas{
+  margin: 0px 50px 10px 0px;
+  color: #a3adbb;
+  cursor: pointer;
+  transition-duration: 0.55s;
+}
+.box-3 .fas:hover{
+  margin: 0px 50px 10px 0px;
+  color: #999;
+  cursor: pointer;
+  transition-duration: 0.55s;
+}
+
+.box-4 {
+  flex: 2;
+}
+.box-4 ul li.link{
+  /* text-decoration: none; */
+  list-style: none;
+  color: #97a5b0;
+  background-color: #f4f7f9;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.box-4 ul li.link a{
+  text-decoration: none;
+  color: #a3adbb;
+}
+.box-4 ul li:hover{
+  text-decoration: none;
+  list-style: none;
+  color: black;
+  background-color: #f4f7f9;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition-duration: 0.95s;
+}
+.box-4 ul li.active{
+  list-style: none;
+  color: #000;
+  background-color: #f4f7f9;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.box-4 ul li .notification{
+  color: #528eff;
+  font-size: 14px;
+  font-weight: bold;
+}
+.box-5{
+  flex: 12;
+  margin-right: 40px;
+}
+.box-5 
+input[type='text'],
+input[type='email'],
+textarea{
+  border: 0px;
+  width: 40%;
+  color: #b0b3b6;
+  background-color: #f4f7f9;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc; 
+  margin-bottom: 10px;
+}
+
+.box-5 button{
+  background-color: #02c386;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px;
+  box-shadow: -10px 1px 30px 1px #ccc;
+}
+.box-5 button:hover {
+  background-color: #09b57e;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px;
+  box-shadow: -10px 1px 30px 1px #ccc;
+  transition-duration: 0.55s;
+}
+
+
+.box-5 #notify{
+  color: #fff;
+  margin-left: 100px; 
+  padding: 20px;
+  box-shadow: -10px 0 30px 1px #e7ecf0;
+  background-color: #02c386;
+  border-radius: 10px;
+  transition-duration: 5.99s;
+  z-index: 3;
+  position: absolute;
+  top: 50px;
+  display: none;
+}
