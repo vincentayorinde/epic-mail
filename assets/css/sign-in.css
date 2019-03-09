@@ -16,10 +16,11 @@
   padding: 0;
 }
 
-html, body {
+html, body, .viewport{
   background-color: #f4f7f9;
   font-family: 'Montserrat', sans-serif;
-  
+  min-height: 100%;
+ 
 }
 
 .container-1{
@@ -27,7 +28,7 @@ html, body {
   height: 100vh;
 }
 .container-1 div{
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .box-1{
