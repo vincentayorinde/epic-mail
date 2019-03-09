@@ -40,7 +40,7 @@
         <div id="notify">Message sent successfully!</div>
         <form action="#" method="post" onsubmit="fadeIn(); return false;">
         <div>
-           <input type="text" required placeholder="To" />
+           <input type="email" required placeholder="To" />
         </div>
         <div>
             <input type="text" required placeholder="Subject" />
@@ -52,10 +52,30 @@
       </form>
       
       </div>
-    
-        
-      </div>
    </div>
+   <div class="container-mobile">
+      <div class="box-6">
+         <span ><a href="mailbox.html"><i class="fas fa-chevron-left"></i></a></span>
+         <h1 >Compose</h1>
+      </div>
+       <div class="box-7">
+          <div id="notifyMobile">Message sent successfully!</div>
+          <form action="#" method="post" onsubmit="fadeInMobile(); return false;">
+          <div>
+             <input type="email" required placeholder="To" />
+          </div>
+          <div>
+              <input type="text" required placeholder="Subject" />
+          </div>
+          <div>
+          <textarea rows="10" required></textarea>
+          </div>
+          <button id="composeMobile">Send</button>
+        </form>
+      </div>
+      
+    </div>
+   
 <script src="assets/js/compose.js"></script>
 </body>
 </html>

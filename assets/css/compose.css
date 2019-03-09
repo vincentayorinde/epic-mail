@@ -1,16 +1,110 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-@media (min-width:468px){
+@media (min-width: 200px) and (max-width: 790px) {
+  .container-1{
+    display: none;
+    flex-direction: row;
+  }
+  .container-2{
+    display: none;
+    align-items: stretch;
+  }
+  .container-mobile{
+    display: flex;
+    flex-direction: column
+  }
+  .container-mobile div{
+    padding:15px 15px 5px 10px;
+  }
+  .box-6{
+    display: flex;
+    margin-top: 20px;
+    flex-direction: row;
+  }
+  .box-6 h1{
+    flex: 2;
+    text-align: center;
+  }
+  .box-6 .fa-chevron-left{
+    flex: 2;
+    font-size: 25px;
+    padding-left: 10px;
+    color: #528eff;
+    cursor: pointer;
+  }
+  
+.box-7{
+  flex: 12;
+}
+.box-7 
+input[type='text'],
+input[type='email'],
+textarea{
+  border: 0px;
+  width: 100% !important;
+  color: #b0b3b6;
+  background-color: #f4f7f9;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc; 
+  margin-bottom: 10px;
+}
+
+.box-7 button{
+  background-color: #02c386;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px;
+  box-shadow: -10px 1px 30px 1px #ccc;  
+  margin-left: 10px !important;
+}
+.box-7 button:hover {
+  background-color: #09b57e;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px;
+  box-shadow: -10px 1px 30px 1px #ccc;
+  transition-duration: 0.55s;
+  margin-left: 10px !important;
+}
+
+
+.box-7 #notifyMobile{
+  color: #fff;
+  margin-left:30px;
+  padding: 10px;
+  box-shadow: -10px 0 30px 1px #e7ecf0;
+  background-color: #02c386;
+  border-radius: 10px;
+  transition-duration: 0.55s;
+  z-index: 3;
+  position: absolute;
+  top: 50px;
+  display: none;
+}
+}
+@media (min-width:481px){
 
   .container-1{
     display: flex;
-    align-items: stretch;
+    flex-direction: row;
   }
   .container-2{
     display: flex;
     align-items: stretch;
   }
-  
+  .container-mobile{
+    display: flex;
+    align-items: stretch;
+  }
+  .container-mobile{
+    display: none;
+    flex-direction: column
+  }
 }
 * {
   margin: 0;
@@ -156,6 +250,7 @@ html, body {
 }
 .box-5 
 input[type='text'],
+input[type='email'],
 textarea{
   border: 0px;
   width: 40%;

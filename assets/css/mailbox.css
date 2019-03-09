@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-@media (min-width: 200px) and (max-width: 480px) {
+@media (min-width: 200px) and (max-width: 790px) {
   .container-1{
     display: none;
     flex-direction: row;
@@ -29,12 +29,14 @@
     font-size: 25px;
     padding-left: 10px;
     color: #528eff;
+    cursor: pointer;
   }
   .box-8 .fa-search, .box-8 .fa-times{
     flex: 2;
     font-size: 25px;
     padding-right: 10px;
     color: #b0b3b6;
+    cursor: pointer;
   }
    .box-9{
     flex: 1;
@@ -43,6 +45,7 @@
     visibility: hidden;
     padding: 0px !important;
     align-content: center;
+    cursor: pointer;
   }
   
    .box-9 input[type='text']{
@@ -108,11 +111,15 @@
     margin: 5px 0px 5px 0px;
   }
   .box-9 #composeNew{
+    color: #02c386;
     font-size: 50px;
     position: fixed;
     bottom: 30px;
     right: 20px;
+    box-shadow: -5px 0 30px 1px #e7ecf0;
+    cursor: pointer;
   }
+  
   .box-10 {
     background-color: #f4f7f9;
     width: 0;
@@ -185,7 +192,44 @@
   display: inline;
   padding-top: 30px;
 }
+.box-12 .box-11{
+  margin-left: 15px;
+}
 
+.box-12 .box-11 .fas{
+  margin: 0px 30px 10px 0px;
+  color: #a3adbb;
+  cursor: pointer;
+  transition-duration: 0.55s;
+}
+.box-12 .box-11 .fas:hover{
+  margin: 0px 50px 10px 0px;
+  color: #999;
+  cursor: pointer;
+  transition-duration: 0.55s;
+}
+.box-12 {
+  display: flex;
+  background-color: #f4f7f9;
+  width: 0;
+  position: fixed;
+  z-index: 99 !important;
+  top: 0; 
+  left: 0;
+  overflow-y: hidden;
+  padding-top: 20px !important;
+  padding-right: 0px !important;
+  padding-left: px !important;
+  display: block;
+  height: 100%;
+  box-shadow: -10px 1px 30px 1px #ccc;
+  font-size: 15px;
+}
+.box-12 p{
+ margin-bottom: 10px;
+ margin-right: 10px;
+ color: #b0b3b6;
+}
 }
 @media (min-width:481px){
 
@@ -277,7 +321,7 @@ html, body {
   flex: 4;
 }
 .box-3 span{
-  margin-left: 60px;
+  margin-left: 30px;
 }
 .box-3 input[type='text']{
   border: 0px;
@@ -287,13 +331,13 @@ html, body {
   font-weight: bold;
 }
 .box-3 .fas{
-  margin: 0px 50px 10px 0px;
+  margin: 0px 20px 10px 0px;
   color: #a3adbb;
   cursor: pointer;
   transition-duration: 0.55s;
 }
 .box-3 .fas:hover{
-  margin: 0px 50px 10px 0px;
+  margin: 0px 20px 10px 0px;
   color: #999;
   cursor: pointer;
   transition-duration: 0.55s;

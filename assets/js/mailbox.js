@@ -22,3 +22,12 @@ icon.className = "fas fa-search";
   }
 
 };
+
+const openMessage = () => {
+  document.getElementById('readMessage').style.width = '100%';
+};
+const closeMessage = () => {
+  document.getElementById('readMessage').style.width = '0%';
+};
+
+
