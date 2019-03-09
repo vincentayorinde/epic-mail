@@ -32,7 +32,7 @@
           <li class="link"><a href="mailbox.html">Inbox</a> &nbsp;&nbsp;&nbsp; <span class="notification">1</span></li>
           <li class="link"><a href="sent.html">Sent</a></li>
           <li class="link"><a href="draft.html">Draft &nbsp;&nbsp;&nbsp; <span class="notification">2</span></a></li>
-          <li class="link"><a href="group.html">Group</a></li>
+          <li class="link"><a href="group.html">Groups</a></li>
           <li class="active">Trash</li>
         </ul>
       </div>
@@ -71,6 +71,61 @@
         <button>Send</button>
       </div>
    </div>
-
+   <div class="container-mobile">
+      <div class="box-8">
+         <span ><i onclick="openNav()" class="fas fa-bars"></i></span>
+         <h1>Trash</h1>
+         <span><i id="searchIcon" onclick="showSearchMobile()" class="fas fa-search"></i></span>
+      </div>
+    
+      <div class="box-9">
+         <span id="searchMobile"><input type="text" placeholder="Search"></span>
+         <div onclick="openMessage()" class="record">
+             <div class="pic">
+                 <img src="assets/img/profile-pictures/vince.jpg" alt="Profile Picture">
+             </div>
+           <div class="record-inner">
+             <span>23:00</span>
+             <h3>Larry Peters</h3> 
+             <h4>Designing of Estage Project</h4>
+             <p>I love your UI design work and would love your to talk to you about...</p>
+           </div>
+         </div>
+         <div id="composeMobile">
+             <a href="compose.html"><i id="composeNew" class="fas fa-plus-circle"></i></a>
+             </div>
+         </div>
+       <div class="box-10" id="mySidenav"><br><br>
+           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+           <ul>
+             <li class="link"><a href="mailbox.html">Inbox</a> &nbsp;&nbsp;&nbsp; <span class="notification">1</span></li>
+             <li class="link"><a href="sent.html">Sent</a></li>
+             <li class="link"><a href="draft.html">Draft</a> &nbsp;&nbsp;&nbsp; <span class="notification">2</span></a></li>
+             <li class="link"><a href="group.html">Groups</a></li>
+             <li class="active">Trash</li>
+           </ul>
+         </div>
+       
+         <div class="box-12" id="readMessage">
+             <div class="box-11">
+                 <i onclick="closeMessage()" class="fas fa-chevron-left"></i>
+                 <i class="fas fa-trash-alt"></i>
+                 <i class="fas fa-reply"></i>
+                 <i class="fas fa-reply-all"></i>
+                 <i class="fas fa-forward"></i>
+                 
+                 
+               </div>
+             <div class="body">
+               <h1>Designing of Estate Project</h1><br>
+               <p>From<strong> Vincent Ayorinde</strong> to <strong>Larry Peters</strong></p>
+               <br>
+               <p>Hi Larry</p>
+               <p>I love your UI design work and would love your to talk to you about possibly revamping the UI on our desktop application. Can we jump on Zoom and discus when you have the time </p>
+               <p>I am looking for a UI designer for an upcoming Estate app. We already have an established web presence and we are now moving to mobile space.</p>
+             </div>
+         </div>
+    </div>
+    <script src="assets/js/trash.js"></script>
 </body>
 </html>

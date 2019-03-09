@@ -1,10 +1,3 @@
-const fadeIn = () => { 
-  document.getElementById('notify').style.display = 'block'
-setTimeout(() => {
-  document.getElementById('notify').style.display = 'none'
-  }, 2000);
-};
-
 
 const openNav = () => {
   document.getElementById('mySidenav').style.width = '250px';
@@ -29,3 +22,12 @@ icon.className = "fas fa-search";
   }
 
 };
+
+const openMessage = () => {
+  document.getElementById('readMessage').style.width = '100%';
+};
+const closeMessage = () => {
+  document.getElementById('readMessage').style.width = '0%';
+};
+
+

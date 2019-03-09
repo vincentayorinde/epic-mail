@@ -4,37 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  <link rel="stylesheet" href="../assets/css/main.css">
-  <title>Add Group</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/add-group.css">
+  <title>Add New Group</title>
 </head>
 <body>
-  <section>
-    <h2>Add New Group</h2>
-    <br>
-    
-     <div id="compose-message">
-      <form id="compose-form">
-           <label for="recipients">
-              <span>Name:</span><br>
-              <input id="users" placeholder="Enter group name" type="text" name="users" required>
-            </label><br>
-            <label for="mail">
-                <span>Group Mail:</span><br>
-                <input id="mail" placeholder="Enter group email (e.g. group@epicmail.com)" type="email" name="mail" required>
-            </label><br>
-            <label for="mail">
-                <span>Members:</span><br>
-                <input id="members" placeholder="example1@epicmail.com, example2@epicmail.com" type="text" name="members" required>
-            </label><br>
-            <label for="desc">
-                <span>Description:</span><br>
-                <input id="subject" type="text" name="subject" placeholder="Describe your group">
-            </label><br>
-            <input id="submit-message" value="Add group" type="submit" name="submit-message">
-      </form>
-    </div>
-  </section>
 
+   <div class="container-mobile">
+      <div class="box-6">
+         <span ><a href="#" onclick="location.href = document.referrer; return false;"><i class="fas fa-chevron-left"></i></a></span>
+         <h1>New Group</h1>
+      </div>
+       <div class="box-7">
+          <div id="notifyMobile">Group added successfully!</div>
+          <form action="#" method="post" onsubmit="fadeInMobile(); return false;">
+              <div>
+                 <input type="text" required placeholder="Group name" />
+              </div>
+              <div>
+                  <input type="email" required placeholder="group@epicmail.com" />
+               </div>
+              <div>
+                  <input type="text" required placeholder="Members" />
+              </div>
+              <div>
+              <textarea rows="10" required>Description</textarea>
+              </div>
+              <button  id="group">Add group</button>
+            </form>
+      </div>
+      
+    </div>
+   
+<script src="assets/js/add-group.js"></script>
 </body>
 </html>
