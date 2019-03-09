@@ -4,34 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  <link rel="stylesheet" href="assets/css/main.css">
-  <title>EPIC Mail</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <title>EPIC Mail - Sign Up</title>
 </head>
 <body>
-  <section class="index-page">
+  <div class="container-1">
+    <div class="box-1">
+      <div class="content">
+          <p>Experience</p>
+          <p>the new way to</p>
+          <p> send messages</p>
+          <p>Use EPIC Mail <em>today!</em></p>
+          <div class="links">
+              <ul>
+                <li>Terms</li>
+                <li>Privacy</li>
+                <li>APIs</li>
+              </ul>
+            </div>
+      </div>
+      
+    </div>
+    <div class="box-2">
+      <div class="signup">
+          <h2>Sign Up</h2>
+            <form action="mailbox.html">
+              <p>Email</p>
+              <input type="email" name="email" id="email" required>
+              <p>First Name</p>
+              <input type="text" name="firstname" id="firstname" required>
+              <p>Last Name</p>
+              <input type="text" name="firstname" id="firstname" required>
+              <p>Password</p>
+              <input type="password" name="password" id="password" required>
+              <p>Re-Type Password</p>
+              <input type="password" name="rpassword" id="rpassword" required><br>
+              <input type="submit" value="Start" />
+            </form><br><br>
+            Already have an account? <a href="#">Sign In</a>
+      </div>
+      
+      
      
-          <!-- <div class="index-page-image">
-          </div>  -->
-          <br><br>
-          <center><img src="assets/img/logo_sm.png" alt="EPIC Mail Logo" title="EPIC Mail Logo"></center>
-          <div class="index-login-form">
-            
-            <h2 class="h2-header">Welcome, <small>Please sign in</small></h2> <br>
-            <center><small>New to <strong>Epic Mail?</strong> Create Account <a href="sign-up.html">here</a></small></center>
-            
-            <form action="mailbox.html" id="login-form" name="loginform" >
-                <input type="email" id="email" placeholder="Enter your email" name="email" class="" required/>
-                <input type="password" id="password" placeholder="Enter your password" name="password" />
-                <br>
-                <input type="submit" class="btn" value="Sign in" />
-                <br>
-                <center><small>Forgotten <strong>Password?</strong> Click <a href="reset-password.html">here</a></small></center>
-          </form>
-            
-          </div>
-     
-  </section>
-  <script src="assets/js/main.js"></script>
+    </div>
+    <div class="box-3">
+        <div class="content">
+          
+      </div>
+  </div>
+  </div>
+  
+  
+  <script src="assets/js/index.js"></script>
 </body>
 </html>
