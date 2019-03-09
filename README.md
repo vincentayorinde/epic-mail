@@ -7,11 +7,11 @@ Epic Mail is a web application that help people exchange messages or information
 2. Internet browser
 
 ### Template Pages URL
-Sign In 
+Sign Up 
 : https://vincentayorinde.github.io/epic-mail/index.html
 
-Sign Up
-: https://vincentayorinde.github.io/epic-mail/sign-up.html
+Sign In
+: https://vincentayorinde.github.io/epic-mail/sign-in.html
 
 Reset Password 
 : https://vincentayorinde.github.io/epic-mail/reset-password.html
