@@ -4,13 +4,14 @@
   "description": "Epic Mail is a web application that help people exchange messages or information over the internet",
   "main": "index.html",
   "scripts": {
+    "test": "mocha",
     "deploy": "gh-pages -d ui"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vincentayorinde/epic-mail.git"
   },
-  "author": "Vincent Ayorinde",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vincentayorinde/epic-mail/issues"

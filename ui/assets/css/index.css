@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+@media (min-width: 200px) and (max-width: 790px) {
+  .container-1 .box-1{
+    display: none;
+    flex-direction: row;
+  }
+  .container-1 .box-3{
+    display: none;
+    align-items: stretch;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #f4f7f9;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+
+.container-1{
+  display: flex;
+  height: 100vh;
+}
+.container-1 div{
+  flex-direction: column;
+}
+
+.box-1{
+  flex: 6;
+  background-image: url('../img/bg-home.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+
+}
+.box-1 .content{
+  font-weight: bolder;
+ padding:20px 20px 20px 20px;
+ flex: 1;
+ background-color:rgba(0, 74, 212, 0.5);
+ filter: alpha(opacity=40);
+ height: 94%;
+}
+.box-1 .content p{
+  color: #fff;
+  opacity: unset;
+  font-size: 35px;
+  margin: 10px 0px 10px 40px;
+
+}
+.box-1 .content br{
+  margin-bottom: 10px
+}
+.box-1 .content .links ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 250px 30px 0px 40px;
+}
+.box-1 .content .links ul li a{
+  text-decoration: none;
+  color: #fff;
+}
+.box-2{
+  flex: 4;
+  padding:20px 20px 20px 20px;
+  box-shadow: 1px -20px 30px 1px #796969;
+  background-color: #fff;
+}
+
+.box-2 .signup h2{
+  margin-bottom: 40px;
+  color: #38d85a;
+  font-weight: bolder;
+}
+
+.box-2 .signup p{
+  color: #bcc0db;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+.box-2 .signup a{
+  text-decoration: none;
+  color: #38d85a;
+  font-weight: bold;
+}
+
+.box-2
+input[type='email'],
+input[type='text'],
+input[type='password']{
+  border: 0px;
+  border-bottom: 1px solid rgba(0, 74, 212, 0.3);
+  background-color: #fff;
+  padding: 10px;
+  width: 90%;
+}
+
+
+.box-2 
+input[type='submit']{
+  margin-top: 20px;
+  background-color: #38d85a;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px;
+  box-shadow: -10px 1px 30px 1px #ccc;
+  width: 200px;
+  border-radius: 30px;
+}
+.box-2 
+input[type='submit']:hover {
+  margin-top: 20px;
+  background-color: #208636;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px;
+  box-shadow: -10px 1px 30px 1px #ccc;
+  transition-duration: 0.55s;
+}
+.box-3{
+  flex: 2;
+  background-color:rgba(0, 74, 212, 0.5);
+  filter: alpha(opacity=40);
+  min-height: 100%;
+}
+.box-3 .content{
+  width: 200px;
+}
