@@ -131,3 +131,39 @@ describe('POST /auth/signup Validations', () => {
       });
   });
 });
+describe('POST /auth/signin', () => {
+  it('Should sign in a user on /api/v1/auth/signin POST', (done) => {
+    const user = {
+      email: 'user1@epicmail.com',
+      firstname: 'Vincent',
+      lastname: 'Ayo',
+      mobile: '08033396401',
+      password: 'password1',
+      rpassword: 'password1',
+    };
+    chai.request(app)
+      .post('/api/v1/auth/signin')
+      .send(user)
+      .end((err, res) => {
+        expect(res).to.have.status(200);
+        expect(res.body.message).to.equal('User sign in successful');
+        expect(res.body).to.be.a('object');
+        done();
+      });
+  });
+  it('User must provide a valid email address', (done) => {
+    const user = {
+      email: 'hello@me',
+      password: 'passtheword',
+    };
+    chai.request(app)
+      .post('/api/v1/auth/signin')
+      .send(user)
+      .end((err, res) => {
+        expect(res.body.errors.email).to.equal('The Email is invalid');
+        expect(res).to.have.status(400);
+        expect(res.body).to.be.a('object');
+        done();
+      });
+});
+});
