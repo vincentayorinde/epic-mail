@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import db from '../db/usersDb';
 import validateCreatUser from '../helpers/validateCreateUser';
+import validateUserLogin from '../helpers/validateUserLogin';
 
 class User {
   /**
@@ -50,6 +51,40 @@ class User {
           data: user,
         });
       });
+    });
+  }
+
+  /**
+   *
+   * @param {object} req
+   * @param {object} res
+   * @returns {object} user object
+   */
+  userLogin(req, res) {
+    const { errors, isValid } = validateUserLogin(req.body);
+    const { email, password } = req.body;
+    if (!isValid) {
+      return res.status(400).send({
+        status: 400,
+        errors,
+      });
+    }
+
+    const user = db.find(dbUser => dbUser.email === email);
+    if (user) {
+      const IsPassword = bcrypt.compareSync(password, user.password);
+      if (IsPassword) {
+        const token = jwt.sign(user, 'secretKey', { expiresIn: '1h' });
+        return res.status(200).send({
+          status: 200,
+          message: 'User sign in successful',
+          data: { ...user, token },
+        });
+      }
+    }
+    return res.status(400).send({
+      status: 400,
+      message: 'Username or Password Incorrect',
     });
   }
 }
