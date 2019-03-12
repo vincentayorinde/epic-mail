@@ -58,7 +58,7 @@ class Message {
    */
 
   static getAllUnreadMailByUser(req, res) {
-    const result = db.filter(val => val.receiverId === parseInt(req.params.id, 10) && val.rstatus === 'unread');
+    const result = db.filter(val => val.receiverId === Number(req.params.id) && val.rstatus === 'unread');
     if (result) {
       return res.status(200).send({
         status: 200,
@@ -90,6 +90,29 @@ class Message {
     return res.status(400).send({
       status: 400,
       message: 'No emails sent by specified user',
+    });
+  }
+  
+  /**
+   *
+   * @param {object} req
+   * @param {object} res
+   * @returns {object} message object
+   */
+  static getAMailRecord(req, res) {
+    const result = db.find(dbMail => dbMail.id === Number(req.params.id));
+
+    if (result) {
+      return res.status(200).send({
+        status: 200,
+        message: 'Email record retrieved successfully',
+        data: result,
+      });
+    }
+
+    return res.status(404).send({
+      status: 404,
+      message: 'Email does not exist',
     });
   }
 }

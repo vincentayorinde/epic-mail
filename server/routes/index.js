@@ -10,7 +10,7 @@ router.post('/api/v1/messages', Message.sendMail);
 router.get('/api/v1/messages', Message.getAllMails);
 router.get('/api/v1/messages/unread/:id', Message.getAllUnreadMailByUser);
 router.get('/api/v1/messages/sent/:id', Message.getAllMailsSentByUser);
-
+router.get('/api/v1/messages/:id', Message.getAMailRecord);
 
 
 module.exports = router;
