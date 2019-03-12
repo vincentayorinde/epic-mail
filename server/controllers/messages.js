@@ -50,7 +50,7 @@ class Message {
       data: db,
     });
   }
-    /**
+  /**
    *
    * @param {object} req
    * @param {object} res
@@ -58,7 +58,7 @@ class Message {
    */
 
   static getAllUnreadMailByUser(req, res) {
-    const result = db.filter(val => val.receiverId === req.params.id && val.status === 'unread');
+    const result = db.filter(val => val.receiverId === parseInt(req.params.id, 10) && val.rstatus === 'unread');
     if (result) {
       return res.status(200).send({
         status: 200,
@@ -71,7 +71,7 @@ class Message {
       message: 'No unread emails by specified user',
     });
   }
-}
 
+}
 
 export default Message;

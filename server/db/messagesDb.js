@@ -7,7 +7,7 @@ const messages = [
     senderId: 1,
     receiverId: 2,
     parentMessageId: [],
-    status: 'unread',
+    rstatus: 'unread',
     isDeleted: false,
   },
   {
@@ -18,7 +18,7 @@ const messages = [
     senderId: 1,
     receiverId: 2,
     parentMessageId: [],
-    status: 'unread',
+    rstatus: 'unread',
     isDeleted: false,
   },
 ];
