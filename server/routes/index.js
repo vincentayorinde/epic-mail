@@ -6,5 +6,6 @@ const router = express.Router();
 
 router.post('/api/v1/auth/signup', User.createUser);
 router.post('/api/v1/auth/signin', User.userLogin);
+router.post('/api/v1/messages', Message.sendMail);
 router.get('/api/v1/messages', Message.getAllMails);
 module.exports = router;
