@@ -70,3 +70,15 @@ describe('GET /messages/sent/:id', () => {
       });
   });
 });
+
+describe('GET /messages/:id', () => {
+  it('Should get a mail record on /api/v1/messages/:id GET', (done) => {
+    chai.request(app)
+      .get('/api/v1/messages/1')
+      .end((err, res) => {
+        expect(res).to.have.status(200);
+        res.body.should.be.a('object');
+        done(0);
+      });
+  });
+});
