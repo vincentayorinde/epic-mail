@@ -58,3 +58,15 @@ describe('GET /messages/unread/:id', () => {
       });
   });
 });
+
+describe('GET /messages/sent/:id', () => {
+  it('Should get all mails sent by user on /api/v1/messages/sent/:id GET', (done) => {
+    chai.request(app)
+      .get('/api/v1/messages/sent/:id')
+      .end((err, res) => {
+        expect(res).to.have.status(200);
+        res.body.should.be.a('object');
+        done(0);
+      });
+  });
+});
