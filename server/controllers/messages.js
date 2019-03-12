@@ -72,6 +72,26 @@ class Message {
     });
   }
 
+  /**
+   *
+   * @param {object} req
+   * @param {object} res
+   * @returns {object} message object
+   */
+  static getAllMailsSentByUser(req, res) {
+    const result = db.filter(val => val.senderId === Number(req.params.id));
+    if (result) {
+      return res.status(200).send({
+        status: 200,
+        message: 'All emails sent by specified user',
+        data: result,
+      });
+    }
+    return res.status(400).send({
+      status: 400,
+      message: 'No emails sent by specified user',
+    });
+  }
 }
 
 export default Message;
