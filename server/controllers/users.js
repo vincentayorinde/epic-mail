@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import db from '../db/usersDb';
@@ -12,13 +11,10 @@ class User {
    * @param {object} res
    * @returns {object} user object
    */
-  // eslint-disable-next-line consistent-return
-  creatUser(req, res) {
+  static createUser(req, res) {
     const { errors, isValid } = validateCreatUser(req.body);
     const { password } = req.body;
-    // Check validation
     if (!isValid) {
-      // return res.status(400).json(errors);
       return res.status(400).send({
         status: 400,
         errors,
@@ -60,7 +56,7 @@ class User {
    * @param {object} res
    * @returns {object} user object
    */
-  userLogin(req, res) {
+  static userLogin(req, res) {
     const { errors, isValid } = validateUserLogin(req.body);
     const { email, password } = req.body;
     if (!isValid) {
@@ -88,5 +84,5 @@ class User {
     });
   }
 }
-const userController = new User();
-export default userController;
+
+export default User;

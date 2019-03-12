@@ -9,15 +9,8 @@ const validateCreateUser = (data) => {
      We made it an empty string so that it can be checked by the validator.isEmpty method
      This is due to the fact that validator.isEmpty can only check for empty string not empty object
   */
-  data.email = isValueEmpty(data.email) === true ? '' : data.email;
-  data.lastname = isValueEmpty(data.lastname) === true ? '' : data.lastname;
-  data.firstname = isValueEmpty(data.firstname) === true ? '' : data.firstname;
-  data.mobile = isValueEmpty(data.mobile) === true ? '' : data.mobile;
-  data.password = isValueEmpty(data.password) === true ? '' : data.password;
-  data.rpassword = isValueEmpty(data.rpassword) === true ? '' : data.rpassword;
 
-
-  if (!ValidData.isEmail(data.email)) {
+  if (isValueEmpty(data.email) || !ValidData.isEmail(data.email)) {
     errors.email = 'The Email is invalid';
   }
 
@@ -26,14 +19,16 @@ const validateCreateUser = (data) => {
     errors.firstname = 'Firstname must be between 2 and 30 characters';
   }
 
-  if (!ValidData.isAlpha(data.firstname)) {
+  if (isValueEmpty(data.firstname) || !ValidData.isAlpha(data.firstname)) {
     errors.firstname = 'Firstname must be only alphabets';
   }
 
-  if (!ValidData.isAlpha(data.lastname)) {
+  if (isValueEmpty(data.lastname) || !ValidData.isAlpha(data.lastname)) {
     errors.lastname = 'Lastname must be only alphabets';
   }
-  if (ValidData.isEmpty(data.lastname) || !ValidData.isLength(data.lastname, { min: 2, max: 30 })) {
+  if (isValueEmpty(data.lastname)
+  || ValidData.isEmpty(data.lastname)
+  || !ValidData.isLength(data.lastname, { min: 2, max: 30 })) {
     errors.lastname = 'Lastname must be between 2 and 30 characters';
   }
 
@@ -45,7 +40,7 @@ const validateCreateUser = (data) => {
     errors.password = 'Password must be between 8 and 30 characters';
   }
 
-  if (!ValidData.isMobilePhone(data.mobile, 'en-NG')) {
+  if (isValueEmpty(data.mobile) || !ValidData.isMobilePhone(data.mobile, 'en-NG')) {
     errors.mobile = 'Mobile number must be a Nigerian';
   }
 
