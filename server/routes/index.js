@@ -11,6 +11,7 @@ router.get('/api/v1/messages', Message.getAllMails);
 router.get('/api/v1/messages/unread/:id', Message.getAllUnreadMailByUser);
 router.get('/api/v1/messages/sent/:id', Message.getAllMailsSentByUser);
 router.get('/api/v1/messages/:id', Message.getAMailRecord);
+router.delete('/api/v1/messages/:id', Message.deleteUserMail);
 
 
 module.exports = router;

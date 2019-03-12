@@ -82,3 +82,15 @@ describe('GET /messages/:id', () => {
       });
   });
 });
+
+describe('DELETE /messages/:id', () => {
+  it('Should delete a mail record on /api/v1/messages/:id DELETE', (done) => {
+    chai.request(app)
+      .get('/api/v1/messages/1')
+      .end((err, res) => {
+        expect(res).to.have.status(200);
+        res.body.should.be.a('object');
+        done(0);
+      });
+  });
+});
