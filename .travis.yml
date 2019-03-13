@@ -1,17 +1,5 @@
 language: node_js
 node_js:
 - 8.11.4
-cache:
-  directories:
-  - node_modules
-env:
-  global:
-  - NODE_ENV=development
-  - ENABLE_SSL=false
-
 script:
-<<<<<<< HEAD
 - npm test
-=======
- - npm run test
->>>>>>> f5e55a0e8e6f60aae7172863a49d43feca29e8bb
