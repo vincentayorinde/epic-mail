@@ -4,7 +4,7 @@
   "description": "Epic Mail is a web application that help people exchange messages or information over the internet",
   "main": "index.html",
   "scripts": {
-    "test": "mocha --require @babel/register",
+    "test": "mocha --require @babel/register --exit",
     "deploy": "gh-pages -d ui",
     "start": "nodemon --exec babel-node app.js"
   },
