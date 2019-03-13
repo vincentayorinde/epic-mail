@@ -9,6 +9,3 @@ before_install:
   - npm install
 script:
  - npm run test
-env:
-  #global:
- - NODE_ENV=test
