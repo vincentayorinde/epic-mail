@@ -44,7 +44,11 @@
     "eslint-plugin-import": "^2.16.0",
     "mocha": "^6.0.2",
     "mocha-lcov-reporter": "^1.3.0",
+<<<<<<< HEAD
     "nodemon": "^1.18.10",
     "nyc": "^13.3.0"
+=======
+    "nodemon": "^1.18.10"
+>>>>>>> 85b07b96612ee7110c6ef092ea722f6eba7b9885
   }
 }
