@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-@media (min-width: 200px) and (max-width: 790px) {
+@media (min-width: 200px) and (max-width: 850px) {
   .container-1 .box-1{
     display: none;
     flex-direction: row;
@@ -44,17 +44,29 @@ html, body {
  flex: 1;
  background-color:rgba(0, 74, 212, 0.5);
  filter: alpha(opacity=40);
- height: 94%;
+ height: 94vh;
+ display: flex;
 }
 .box-1 .content p{
   color: #fff;
   opacity: unset;
   font-size: 35px;
   margin: 10px 0px 10px 40px;
-
+  
 }
 .box-1 .content br{
   margin-bottom: 10px
+}
+.box-1 .content .links{
+  align-self: flex-start;
+  justify-content: center;
+  margin-top: auto !important;
+}
+.box-1 .content .links ul{
+  display: inline-block;
+  list-style: none;
+  margin-bottom: auto !important;
+  margin-top: auto !important;
 }
 .box-1 .content .links ul li{
   display: inline-block;
