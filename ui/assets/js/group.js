@@ -1,11 +1,3 @@
-const fadeIn = () => { 
-  document.getElementById('notify').style.display = 'block'
-setTimeout(() => {
-  document.getElementById('notify').style.display = 'none'
-  }, 2000);
-};
-
-
 const openNav = () => {
   document.getElementById('mySidenav').style.width = '250px';
 };
@@ -15,17 +7,3 @@ const closeNav = () => {
   document.getElementById('mySidenav').style.width = '0';
 };
 closeNav();
-
-const showSearchMobile = () => {
-  const value = document.getElementById('searchMobile').style.visibility;
-  if(value === 'hidden'){
-    document.getElementById('searchMobile').style.visibility = 'visible';
-    const icon = document.getElementById("searchIcon");
-icon.className = "fas fa-times";
-  }else{
-    document.getElementById('searchMobile').style.visibility = 'hidden';
-    const icon = document.getElementById("searchIcon");
-icon.className = "fas fa-search";
-  }
-
-};
