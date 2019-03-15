@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-@media (min-width: 200px) and (max-width: 790px) {
+@media (min-width: 200px) and (max-width: 850px) {
   .container-1{
     display: none;
     flex-direction: row;
