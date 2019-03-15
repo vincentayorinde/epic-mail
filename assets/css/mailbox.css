@@ -440,13 +440,9 @@ html, body {
   margin-left: 50px;
   margin-top: 20px;
 }
-#box-7{  
-  visibility: hidden;
-}
 .box-7{
   flex: 7;
   background-color: #fff;
-  display: block;
 }
 .box-7 p{
   margin: 20px; 
@@ -496,55 +492,14 @@ html, body {
   transition-duration: 0.55s;
 }
 
-.box-7-1{
-  flex: 7;
-  background-color: #fff;
+
+/* .sidenav {
   display: none;
 }
-.box-7-1 p{
-  margin: 20px; 
-}
-.box-7-1 .hr {
-  border-top: 1px solid #e9eef2;
-}
-.box-7-1 textarea{
-  border: 0px;
-  width: 90%;
-  color: #b0b3b6;
-  background-color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-  border-bottom: 1px solid #ccc; 
-  margin-bottom: 10px;
-}
-.box-7-1 button{
-  background-color: #02c386;
-  color: #fff;
-  cursor: pointer;
-  border: 0px;
-  font-family: 'Montserrat', sans-serif;
-  padding: 15px;
-  box-shadow: -10px 1px 30px 1px #ccc;
-}
-.box-7-1 button:hover {
-  background-color: #09b57e;
-  color: #fff;
-  cursor: pointer;
-  border: 0px;
-  font-family: 'Montserrat', sans-serif;
-  padding: 15px;
-  box-shadow: -10px 1px 30px 1px #ccc;
-  transition-duration: 0.55s;
+.sidenav a {
+display: none;
 }
 
-.box-7-1 .reply-icons .fas{
-  margin: 0px 30px 10px 0px;
-  color: #a3adbb;
-  cursor: pointer;
-}
-.box-7-1 .reply-icons .fas{
-  margin: 0px 30px 10px 0px;
-  color: #999;
-  cursor: pointer;
-  transition-duration: 0.55s;
-}
+.sidenav .closebtn {
+display: none;
+} */

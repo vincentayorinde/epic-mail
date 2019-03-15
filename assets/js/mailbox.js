@@ -11,15 +11,16 @@ closeNav();
 
 const showSearchMobile = () => {
   const value = document.getElementById('searchMobile').style.visibility;
-  if (value === 'hidden') {
+  if(value === 'hidden'){
     document.getElementById('searchMobile').style.visibility = 'visible';
-    const icon = document.getElementById('searchIcon');
-    icon.className = 'fas fa-times';
-  } else{
+    const icon = document.getElementById("searchIcon");
+icon.className = "fas fa-times";
+  }else{
     document.getElementById('searchMobile').style.visibility = 'hidden';
-    const icon = document.getElementById('searchIcon');
-    icon.className = 'fas fa-search';
+    const icon = document.getElementById("searchIcon");
+icon.className = "fas fa-search";
   }
+
 };
 
 const openMessage = () => {
@@ -30,8 +31,3 @@ const closeMessage = () => {
 };
 
 
-const showMail = () => {
- document.getElementById('box-7').style.visibility = 'visible';
- const element = document.getElementById('box-7');
-  element.classList.add('record-hover');
-};
