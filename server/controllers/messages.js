@@ -12,7 +12,7 @@ class Message {
   static sendMail(req, res) {
     const { errors, isValid } = validateMessage(req.body);
     if (!isValid) {
-      return this.res.status(400).send({
+      return res.status(400).send({
         status: 400,
         errors,
       });
@@ -58,7 +58,7 @@ class Message {
    */
 
   static getAllUnreadMailByUser(req, res) {
-    const result = db.filter(val => val.receiverId === Number(req.params.id) && val.rstatus === 'unread');
+    const result = db.filter(val => val.receiverId === Number(req.params.receiverId) && val.rstatus === 'unread');
     if (result) {
       return res.status(200).send({
         status: 200,
@@ -66,8 +66,8 @@ class Message {
         data: result,
       });
     }
-    return res.status(400).send({
-      status: 400,
+    return res.status(404).send({
+      status: 404,
       message: 'No unread emails by specified user',
     });
   }
@@ -79,7 +79,7 @@ class Message {
    * @returns {object} message object
    */
   static getAllMailsSentByUser(req, res) {
-    const result = db.filter(val => val.senderId === Number(req.params.id));
+    const result = db.filter(val => val.senderId === Number(req.params.senderId));
     if (result) {
       return res.status(200).send({
         status: 200,
@@ -87,8 +87,8 @@ class Message {
         data: result,
       });
     }
-    return res.status(400).send({
-      status: 400,
+    return res.status(404).send({
+      status: 404,
       message: 'No emails sent by specified user',
     });
   }
@@ -100,7 +100,7 @@ class Message {
    * @returns {object} message object
    */
   static getAMailRecord(req, res) {
-    const result = db.find(dbMail => dbMail.id === Number(req.params.id));
+    const result = db.find(dbMail => dbMail.id === Number(req.params.messageId));
 
     if (result) {
       return res.status(200).send({
@@ -123,7 +123,7 @@ class Message {
    * @returns {object} message object
    */
   static deleteUserMail(req, res) {
-    const result = db.find(dbMail => dbMail.id === Number(req.params.id));
+    const result = db.find(dbMail => dbMail.id === Number(req.params.messageId));
     result.isDeleted = true;
     if (result) {
       return res.status(200).send({
