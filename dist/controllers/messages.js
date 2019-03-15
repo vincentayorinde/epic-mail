@@ -39,7 +39,7 @@ function () {
           isValid = _validateMessage.isValid;
 
       if (!isValid) {
-        return this.res.status(400).send({
+        return res.status(400).send({
           status: 400,
           errors: errors
         });
@@ -93,7 +93,7 @@ function () {
     key: "getAllUnreadMailByUser",
     value: function getAllUnreadMailByUser(req, res) {
       var result = _messagesDb.default.filter(function (val) {
-        return val.receiverId === Number(req.params.id) && val.rstatus === 'unread';
+        return val.receiverId === Number(req.params.receiverId) && val.rstatus === 'unread';
       });
 
       if (result) {
@@ -104,8 +104,8 @@ function () {
         });
       }
 
-      return res.status(400).send({
-        status: 400,
+      return res.status(404).send({
+        status: 404,
         message: 'No unread emails by specified user'
       });
     }
@@ -120,7 +120,7 @@ function () {
     key: "getAllMailsSentByUser",
     value: function getAllMailsSentByUser(req, res) {
       var result = _messagesDb.default.filter(function (val) {
-        return val.senderId === Number(req.params.id);
+        return val.senderId === Number(req.params.senderId);
       });
 
       if (result) {
@@ -131,8 +131,8 @@ function () {
         });
       }
 
-      return res.status(400).send({
-        status: 400,
+      return res.status(404).send({
+        status: 404,
         message: 'No emails sent by specified user'
       });
     }
@@ -147,7 +147,7 @@ function () {
     key: "getAMailRecord",
     value: function getAMailRecord(req, res) {
       var result = _messagesDb.default.find(function (dbMail) {
-        return dbMail.id === Number(req.params.id);
+        return dbMail.id === Number(req.params.messageId);
       });
 
       if (result) {
@@ -174,7 +174,7 @@ function () {
     key: "deleteUserMail",
     value: function deleteUserMail(req, res) {
       var result = _messagesDb.default.find(function (dbMail) {
-        return dbMail.id === Number(req.params.id);
+        return dbMail.id === Number(req.params.messageId);
       });
 
       result.isDeleted = true;

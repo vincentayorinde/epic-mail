@@ -8,10 +8,10 @@ router.post('/api/v1/auth/signup', User.createUser);
 router.post('/api/v1/auth/signin', User.userLogin);
 router.post('/api/v1/messages', Message.sendMail);
 router.get('/api/v1/messages', Message.getAllMails);
-router.get('/api/v1/messages/unread/:id', Message.getAllUnreadMailByUser);
-router.get('/api/v1/messages/sent/:id', Message.getAllMailsSentByUser);
-router.get('/api/v1/messages/:id', Message.getAMailRecord);
-router.delete('/api/v1/messages/:id', Message.deleteUserMail);
+router.get('/api/v1/messages/unread/:receiverId', Message.getAllUnreadMailByUser);
+router.get('/api/v1/messages/sent/:senderId', Message.getAllMailsSentByUser);
+router.get('/api/v1/messages/:messageId', Message.getAMailRecord);
+router.delete('/api/v1/messages/:messageId', Message.deleteUserMail);
 
 
 module.exports = router;
