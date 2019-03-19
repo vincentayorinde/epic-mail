@@ -16,7 +16,7 @@ describe('POST /auth/signup', () => {
       lastname: 'Ayo',
       mobile: '08033396401',
       password: 'password123',
-      rpassword: 'password123',
+      confirmPassword: 'password123',
     };
     chai.request(app)
       .post('/api/v1/auth/signup')
@@ -39,14 +39,14 @@ describe('POST /auth/signup Validations', () => {
       email: 'test1@epicmail.com',
       mobile: '08063475512',
       password: 'password2',
-      rpassword: 'password3',
+      confirmPassword: 'password23',
     };
     chai.request(app)
       .post('/api/v1/auth/signup')
       .send(user)
       .end((err, res) => {
         expect(res).to.have.status(400);
-        expect(res.body.errors.rpassword).to.equal('Your password does not match');
+        expect(res.body.errors.confirmPassword).to.equal('Your password does not match');
         expect(res.body).to.be.a('object');
         done();
       });
@@ -58,7 +58,7 @@ describe('POST /auth/signup Validations', () => {
       email: 'email@epicmail.com',
       mobile: '08063475512',
       password: 'Password1',
-      password2: 'Password1',
+      confirmPassword: 'Password1',
     };
     chai.request(app)
       .post('/api/v1/auth/signup')
@@ -78,7 +78,7 @@ describe('POST /auth/signup Validations', () => {
       email: 'email@email.com',
       mobile: '08063475512',
       password: 'Password1',
-      password2: 'Password1',
+      confirmPassword: 'Password1',
     };
     chai.request(app)
       .post('/api/v1/auth/signup')
@@ -98,7 +98,7 @@ describe('POST /auth/signup Validations', () => {
       email: 'email@email.com',
       mobile: '08025785342',
       password: 'Password1',
-      password2: 'Password1',
+      confirmPassword: 'Password1',
     };
     chai.request(app)
       .post('/api/v1/auth/signup')
@@ -118,7 +118,7 @@ describe('POST /auth/signup Validations', () => {
       email: 'email@email.com',
       mobile: '08025785342',
       password: 'Password123',
-      password2: 'Password123',
+      confirmPassword: 'Password123',
     };
     chai.request(app)
       .post('/api/v1/auth/signup')
@@ -139,7 +139,7 @@ describe('POST /auth/signin', () => {
       lastname: 'Ayo',
       mobile: '08033396401',
       password: 'password1',
-      rpassword: 'password1',
+      confirmPassword: 'password1',
     };
     chai.request(app)
       .post('/api/v1/auth/signin')

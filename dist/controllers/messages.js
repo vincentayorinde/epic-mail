@@ -5,11 +5,21 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _messagesDb = _interopRequireDefault(require("../db/messagesDb"));
+var _jsonwebtoken = _interopRequireDefault(require("jsonwebtoken"));
+
+var _config = _interopRequireDefault(require("../config"));
+
+var _messagesDb = _interopRequireDefault(require("../models/messagesDb"));
+
+var _usersDb = _interopRequireDefault(require("../models/usersDb"));
 
 var _validateMessage2 = _interopRequireDefault(require("../helpers/validateMessage"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -45,25 +55,47 @@ function () {
         });
       }
 
-      var message = [];
-      message = {
-        id: _messagesDb.default.length + 1,
-        createdOn: new Date(),
-        subject: req.body.subject,
-        message: req.body.message,
-        senderId: req.body.senderId,
-        receiverId: req.body.receiverId,
-        parentMessageId: [],
-        status: 'unread',
-        isDeleted: false
-      };
+      var checkReceiver = _usersDb.default.find(function (dbU) {
+        return dbU.id === Number(req.body.receiverId);
+      });
 
-      _messagesDb.default.push(message);
+      if (checkReceiver) {
+        _jsonwebtoken.default.verify(req.token, _config.default.secret, function (err, authData) {
+          if (err) {
+            res.status(403).send({
+              status: 403,
+              message: 'Token mismatch'
+            });
+          } else {
+            var message = [];
+            message = {
+              id: _messagesDb.default.length + 1,
+              createdOn: new Date(),
+              subject: req.body.subject,
+              message: req.body.message,
+              senderId: req.body.senderId,
+              receiverId: checkReceiver.id,
+              status: 'unread',
+              senderDelete: false,
+              receiverDelete: false
+            };
 
-      return res.status(201).send({
-        status: 201,
-        message: 'Message sent successfully',
-        data: message
+            _messagesDb.default.push(message);
+
+            return res.status(201).send({
+              status: 201,
+              message: 'Message sent successfully',
+              data: _objectSpread({}, message, {
+                authData: authData
+              })
+            });
+          }
+        });
+      }
+
+      return res.status(400).send({
+        status: 400,
+        message: 'Receiver does not exist'
       });
     }
     /**
@@ -76,10 +108,21 @@ function () {
   }, {
     key: "getAllMails",
     value: function getAllMails(req, res) {
-      return res.status(200).send({
-        status: 200,
-        message: 'All received emails',
-        data: _messagesDb.default
+      var result = _messagesDb.default.filter(function (val) {
+        return val.isDeleted === false;
+      });
+
+      if (result) {
+        return res.status(200).send({
+          status: 200,
+          message: 'All received emails',
+          data: result
+        });
+      }
+
+      return res.status(404).send({
+        status: 404,
+        message: 'No emails found'
       });
     }
     /**

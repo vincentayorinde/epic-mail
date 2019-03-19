@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-import db from '../db/usersDb';
+import config from '../config';
+import db from '../models/usersDb';
 import validateCreatUser from '../helpers/validateCreateUser';
 import validateUserLogin from '../helpers/validateUserLogin';
 
@@ -30,7 +31,7 @@ class User {
 
 
       let user = [];
-      jwt.sign({ user }, 'secretKey', (err, token) => {
+      jwt.sign({ id: db.id }, config.secret, (err, token) => {
         user = {
           token,
           id: db.length + 1,
@@ -65,12 +66,12 @@ class User {
         errors,
       });
     }
-
-    const user = db.find(dbUser => dbUser.email === email);
+    const user = db.find(dbUser => dbUser.email === email, { password: 0 });
     if (user) {
       const IsPassword = bcrypt.compareSync(password, user.password);
       if (IsPassword) {
-        const token = jwt.sign(user, 'secretKey', { expiresIn: '1h' });
+        delete user.password;
+        const token = jwt.sign({ id: user.id, email: user.email }, config.secret, { expiresIn: '1h' });
         return res.status(200).send({
           status: 200,
           message: 'User sign in successful',
@@ -81,6 +82,14 @@ class User {
     return res.status(400).send({
       status: 400,
       message: 'Username or Password Incorrect',
+    });
+  }
+
+  static getAllUsers(req, res) {
+    return res.status(200).send({
+      status: 200,
+      message: 'Users retrieved successfully',
+      data: db,
     });
   }
 }

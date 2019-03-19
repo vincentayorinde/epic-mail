@@ -60,12 +60,12 @@ var validateCreateUser = function validateCreateUser(data) {
     errors.mobile = 'Mobile number must be a Nigerian';
   }
 
-  if ((0, _isValueEmpty.default)(data.rpassword)) {
-    errors.rpassword = 'Confirm password field is required';
+  if ((0, _isValueEmpty.default)(data.confirmPassword)) {
+    errors.confirmPassword = 'Confirm password field is required';
   }
 
-  if (!_validator.default.equals(data.password, data.rpassword)) {
-    errors.rpassword = 'Your password does not match';
+  if (!_validator.default.equals(data.password, data.confirmPassword)) {
+    errors.confirmPassword = 'Your password does not match';
   }
 
   return {

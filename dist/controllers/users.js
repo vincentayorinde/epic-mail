@@ -9,7 +9,9 @@ var _jsonwebtoken = _interopRequireDefault(require("jsonwebtoken"));
 
 var _bcryptjs = _interopRequireDefault(require("bcryptjs"));
 
-var _usersDb = _interopRequireDefault(require("../db/usersDb"));
+var _config = _interopRequireDefault(require("../config"));
+
+var _usersDb = _interopRequireDefault(require("../models/usersDb"));
 
 var _validateCreateUser = _interopRequireDefault(require("../helpers/validateCreateUser"));
 
@@ -68,8 +70,8 @@ function () {
         var user = [];
 
         _jsonwebtoken.default.sign({
-          user: user
-        }, 'secretKey', function (err, token) {
+          id: _usersDb.default.id
+        }, _config.default.secret, function (err, token) {
           user = {
             token: token,
             id: _usersDb.default.length + 1,
@@ -117,13 +119,20 @@ function () {
 
       var user = _usersDb.default.find(function (dbUser) {
         return dbUser.email === email;
+      }, {
+        password: 0
       });
 
       if (user) {
         var IsPassword = _bcryptjs.default.compareSync(password, user.password);
 
         if (IsPassword) {
-          var token = _jsonwebtoken.default.sign(user, 'secretKey', {
+          delete user.password;
+
+          var token = _jsonwebtoken.default.sign({
+            id: user.id,
+            email: user.email
+          }, _config.default.secret, {
             expiresIn: '1h'
           });
 
@@ -140,6 +149,15 @@ function () {
       return res.status(400).send({
         status: 400,
         message: 'Username or Password Incorrect'
+      });
+    }
+  }, {
+    key: "getAllUsers",
+    value: function getAllUsers(req, res) {
+      return res.status(200).send({
+        status: 200,
+        message: 'Users retrieved successfully',
+        data: _usersDb.default
       });
     }
   }]);

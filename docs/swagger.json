@@ -371,7 +371,7 @@
           "type": "string",
           "example": "password234"
         },
-        "rpassword": {
+        "confirmPassword": {
           "type": "string",
           "example": "password234"
         }
@@ -412,6 +412,14 @@
         "status": {
           "type": "string",
           "example": "unread"
+        },
+        "senderDelete":{
+          "type":"boolean",
+          "example": false
+        },
+        "receiverDelete":{
+          "type":"boolean",
+          "example": false
         }
       }
     },
@@ -436,13 +444,13 @@
         "receiverId":{
           "type":"integer"
         },
-        "parentMessageId":{
-          "type":"array"
-        },
-        "rstatus":{
+        "status":{
           "type":"string"
         },
-        "isDeleted":{
+        "senderDelete":{
+          "type":"boolean"
+        },
+        "receiverDelete":{
           "type":"boolean"
         }
       }

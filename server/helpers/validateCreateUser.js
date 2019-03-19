@@ -44,12 +44,12 @@ const validateCreateUser = (data) => {
     errors.mobile = 'Mobile number must be a Nigerian';
   }
 
-  if (isValueEmpty(data.rpassword)) {
-    errors.rpassword = 'Confirm password field is required';
+  if (isValueEmpty(data.confirmPassword)) {
+    errors.confirmPassword = 'Confirm password field is required';
   }
 
-  if (!ValidData.equals(data.password, data.rpassword)) {
-    errors.rpassword = 'Your password does not match';
+  if (!ValidData.equals(data.password, data.confirmPassword)) {
+    errors.confirmPassword = 'Your password does not match';
   }
 
   return {

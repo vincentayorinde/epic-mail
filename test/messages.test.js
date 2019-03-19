@@ -8,32 +8,50 @@ chai.use(chaiHttp);
 const should = chai.should();
 
 let newmessage;
+let userToken;
 
 
-describe('POST /messages', () => {
-  it('Should create or send an email on /api/v1/messages POST', (done) => {
-    const message = {
-      createdOn: new Date(),
-      subject: 'Sample message title',
-      message: 'Sample message content',
-      senderId: '3',
-      receiverId: '5',
-      parentMessageId: [],
-      status: 'unread',
-      isDeleted: false,
-    };
-    chai.request(app)
-      .post('/api/v1/messages')
-      .send(message)
-      .end((err, res) => {
-        newmessage = res.body.message;
-        expect(res).to.have.status(201);
-        expect(res.body.message).to.equal('Message sent successfully');
-        expect(res.body).to.be.a('object');
-        done();
-      });
-  });
-});
+// describe('POST /messages', () => {
+//   it('Should Authenticate user to send message', (done) => {
+//     const user = {
+//       email: 'user1@epicmail.com',
+//       password: 'password1',
+//     };
+//     chai.request(app)
+//       .post('/api/v1/auth/signin')
+//       .send(user)
+//       .end((err, res) => {
+//         userToken = res.body.token;
+//         expect(res.body.message).to.equal('User sign in successful');
+//         expect(res).to.have.status(200);
+//         expect(res.body).to.be.a('object');
+//         done();
+//       });
+//   });
+//   it('Should create or send an email on /api/v1/messages POST', (done) => {
+//     const message = {
+//       createdOn: new Date(),
+//       subject: 'Sample message title',
+//       message: 'Sample message content',
+//       senderId: '1',
+//       receiverId: '5',
+//       status: 'unread',
+//       senderDelete: false,
+//       receiverDelete: false,
+//     };
+//     chai.request(app)
+//       .post('/api/v1/messages')
+//       .set('Authorization', `Bearer ${userToken}`)
+//       .send(message)
+//       .end((err, res) => {
+//         newmessage = res.body.message;
+//         expect(res).to.have.status(201);
+//         expect(res.body.message).to.equal('Message sent successfully');
+//         expect(res.body).to.be.a('object');
+//         done();
+//       });
+//   });
+// });
 
 describe('GET /messages', () => {
   it('Should get all receive mails on /api/v1/messages GET', (done) => {
