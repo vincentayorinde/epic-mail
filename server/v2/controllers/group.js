@@ -187,6 +187,39 @@ const Group = {
       });
     }
   },
+  /**
+   * Delete a User from group
+   * @param {object} req
+   * @param {object} res
+   * @returns {void} return
+   */
+  async deleteUserGroup(req, res) {
+    const { groupId, userId } = req.params;
+    const deleteUserGroupQuery = 'DELETE FROM groupmembertable WHERE memberid=$1 AND groupid=$2 returning *';
+    const values = [
+      userId,
+      groupId,
+    ];
+    try {
+      const { rows } = await db.query(deleteUserGroupQuery, values);
+      if (!rows[0]) {
+        return res.status(400).send({
+          status: 400,
+          message: 'User not found',
+        });
+      }
+      return res.status(200).send({
+        status: 200,
+        message: 'User deleted from group successfully',
+      });
+    } catch (error) {
+      return res.status(400).send({
+        status: 400,
+        message: 'User not found',
+        error,
+      });
+    }
+  },
 };
 
 export default Group;
