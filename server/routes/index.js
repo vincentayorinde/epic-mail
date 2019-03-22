@@ -39,5 +39,7 @@ router.get('/api/v2/groups', Auth.verifyToken, Group.getAllGroups);
 // Edit the name of a specific group
 router.patch('/api/v2/groups/:groupId', Auth.verifyToken, Group.editGroupName);
 
+// Delete a specific group
+router.delete('/api/v2/groups/:groupId', Auth.verifyToken, Group.deleteGroup);
 
 module.exports = router;
