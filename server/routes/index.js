@@ -42,4 +42,7 @@ router.patch('/api/v2/groups/:groupId', Auth.verifyToken, Group.editGroupName);
 // Delete a specific group
 router.delete('/api/v2/groups/:groupId', Auth.verifyToken, Group.deleteGroup);
 
+// Add a user to a group
+router.post('/api/v2/groups/:groupId/users', Auth.verifyToken, Group.addUserToGroup);
+
 module.exports = router;
