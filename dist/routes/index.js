@@ -2,20 +2,46 @@
 
 var _express = _interopRequireDefault(require("express"));
 
-var _users = _interopRequireDefault(require("../controllers/users"));
+var _user = _interopRequireDefault(require("../v2/controllers/user"));
 
-var _messages = _interopRequireDefault(require("../controllers/messages"));
+var _message = _interopRequireDefault(require("../v2/controllers/message"));
+
+var _group = _interopRequireDefault(require("../v2/controllers/group"));
+
+var _auth = _interopRequireDefault(require("../v2/middleware/auth"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var router = _express.default.Router();
+var router = _express.default.Router(); // Create or add user
 
-router.post('/api/v1/auth/signup', _users.default.createUser);
-router.post('/api/v1/auth/signin', _users.default.userLogin);
-router.post('/api/v1/messages', _messages.default.sendMail);
-router.get('/api/v1/messages', _messages.default.getAllMails);
-router.get('/api/v1/messages/unread/:receiverId', _messages.default.getAllUnreadMailByUser);
-router.get('/api/v1/messages/sent/:senderId', _messages.default.getAllMailsSentByUser);
-router.get('/api/v1/messages/:messageId', _messages.default.getAMailRecord);
-router.delete('/api/v1/messages/:messageId', _messages.default.deleteUserMail);
+
+router.post('/api/v2/auth/signup', _user.default.signUp); // Login user
+
+router.post('/api/v2/auth/login', _user.default.loginUser); // Send or create a message
+
+router.post('/api/v2/messages', _auth.default.verifyToken, _message.default.sendMail); // Get all messages
+
+router.get('/api/v2/messages', _auth.default.verifyToken, _message.default.getAllMails); // Get all user unread messages
+
+router.get('/api/v2/messages/unread', _auth.default.verifyToken, _message.default.getAllUnreadMailByUser); // Get all user sent messages
+
+router.get('/api/v2/messages/sent', _auth.default.verifyToken, _message.default.getAllMailsSentByUser); // Get a specific mail record
+
+router.get('/api/v2/messages/:messageId', _auth.default.verifyToken, _message.default.getAMailRecord); // // Delete a specific mail record
+
+router.delete('/api/v2/messages/:messageId', _auth.default.verifyToken, _message.default.deleteUserMail); // Create or add a new group
+
+router.post('/api/v2/groups', _auth.default.verifyToken, _group.default.createGroup); // Get all group
+
+router.get('/api/v2/groups', _auth.default.verifyToken, _group.default.getAllGroups); // Edit the name of a specific group
+
+router.patch('/api/v2/groups/:groupId', _auth.default.verifyToken, _group.default.editGroupName); // Delete a specific group
+
+router.delete('/api/v2/groups/:groupId', _auth.default.verifyToken, _group.default.deleteGroup); // Add a user to a group
+
+router.post('/api/v2/groups/:groupId/users', _auth.default.verifyToken, _group.default.addUserToGroup); // Delete a user from a specific group
+
+router.delete('/api/v2/groups/:groupId/users/:userId', _auth.default.verifyToken, _group.default.deleteUserGroup); // Create or send an email to a group
+
+router.post('/api/v2/groups/:groupId/messages', _auth.default.verifyToken, _group.default.sendMailGroup);
 module.exports = router;
