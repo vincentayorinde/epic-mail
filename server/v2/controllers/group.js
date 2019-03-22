@@ -39,6 +39,28 @@ const Group = {
       });
     }
   },
+   /**
+   * Get All Groups
+   * @param {object} req
+   * @param {object} res
+   * @returns {object} mails array
+   */
+  async getAllGroups(req, res) {
+    const AllGroupsQuery = 'SELECT * FROM groupTable WHERE ownerid=$1';
+    try {
+      const { rows, rowCount } = await db.query(AllGroupsQuery, [req.user.id]);
+      return res.status(200).send({
+        status: 200,
+        message: 'All groups retrieved successfully',
+        data: { rowCount, rows },
+      });
+    } catch (error) {
+      return res.status(400).send({
+        status: 400,
+        message: 'Bad request',
+        error,
+     
 };
 
 export default Group;
+
