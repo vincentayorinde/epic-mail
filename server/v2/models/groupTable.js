@@ -42,11 +42,9 @@ const createGroupTable = async () => {
 
   await pool.query(groupTable)
     .then((res) => {
-      console.log(res);
       pool.end();
     })
     .catch((err) => {
-      console.log(err);
       pool.end();
     });
 };
@@ -58,19 +56,13 @@ const dropGroupTable = async () => {
   const dropGroup = 'DROP TABLE IF EXISTS groupTable';
   await pool.query(dropGroup)
     .then((res) => {
-      console.log(res);
       pool.end();
     })
     .catch((err) => {
-      console.log(err);
       pool.end();
     });
 };
 
-// pool.on('remove', () => {
-//   console.log('groupTable removed');
-//   process.exit(0);
-// });
 
 module.exports = {
   createGroupTable,
