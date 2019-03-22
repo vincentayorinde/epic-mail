@@ -39,7 +39,7 @@ const Group = {
       });
     }
   },
-   /**
+ /**
    * Get All Groups
    * @param {object} req
    * @param {object} res
@@ -59,8 +59,46 @@ const Group = {
         status: 400,
         message: 'Bad request',
         error,
-     
+      });
+    }
+  },
+  /**
+   * Update A Reflection
+   * @param {object} req
+   * @param {object} res
+   * @returns {object} updated reflection
+   */
+  async editGroupName(req, res) {
+    const findOneGroupQuery = 'SELECT * FROM groupTable WHERE id=$1';
+    const patchOneGroupQuery = `UPDATE groupTable
+      SET groupname=$1,modifieddate=$2 WHERE id=$3 returning *`;
+    try {
+      const { rows } = await db.query(findOneGroupQuery, [req.params.groupId]);
+      if (!rows[0]) {
+        return res.status(404).send({
+          status: 404,
+          message: 'Group not found',
+        });
+      }
+      const values = [
+        req.body.groupname || rows[0].groupname,
+        moment(new Date()),
+        req.params.groupId,
+      ];
+      const row = await db.query(patchOneGroupQuery, values);
+      return res.status(200).send({
+        status: 200,
+        message: 'Group updated successfully',
+        data: row.rows[0],
+      });
+    } catch (error) {
+      return res.status(400).send({
+        status: 400,
+        message: 'Group name could not be updated',
+        error,
+      });
+    }
+  },
 };
 
 export default Group;
-

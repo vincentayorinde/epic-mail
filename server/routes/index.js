@@ -36,4 +36,8 @@ router.post('/api/v2/groups', Auth.verifyToken, Group.createGroup);
 // Get all group
 router.get('/api/v2/groups', Auth.verifyToken, Group.getAllGroups);
 
+// Edit the name of a specific group
+router.patch('/api/v2/groups/:groupId', Auth.verifyToken, Group.editGroupName);
+
+
 module.exports = router;
