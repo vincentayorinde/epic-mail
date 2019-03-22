@@ -33,6 +33,7 @@ router.delete('/api/v2/messages/:messageId', Auth.verifyToken, Message.deleteUse
 // Create or add a new group
 router.post('/api/v2/groups', Auth.verifyToken, Group.createGroup);
 
-
+// Get all group
+router.get('/api/v2/groups', Auth.verifyToken, Group.getAllGroups);
 
 module.exports = router;
