@@ -12,7 +12,8 @@
     "db-build": "cross-env NODE_ENV=development nodemon --exec babel-node server/v2/models/index createTables",
     "db-drop": "cross-env NODE_ENV=development nodemon --exec babel-node server/v2/models/index dropTables",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-    "build": "rm -rf dist && babel server --out-dir dist"
+    "build": "rm -rf dist && babel server --out-dir dist",
+    "migrate-db":"babel-node dist/v2/models/index.js createTables && babel-node dist/v2/models/index.js dropTables"
   },
   "repository": {
     "type": "git",
