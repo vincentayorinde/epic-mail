@@ -99,6 +99,34 @@ const Group = {
       });
     }
   },
+  /**
+   * Delete A Mail
+   * @param {object} req
+   * @param {object} res
+   * @returns {void} return
+   */
+  async deleteGroup(req, res) {
+    const deleteGroupQuery = 'DELETE FROM groupTable WHERE id=$1 AND ownerid=$2 returning *';
+    try {
+      const { rows } = await db.query(deleteGroupQuery, [req.params.groupId, req.user.id]);
+      if (!rows[0]) {
+        return res.status(400).send({
+          status: 400,
+          message: 'Group not found',
+        });
+      }
+      return res.status(200).send({
+        status: 200,
+        message: 'Group deleted successfully',
+      });
+    } catch (error) {
+      return res.status(400).send({
+        status: 400,
+        message: 'Group not found',
+        error,
+      });
+    }
+  },
 };
 
 export default Group;
