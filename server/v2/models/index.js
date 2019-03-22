@@ -30,7 +30,6 @@ if (env === 'production') {
 
 
 pool.on('connect', () => {
-  console.log('connected to the db');
 });
 
 const createTables = async () => {
@@ -40,7 +39,6 @@ const createTables = async () => {
     await createGroupTable();
     await createGroupMemberTable();
   } catch (err) {
-    console.log(err);
   }
 };
 
@@ -51,7 +49,6 @@ const dropTables = async () => {
     await dropMessageTable();
     await dropUserTable();
   } catch (err) {
-    console.log(err);
   }
 };
 

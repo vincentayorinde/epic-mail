@@ -25,7 +25,6 @@ describe('POST /auth/signup Validations', () => {
       .post('/api/v2/auth/signup')
       .send(user)
       .end((err, res) => {
-        console.log(res.body, '++++++++');
         expect(res).to.have.status(400);
         expect(res.body.errors.confirmPassword).to.equal('Your password does not match');
         expect(res.body).to.be.a('object');
@@ -45,7 +44,6 @@ describe('POST /auth/signup Validations', () => {
       .post('/api/v2/auth/signup')
       .send(user)
       .end((err, res) => {
-        console.log(res.body, '++++++++');
         expect(res.body.errors.firstname).to.equal('Firstname must be between 2 and 30 characters');
         expect(res).to.have.status(400);
         expect(res.body).to.be.a('object');
@@ -66,7 +64,6 @@ describe('POST /auth/signup Validations', () => {
       .post('/api/v2/auth/signup')
       .send(user)
       .end((err, res) => {
-        console.log(res.body, '++++++++');
         expect(res.body.errors.lastname).to.equal('Lastname must be between 2 and 30 characters');
         expect(res).to.have.status(400);
         expect(res.body).to.be.a('object');
@@ -87,7 +84,6 @@ describe('POST /auth/signup Validations', () => {
       .post('/api/v2/auth/signup')
       .send(user)
       .end((err, res) => {
-        console.log(res.body, '++++++++');
         expect(res.body.errors.lastname).to.equal('Lastname must be between 2 and 30 characters');
         expect(res).to.have.status(400);
         expect(res.body).to.be.a('object');
@@ -108,7 +104,6 @@ describe('POST /auth/signup Validations', () => {
       .post('/api/v2/auth/signup')
       .send(user)
       .end((err, res) => {
-        console.log(res.body, '++++++++');
         expect(res.body.errors.lastname).to.equal('Lastname must be only alphabets');
         expect(res).to.have.status(400);
         expect(res.body).to.be.a('object');

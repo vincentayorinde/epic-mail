@@ -220,6 +220,66 @@ const Group = {
       });
     }
   },
+   /**
+   * Send a mail
+   * @param {object} req
+   * @param {object} res
+   * @returns {object} mail object
+
+   */
+  async sendMailGroup(req, res) {
+    const { receiverId, subject, message } = req.body;
+    if (!Helper.isValidEmail(receiverId)) {
+      return res.status(400).send({
+        status: 400,
+        error: 'Please enter a valid receiver email address',
+      });
+    }
+    const selectMembers = 'SELECT groupmail FROM groupmembertable WHERE groupemail=$1';
+    const sendMailGroupQuery = `INSERT INTO
+      messageTable(id, createon, subject, message, parentmessageid, status, senderid, receiverid, senderdelete, receiverdelete)
+      VALUES(DEFAULT,$1, $2, $3, $4, $5, (SELECT groupmail FROM groupTable WHERE groupemail=$6), $7, $8)
+      returning *`;
+    try {
+      const { rows } = await db.query(selectMembers, [req.body.receiverId]);
+      if (!rows[0]) {
+        return res.status(404).send({
+          status: 404,
+          message: 'Group not found',
+        });
+      }
+      const values = [
+        moment(new Date()),
+        subject,
+        message,
+        0,
+        'unread',
+        receiverId,
+        false,
+        false,
+      ];
+      rows.forEach(async () => {
+        await db.query(sendMailGroupQuery, values);
+      });
+      return res.status(200).send({
+        status: 200,
+        message: 'Mail sent to group successfully',
+        data: rows[0],
+      });
+    } catch (error) {
+      if (error.routine !== '_bt_check_unique') {
+        return res.status(400).send({
+          status: 400,
+          message: 'Receiver email does not exist',
+        });
+      }
+      return res.status(400).send({
+        status: 400,
+        message: 'Bad request',
+        error,
+      });
+    }
+  },
 };
 
 export default Group;

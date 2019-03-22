@@ -48,4 +48,7 @@ router.post('/api/v2/groups/:groupId/users', Auth.verifyToken, Group.addUserToGr
 // Delete a user from a specific group
 router.delete('/api/v2/groups/:groupId/users/:userId', Auth.verifyToken, Group.deleteUserGroup);
 
+// Create or send an email to a group
+router.post('/api/v2/groups/:groupId/messages', Auth.verifyToken, Group.sendMailGroup);
+
 module.exports = router;
