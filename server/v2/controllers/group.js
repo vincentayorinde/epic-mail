@@ -127,6 +127,66 @@ const Group = {
       });
     }
   },
+    /**
+   * Create A Group
+   * @param {object} req
+   * @param {object} res
+   * @returns {object} group object
+   */
+  async addUserToGroup(req, res) {
+    if (!Helper.isValidEmail(req.body.email)) {
+      return res.status(400).send({
+        status: 400,
+        error: 'Please enter a valid email address',
+      });
+    }
+    const checkUserQuery = 'SELECT * FROM userTable WHERE email=$1 LIMIT 1';
+    const findUserQuery = 'SELECT * FROM groupmembertable WHERE membermail=$1';
+    const groupQuery = `INSERT INTO
+      groupMemberTable(id, groupid, memberid, membermail, groupmail, join_date)
+      VALUES(DEFAULT, (SELECT id FROM groupTable WHERE id=$1), (SELECT id FROM userTable WHERE email=$2), (SELECT email FROM userTable WHERE email=$2), (SELECT groupmail FROM groupTable WHERE id=$1), $3)
+      returning *`;
+    const { rows } = await db.query(checkUserQuery, [req.body.email]);
+    if (!rows.length) {
+      return res.status(400).send({
+        status: 400,
+        message: 'User does not exist, kindly create an account for this user first, and try again',
+      });
+    }
+    const data = await db.query(findUserQuery, [req.body.email]);
+    if (data.rows.length) {
+      return res.status(409).send({
+        status: 409,
+        message: 'User already exist in group',
+      });
+    }
+    const values = [
+      req.params.groupId,
+      req.body.email,
+      moment(new Date()),
+    ];
+
+    try {
+      const { rows } = await db.query(groupQuery, values);
+      return res.status(200).send({
+        status: 200,
+        message: 'User added to group successfully',
+        data: rows[0],
+      });
+    } catch (error) {
+      if (error.routine === '_bt_check_unique') {
+        return res.status(409).send({
+          status: 409,
+          message: 'User with that email already exist group',
+        });
+      }
+      return res.status(400).send({
+        status: 400,
+        message: 'Bad request',
+        error,
+      });
+    }
+  },
 };
 
 export default Group;
