@@ -97,11 +97,11 @@ const Message = {
    * @param {object} res
    * @returns {object} mails array
    */
-  async getAllMailsSentByUser(req, res) {
-    const AllMailsSentByUserQuery = 'SELECT * FROM messageTable WHERE senderId=$1';
+  async sentByUser(req, res) {
+    const sentByUserQuery = 'SELECT * FROM messageTable WHERE senderId=$1';
     try {
-      const { rows, rowCount } = await db.query(AllMailsSentByUserQuery, [req.user.id]);
-      if (rowCount < 1) {
+      const { rows, rowNo } = await db.query(sentByUserQuery, [req.user.id]);
+      if (rowNo < 1) {
         return res.status(200).send({
           status: 200,
           message: 'No mails found',
@@ -110,7 +110,7 @@ const Message = {
       return res.status(200).send({
         status: 200,
         message: 'Emails retrieved successfully',
-        data: { rowCount, rows },
+        data: { rowNo, rows },
       });
     } catch (error) {
       return res.status(400).send({
