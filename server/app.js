@@ -6,10 +6,8 @@ import 'idempotent-babel-polyfill';
 import swaggerDoc from '../docs/swagger.json';
 import router from './routes/index';
 
-import UserWithDB from './v2/controllers/user';
 
 dotenv.config();
-// const User = process.env.TYPE === 'db' ? UserWithDB : null;
 
 // Global app object
 const app = express();
@@ -25,7 +23,7 @@ app.get('/', (req, res) => {
 });
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT);
 

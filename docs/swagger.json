@@ -1,455 +1,745 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "description": "Epic Mail is a web application that help people exchange messages or information over the internet",
-    "version": "1.0.0",
-    "title": "Epic Mail",
-    "termsOfService": "http://swagger.io/terms/",
-    "contact": {
-      "email": "apiteam@swagger.io"
-    },
-    "license": {
-      "name": "Apache 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
-    }
-  },
-  "basePath": "/api/v1",
-  "tags": [
+  "swaggerVersion": "1.2",
+  "basePath": "https://epic-mail-global.herokuapp.com/api/v2",
+  "resourcePath": "/",
+  "apis": [
     {
-      "name": "auth",
-      "description": "Everything about user signup"
-    },
-    {
-      "name": "messages",
-      "description": "Everything about messages"
-    },
-    {
-      "name": "user",
-      "description": "Operations about user",
-      "externalDocs": {
-        "description": "Find out more about our store",
-        "url": "http://swagger.io"
-      }
-    }
-  ],
-  "schemes": [
-    "https"
-  ],
-  "paths": {
-    "/auth/signup": {
-      "post": {
-        "tags": [
-          "auth"
-        ],
-        "summary": "Add a new user to the app",
-        "description": "",
-        "operationId": "signUp",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "User object that needs to be added",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/SignUpUser"
-            }
-          }
-        ],
-        "responses": {
-          "405": {
-            "description": "Invalid input"
-          }
-        },
-        "security": [
-          {
-            "usersignup_auth": [
-              "write:signup",
-              "read:signup"
-            ]
-          }
-        ]
-      }      
-    },
-    "/auth/signin": {
-      "post": {
-        "tags": [
-          "auth"
-        ],
-        "summary": "Login a user to the app",
-        "description": "",
-        "operationId": "signIn",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "User object that needs to sign in",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/SignInUser"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "User login successful"
-          },
-          "headers": {
-            "X-Rate-Limit": {
-              "type": "integer",
-              "format": "int32",
-              "description": "calls per hour allowed by the user"
+      "path": "/auth/signup",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "TODO: Add Description",
+          "deprecated": false,
+          "nickname": "SignUp",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
             },
-            "X-Expires-After": {
-              "type": "string",
-              "format": "date-time",
-              "description": "date in UTC when token expires"
+            {
+              "name": "email",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "firstname",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "lastname",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "password",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "confirmPassword",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "mobile",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
             }
-          },
-          "405": {
-            "description": "Invalid input"
-          }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "responseMessages": [],
+          "uniqueItems": false
+        }
+      ]
+    },
+    {
+      "path": "/auth/login",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "TODO: Add Description",
+          "deprecated": false,
+          "nickname": "Login",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "email",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "confirmPassword",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "responseMessages": [],
+          "uniqueItems": false
+        }
+      ]
+    },
+    {
+      "path": "/messages",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "TODO: Add Description",
+          "deprecated": false,
+          "nickname": "Sendamessage",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "email",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "password",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "responseMessages": [],
+          "uniqueItems": false
         },
-        "security": [
-          {
-            "usersignup_auth": [
-              "write:signin",
-              "read:signin"
-            ]
-          }
-        ]
-      }      
-    },
-    "/messages": {
-      "post": {
-        "tags": [
-          "messages"
-        ],
-        "summary": "Sends a Mail",
-        "description": "Helps to send mail",
-        "operationId": "SendMail",
-        "produces": [
-          "application/json"
-        ],
-        "parameters":[
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Message object needs to be added",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/SendMail"
+        {
+          "method": "GET",
+          "summary": "TODO: Add Description",
+          "deprecated": false,
+          "nickname": "Getmailrecievedbyuser",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "x-access-token",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
             }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Message send successfully"
-          },
-          "400": {
-            "description": "Invalid status value"
-          }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [],
+          "uniqueItems": false
         },
-        "security": [
-          {
-            "messages_auth": [
-              "write:messages",
-              "read:messages"
-            ]
-          }
-        ]
-      },
-      "get": {
-        "tags": [
-          "messages"
-        ],
-        "summary": "Finds all Messages",
-        "description": "Helps to fetch all received mails",
-        "operationId": "GetMessages",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "All message retrieved successfully"
-          },
-          "400": {
-            "description": "Invalid status value"
-          }
+        {
+          "method": "GET",
+          "summary": "TODO: Add Description",
+          "deprecated": false,
+          "nickname": "Getallunreadmails",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "x-access-token",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [],
+          "uniqueItems": false
+        }
+      ]
+    },
+    {
+      "path": "/messages/unread",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "TODO: Add Description",
+          "deprecated": false,
+          "nickname": "Getallsentmails",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "x-access-token",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [],
+          "uniqueItems": false
+        }
+      ]
+    },
+    {
+      "path": "/messages/sent",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "TODO: Add Description",
+          "deprecated": false,
+          "nickname": "Getamail",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "x-access-token",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [],
+          "uniqueItems": false
+        }
+      ]
+    },
+    {
+      "path": "/messages/1",
+      "operations": [
+        {
+          "method": "DELETE",
+          "summary": "TODO: Add Description",
+          "deprecated": false,
+          "nickname": "Deleteamail",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "x-access-token",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [],
+          "uniqueItems": false
+        }
+      ]
+    },
+    {
+      "path": "/groups",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "TODO: Add Description",
+          "deprecated": false,
+          "nickname": "CreateGroup",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "x-access-token",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "groupname",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "groupmail",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "groupdesc",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "responseMessages": [],
+          "uniqueItems": false
         },
-        "security": [
-          {
-            "messages_auth": [
-              "write:messages",
-              "read:messages"
-            ]
-          }
-        ]
-      }
-    },
-    "/messages/unread/{receiverId}": {
-      "get": {
-        "tags": [
-          "messages"
-        ],
-        "summary": "Get all unread mails for a user",
-        "description": "",
-        "operationId": "getAllUnreadMailByUser",
-        "produces": [
-          "application/xml",
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "receiverId",
-            "in": "path",
-            "description": "input the receiver id",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "All unread received emails by specified user",
-            "schema": {
+        {
+          "method": "GET",
+          "summary": "TODO: Add Description",
+          "deprecated": false,
+          "nickname": "Getallgroups",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "x-access-token",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
               "type": "string"
             }
-          },
-          "400": {
-            "description": "Invalid receiverId supplied"
-          }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [],
+          "uniqueItems": false
         }
-      }
+      ]
     },
-    "/messages/sent/{senderId}": {
-      "get": {
-        "tags": [
-          "messages"
-        ],
-        "summary": "Get all sent mails for a user",
-        "description": "",
-        "operationId": "getAllMailsSentByUser",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "senderId",
-            "in": "path",
-            "description": "input the sender id",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "All sent emails by specified user",
-            "schema": {
+    {
+      "path": "/groups/2",
+      "operations": [
+        {
+          "method": "PATCH",
+          "summary": "TODO: Add Description",
+          "deprecated": false,
+          "nickname": "Updategroupname",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "x-access-token",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "groupname",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
               "type": "string"
             }
-          },
-          "404": {
-            "description": "Invalid senderId supplied"
-          }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "responseMessages": [],
+          "uniqueItems": false
         }
-      }
+      ]
     },
-    "/messages/{messageId}": {
-      "get": {
-        "tags": [
-          "messages"
-        ],
-        "summary": "Get a specific mail record",
-        "description": "",
-        "operationId": "getAMailRecord",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "messageId",
-            "in": "path",
-            "description": "input the message id",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Email record retrieved successfully",
-            "schema": {
+    {
+      "path": "/groups/6",
+      "operations": [
+        {
+          "method": "DELETE",
+          "summary": "TODO: Add Description",
+          "deprecated": false,
+          "nickname": "Deleteagroup",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "x-access-token",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
               "type": "string"
             }
-          },
-          "404": {
-            "description": "Email does not exist"
-          }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [],
+          "uniqueItems": false
         }
-      },
-      "delete": {
-        "tags": [
-          "messages"
-        ],
-        "summary": "Delete a specific mail record",
-        "description": "",
-        "operationId": "deleteUserMail",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "messageId",
-            "in": "path",
-            "description": "input the message id",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Email record deleted successfully",
-            "schema": {
+      ]
+    },
+    {
+      "path": "/groups/1/users",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "TODO: Add Description",
+          "deprecated": false,
+          "nickname": "Addusertogroup",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "x-access-token",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "email",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
               "type": "string"
             }
-          },
-          "404": {
-            "description": "Email does not exist"
-          }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "responseMessages": [],
+          "uniqueItems": false
         }
-      }
-    }              
-  },
-  "securityDefinitions": {
-    "petstore_auth": {
-      "type": "oauth2",
-      "authorizationUrl": "http://petstore.swagger.io/oauth/dialog",
-      "flow": "implicit",
-      "scopes": {
-        "write:pets": "modify pets in your account",
-        "read:pets": "read your pets"
-      }
+      ]
     },
-    "api_key": {
-      "type": "apiKey",
-      "name": "api_key",
-      "in": "header"
+    {
+      "path": "/groups/2/users/1",
+      "operations": [
+        {
+          "method": "DELETE",
+          "summary": "TODO: Add Description",
+          "deprecated": false,
+          "nickname": "Deleteauserfromgroup",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "x-access-token",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [],
+          "uniqueItems": false
+        }
+      ]
+    },
+    {
+      "path": "/groups/2/messages",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "TODO: Add Description",
+          "deprecated": false,
+          "nickname": "Sendmessagetogroup",
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "x-access-token",
+              "description": "",
+              "paramType": "header",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "receiverId",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "subject",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "message",
+              "description": "",
+              "paramType": "form",
+              "required": true,
+              "allowMultiple": false,
+              "defaultValue": "",
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "responseMessages": [],
+          "uniqueItems": false
+        }
+      ]
     }
+  ],
+  "models": {},
+  "authorizations": {},
+  "info": {
+    "title": "Epic Mail Online",
+    "description": "TODO: Add Description"
   },
-  "definitions": {
-    "SignUpUser": {
-      "type": "object",
-      "properties": {
-        "email": {
-          "type": "string",
-          "example": "user1@epicmail.com"
-        },
-        "firstname": {
-          "type": "string",
-          "example": "Vincent"
-        },
-        "lastname": {
-          "type": "string",
-          "example": "Olagbemide"
-        },
-        "mobile": {
-          "type": "string",
-          "example": "08063475512"
-        },
-        "password": {
-          "type": "string",
-          "example": "password234"
-        },
-        "rpassword": {
-          "type": "string",
-          "example": "password234"
-        }
-      }
-    },
-    "SignInUser": {
-      "type": "object",
-      "properties": {
-        "email": {
-          "type": "string",
-          "example": "user1@epicmail.com"
-        },
-        "password": {
-          "type": "string",
-          "example": "password1"
-        }
-      }
-    },
-    "SendMail": {
-      "type": "object",
-      "properties": {
-        "subject": {
-          "type": "string",
-          "example": "Sample Subject"
-        },
-        "message": {
-          "type": "string",
-          "example": "This is the message content"
-        },
-        "senderId": {
-          "type": "integer",
-          "example": "1"
-        },
-        "receiverId": {
-          "type": "integer",
-          "example": "2"
-        },
-        "status": {
-          "type": "string",
-          "example": "unread"
-        }
-      }
-    },
-    "GetMessages": {
-      "type": "object",
-      "properties": {
-        "id":{
-          "type":"integer"
-        },
-        "createdOn":{
-          "type":"date-time"
-        },
-        "subject":{
-          "type":"string"
-        },
-        "message":{
-          "type":"string"
-        },
-        "senderId":{
-          "type":"integer"
-        },
-        "receiverId":{
-          "type":"integer"
-        },
-        "parentMessageId":{
-          "type":"array"
-        },
-        "rstatus":{
-          "type":"string"
-        },
-        "isDeleted":{
-          "type":"boolean"
-        }
-      }
-    }
-   },
-  "externalDocs": {
-    "description": "Find out more about Swagger",
-    "url": "http://swagger.io"
-  }
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ]
 }

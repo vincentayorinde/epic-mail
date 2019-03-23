@@ -1,8 +1,8 @@
 import express from 'express';
-import User from '../v2/controllers/user';
-import Message from '../v2/controllers/message';
-import Group from '../v2/controllers/group';
-import Auth from '../v2/middleware/auth';
+import User from '../controllers/user';
+import Message from '../controllers/message';
+import Group from '../controllers/group';
+import Auth from '../middleware/auth';
 
 const router = express.Router();
 

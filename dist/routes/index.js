@@ -2,13 +2,13 @@
 
 var _express = _interopRequireDefault(require("express"));
 
-var _user = _interopRequireDefault(require("../v2/controllers/user"));
+var _user = _interopRequireDefault(require("../controllers/user"));
 
-var _message = _interopRequireDefault(require("../v2/controllers/message"));
+var _message = _interopRequireDefault(require("../controllers/message"));
 
-var _group = _interopRequireDefault(require("../v2/controllers/group"));
+var _group = _interopRequireDefault(require("../controllers/group"));
 
-var _auth = _interopRequireDefault(require("../v2/middleware/auth"));
+var _auth = _interopRequireDefault(require("../middleware/auth"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
