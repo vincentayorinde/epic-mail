@@ -22,7 +22,7 @@ router.get('/api/v2/messages', Auth.verifyToken, Message.getAllMails);
 router.get('/api/v2/messages/unread', Auth.verifyToken, Message.getAllUnreadMailByUser);
 
 // Get all user sent messages
-router.get('/api/v2/messages/sent', Auth.verifyToken, Message.getAllMailsSentByUser);
+router.get('/api/v2/messages/sent', Auth.verifyToken, Message.sentByUser);
 
 // Get a specific mail record
 router.get('/api/v2/messages/:messageId', Auth.verifyToken, Message.getAMailRecord);
