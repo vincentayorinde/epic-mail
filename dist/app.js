@@ -19,12 +19,9 @@ var _swagger = _interopRequireDefault(require("../docs/swagger.json"));
 
 var _index = _interopRequireDefault(require("./routes/index"));
 
-var _user = _interopRequireDefault(require("./v2/controllers/user"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_dotenv.default.config(); // const User = process.env.TYPE === 'db' ? UserWithDB : null;
-// Global app object
+_dotenv.default.config(); // Global app object
 
 
 var app = (0, _express.default)();
@@ -38,7 +35,7 @@ app.get('/', function (req, res) {
   res.send('Welcome to Epic Mail');
 });
 app.use('/api-docs', _swaggerUiExpress.default.serve, _swaggerUiExpress.default.setup(_swagger.default));
-var PORT = process.env.PORT || 6000;
+var PORT = process.env.PORT || 5000;
 app.listen(PORT);
 var _default = app;
 exports.default = _default;
