@@ -38,9 +38,11 @@ const createGroupMemberTable = async () => {
 
   await pool.query(groupMemberTable)
     .then((res) => {
+      console.log(res);
       pool.end();
     })
     .catch((err) => {
+      console.log(err);
       pool.end();
     });
 };
@@ -52,9 +54,11 @@ const dropGroupMemberTable = async () => {
   const dropGroupMember = 'DROP TABLE IF EXISTS groupMemberTable';
   await pool.query(dropGroupMember)
     .then((res) => {
+      console.log(res);
       pool.end();
     })
     .catch((err) => {
+      console.log(err);
       pool.end();
     });
 };

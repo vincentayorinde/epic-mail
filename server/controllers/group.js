@@ -14,8 +14,8 @@ const Group = {
     const values = [groupname, groupdesc, groupmail, 'admin', req.user.id, moment(new Date()), moment(new Date())];
     try {
       const { rows } = await db.query(groupQuery, values);
-      return res.status(200).send({
-        status: 200,
+      return res.status(201).send({
+        status: 201,
         message: 'Group created successfully',
         data: rows[0],
       });
@@ -74,8 +74,8 @@ const Group = {
     try {
       const { rows } = await db.query(deleteGroupQuery, [req.params.groupId, req.user.id]);
       if (!rows[0]) {
-        return res.status(400).send({
-          status: 400,
+        return res.status(404).send({
+          status: 404,
           message: 'Group not found',
         });
       }
@@ -137,25 +137,26 @@ const Group = {
     const selectMembers = 'SELECT memberid FROM groupmembertable WHERE groupid=$1';
     const sendMailGroupQuery = `INSERT INTO
       messageTable(id, createon, subject, message, parentmessageid, status, senderid, receiverid, senderdelete, receiverdelete)
-      VALUES(DEFAULT,$1, $2, $3, $4, $5, (SELECT email FROM userTable WHERE id=$6), $7, $8)
+      VALUES(DEFAULT,$1, $2, $3, $4, $5, (SELECT email FROM userTable WHERE id=$6), $7, $8, $9)
       returning *`;
     try {
       const { rows } = await db.query(selectMembers, [req.params.groupId]);
       if (!rows[0]) { return res.status(404).send({ status: 404, message: 'Group not found' }); }
 
-      const send = async () => {
-        for (const row of rows) {
-          db.query(sendMailGroupQuery,
-            [moment(new Date()), subject, message, 0, 'unread', req.body.receiverId, row.receiverId, false, false]);
-        }
-      };
+      // const send = async () => {
+      //   // eslint-disable-next-line no-restricted-syntax
+      //   for (const row of rows) {
+      //     db.query(sendMailGroupQuery,
+      //       [moment(new Date()), subject, message, 0, 'unread', req.body.receiverId, row.receiverId, false, false]);
+      //   }
+      // };
+      // send();
 
       return res.status(200).send({ status: 200, message: 'Mail sent to group successfully', data: rows[0] });
     } catch (error) {
-      console.log(error);
-      // if (error.routine !== '_bt_check_unique') {
-      //   return res.status(400).send({ status: 400, message: 'Receiver email does not exist' });
-      // }
+      if (error.routine !== '_bt_check_unique') {
+        return res.status(400).send({ status: 400, message: 'Receiver email does not exist' });
+      }
       return res.status(400).send({ status: 400, message: 'Bad request', error });
     }
   },

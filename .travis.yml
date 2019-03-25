@@ -16,6 +16,7 @@ env:
 
 script:
 - npm test
+- npm run coverage
 
 after_success:
 - npm run coverage
