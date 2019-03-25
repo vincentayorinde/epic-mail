@@ -48,8 +48,10 @@ function () {
             groupMemberTable = "CREATE TABLE IF NOT EXISTS\n      groupMemberTable(\n        id SERIAL PRIMARY KEY,\n        groupId integer REFERENCES groupTable(id),\n        memberId integer REFERENCES userTable(id),\n        membermail VARCHAR(128) REFERENCES usertable(email),\n        groupMail VARCHAR(128),\n        join_date TIMESTAMP\n      )";
             _context.next = 3;
             return pool.query(groupMemberTable).then(function (res) {
+              console.log(res);
               pool.end();
             }).catch(function (err) {
+              console.log(err);
               pool.end();
             });
 
@@ -84,8 +86,10 @@ function () {
             dropGroupMember = 'DROP TABLE IF EXISTS groupMemberTable';
             _context2.next = 3;
             return pool.query(dropGroupMember).then(function (res) {
+              console.log(res);
               pool.end();
             }).catch(function (err) {
+              console.log(err);
               pool.end();
             });
 

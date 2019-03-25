@@ -25,7 +25,7 @@ router.get('/api/v2/messages', _auth.default.verifyToken, _message.default.getAl
 
 router.get('/api/v2/messages/unread', _auth.default.verifyToken, _message.default.getAllUnreadMailByUser); // Get all user sent messages
 
-router.get('/api/v2/messages/sent', _auth.default.verifyToken, _message.default.getAllMailsSentByUser); // Get a specific mail record
+router.get('/api/v2/messages/sent', _auth.default.verifyToken, _message.default.sentByUser); // Get a specific mail record
 
 router.get('/api/v2/messages/:messageId', _auth.default.verifyToken, _message.default.getAMailRecord); // // Delete a specific mail record
 

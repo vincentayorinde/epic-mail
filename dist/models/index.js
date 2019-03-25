@@ -1,8 +1,8 @@
 "use strict";
 
-var _dotenv = _interopRequireDefault(require("dotenv"));
-
 var _pg = require("pg");
+
+var _dotenv = _interopRequireDefault(require("dotenv"));
 
 var _userTable = require("./userTable");
 
@@ -41,7 +41,9 @@ if (env === 'production') {
   });
 }
 
-pool.on('connect', function () {});
+pool.on('connect', function () {
+  console.log('connected to the db');
+});
 
 var createTables =
 /*#__PURE__*/
@@ -70,14 +72,15 @@ function () {
             return (0, _groupMemberTable.createGroupMemberTable)();
 
           case 9:
-            _context.next = 13;
+            _context.next = 14;
             break;
 
           case 11:
             _context.prev = 11;
             _context.t0 = _context["catch"](0);
+            console.log(_context.t0);
 
-          case 13:
+          case 14:
           case "end":
             return _context.stop();
         }
@@ -117,14 +120,15 @@ function () {
             return (0, _userTable.dropUserTable)();
 
           case 9:
-            _context2.next = 13;
+            _context2.next = 14;
             break;
 
           case 11:
             _context2.prev = 11;
             _context2.t0 = _context2["catch"](0);
+            console.log(_context2.t0);
 
-          case 13:
+          case 14:
           case "end":
             return _context2.stop();
         }
