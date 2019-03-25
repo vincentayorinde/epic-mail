@@ -41,9 +41,11 @@ const createUserTable = async () => {
 
   await pool.query(userTable)
     .then((res) => {
+      console.log(res);
       pool.end();
     })
     .catch((err) => {
+      console.log(err);
       pool.end();
     });
 };
@@ -55,9 +57,11 @@ const dropUserTable = async () => {
   const dropUsers = 'DROP TABLE IF EXISTS userTable';
   await pool.query(dropUsers)
     .then((res) => {
+      console.log(res);
       pool.end();
     })
     .catch((err) => {
+      console.log(err);
       pool.end();
     });
 };

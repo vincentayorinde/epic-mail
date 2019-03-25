@@ -80,7 +80,7 @@ const Message = {
       }
       return res.status(200).send({
         status: 200,
-        message: 'Emails retrieved successfully',
+        message: 'Unread Emails retrieved successfully',
         data: { rowCount, rows },
       });
     } catch (error) {
@@ -109,7 +109,7 @@ const Message = {
       }
       return res.status(200).send({
         status: 200,
-        message: 'Emails retrieved successfully',
+        message: 'Sent Emails retrieved successfully',
         data: { rowNo, rows },
       });
     } catch (error) {
@@ -132,7 +132,7 @@ const Message = {
     try {
       const { rows } = await db.query(findMailQuery, [req.params.messageId]);
       if (!rows[0]) {
-        return res.status(200).send({ status: 200, message: 'no unread mail at the moment' });
+        return res.status(200).send({ status: 200, message: 'no unread mail with ID provided' });
       }
       const values = ['read', rows[0].id];
       const row = await db.query(updateMailQuery, values);
