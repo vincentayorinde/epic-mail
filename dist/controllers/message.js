@@ -212,7 +212,7 @@ var Message = {
             case 10:
               return _context3.abrupt("return", res.status(200).send({
                 status: 200,
-                message: 'Emails retrieved successfully',
+                message: 'Unread Emails retrieved successfully',
                 data: {
                   rowCount: rowCount,
                   rows: rows
@@ -249,27 +249,27 @@ var Message = {
    * @param {object} res
    * @returns {object} mails array
    */
-  getAllMailsSentByUser: function () {
-    var _getAllMailsSentByUser = _asyncToGenerator(
+  sentByUser: function () {
+    var _sentByUser = _asyncToGenerator(
     /*#__PURE__*/
     regeneratorRuntime.mark(function _callee4(req, res) {
-      var AllMailsSentByUserQuery, _ref4, rows, rowCount;
+      var sentByUserQuery, _ref4, rows, rowNo;
 
       return regeneratorRuntime.wrap(function _callee4$(_context4) {
         while (1) {
           switch (_context4.prev = _context4.next) {
             case 0:
-              AllMailsSentByUserQuery = 'SELECT * FROM messageTable WHERE senderId=$1';
+              sentByUserQuery = 'SELECT * FROM messageTable WHERE senderId=$1';
               _context4.prev = 1;
               _context4.next = 4;
-              return _index.default.query(AllMailsSentByUserQuery, [req.user.id]);
+              return _index.default.query(sentByUserQuery, [req.user.id]);
 
             case 4:
               _ref4 = _context4.sent;
               rows = _ref4.rows;
-              rowCount = _ref4.rowCount;
+              rowNo = _ref4.rowNo;
 
-              if (!(rowCount < 1)) {
+              if (!(rowNo < 1)) {
                 _context4.next = 9;
                 break;
               }
@@ -282,9 +282,9 @@ var Message = {
             case 9:
               return _context4.abrupt("return", res.status(200).send({
                 status: 200,
-                message: 'Emails retrieved successfully',
+                message: 'Sent Emails retrieved successfully',
                 data: {
-                  rowCount: rowCount,
+                  rowNo: rowNo,
                   rows: rows
                 }
               }));
@@ -306,11 +306,11 @@ var Message = {
       }, _callee4, null, [[1, 12]]);
     }));
 
-    function getAllMailsSentByUser(_x7, _x8) {
-      return _getAllMailsSentByUser.apply(this, arguments);
+    function sentByUser(_x7, _x8) {
+      return _sentByUser.apply(this, arguments);
     }
 
-    return getAllMailsSentByUser;
+    return sentByUser;
   }(),
 
   /**
@@ -346,7 +346,7 @@ var Message = {
 
               return _context5.abrupt("return", res.status(200).send({
                 status: 200,
-                message: 'no unread mail at the moment'
+                message: 'no unread mail with ID provided'
               }));
 
             case 9:

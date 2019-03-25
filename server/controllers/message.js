@@ -80,7 +80,7 @@ const Message = {
       }
       return res.status(200).send({
         status: 200,
-        message: 'Emails retrieved successfully',
+        message: 'Unread Emails retrieved successfully',
         data: { rowCount, rows },
       });
     } catch (error) {
@@ -97,11 +97,11 @@ const Message = {
    * @param {object} res
    * @returns {object} mails array
    */
-  async getAllMailsSentByUser(req, res) {
-    const AllMailsSentByUserQuery = 'SELECT * FROM messageTable WHERE senderId=$1';
+  async sentByUser(req, res) {
+    const sentByUserQuery = 'SELECT * FROM messageTable WHERE senderId=$1';
     try {
-      const { rows, rowCount } = await db.query(AllMailsSentByUserQuery, [req.user.id]);
-      if (rowCount < 1) {
+      const { rows, rowNo } = await db.query(sentByUserQuery, [req.user.id]);
+      if (rowNo < 1) {
         return res.status(200).send({
           status: 200,
           message: 'No mails found',
@@ -109,8 +109,8 @@ const Message = {
       }
       return res.status(200).send({
         status: 200,
-        message: 'Emails retrieved successfully',
-        data: { rowCount, rows },
+        message: 'Sent Emails retrieved successfully',
+        data: { rowNo, rows },
       });
     } catch (error) {
       return res.status(400).send({
@@ -132,7 +132,7 @@ const Message = {
     try {
       const { rows } = await db.query(findMailQuery, [req.params.messageId]);
       if (!rows[0]) {
-        return res.status(200).send({ status: 200, message: 'no unread mail at the moment' });
+        return res.status(200).send({ status: 200, message: 'no unread mail with ID provided' });
       }
       const values = ['read', rows[0].id];
       const row = await db.query(updateMailQuery, values);

@@ -28,14 +28,14 @@ var User = {
     var _signUp = _asyncToGenerator(
     /*#__PURE__*/
     regeneratorRuntime.mark(function _callee(req, res) {
-      var _Helper$validateCreat, errors, isValid, password, _req$body, email, firstname, lastname, mobile, hashPassword, signUpQuery, values, _ref, rows, token;
+      var _Helper$validateCreat, errors, isValid, _req$body, password, email, firstname, lastname, mobile, hashPassword, signUpQuery, values, _ref, rows, token;
 
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               _Helper$validateCreat = _helpers.default.validateCreateUser(req.body), errors = _Helper$validateCreat.errors, isValid = _Helper$validateCreat.isValid;
-              password = req.body.password;
+              _req$body = req.body, password = _req$body.password, email = _req$body.email, firstname = _req$body.firstname, lastname = _req$body.lastname, mobile = _req$body.mobile;
 
               if (isValid) {
                 _context.next = 4;
@@ -48,15 +48,14 @@ var User = {
               }));
 
             case 4:
-              _req$body = req.body, email = _req$body.email, firstname = _req$body.firstname, lastname = _req$body.lastname, mobile = _req$body.mobile;
               hashPassword = _helpers.default.hashPassword(password);
               signUpQuery = "INSERT INTO userTable(id, email, firstname, lastname, password, mobile, join_date)\n      VALUES(DEFAULT, $1, $2, $3, $4, $5, $6) returning *";
               values = [email, firstname, lastname, hashPassword, mobile, (0, _moment.default)(new Date())];
-              _context.prev = 8;
-              _context.next = 11;
+              _context.prev = 7;
+              _context.next = 10;
               return _index.default.query(signUpQuery, values);
 
-            case 11:
+            case 10:
               _ref = _context.sent;
               rows = _ref.rows;
               token = _helpers.default.generateToken(rows[0].id);
@@ -68,9 +67,10 @@ var User = {
                 }
               }));
 
-            case 17:
-              _context.prev = 17;
-              _context.t0 = _context["catch"](8);
+            case 16:
+              _context.prev = 16;
+              _context.t0 = _context["catch"](7);
+              console.log(_context.t0);
 
               if (!(_context.t0.routine === '_bt_check_unique')) {
                 _context.next = 21;
@@ -93,7 +93,7 @@ var User = {
               return _context.stop();
           }
         }
-      }, _callee, null, [[8, 17]]);
+      }, _callee, null, [[7, 16]]);
     }));
 
     function signUp(_x, _x2) {

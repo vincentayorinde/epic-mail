@@ -50,8 +50,8 @@ var Group = {
             case 8:
               _ref = _context.sent;
               rows = _ref.rows;
-              return _context.abrupt("return", res.status(200).send({
-                status: 200,
+              return _context.abrupt("return", res.status(201).send({
+                status: 201,
                 message: 'Group created successfully',
                 data: rows[0]
               }));
@@ -220,8 +220,8 @@ var Group = {
                 break;
               }
 
-              return _context4.abrupt("return", res.status(400).send({
-                status: 400,
+              return _context4.abrupt("return", res.status(404).send({
+                status: 404,
                 message: 'Group not found'
               }));
 
@@ -424,141 +424,80 @@ var Group = {
   sendMailGroup: function () {
     var _sendMailGroup = _asyncToGenerator(
     /*#__PURE__*/
-    regeneratorRuntime.mark(function _callee8(req, res) {
-      var _req$body2, receiverId, subject, message, selectMembers, sendMailGroupQuery, _ref8, rows, send;
+    regeneratorRuntime.mark(function _callee7(req, res) {
+      var _req$body2, receiverId, subject, message, selectMembers, sendMailGroupQuery, _ref8, rows;
 
-      return regeneratorRuntime.wrap(function _callee8$(_context8) {
+      return regeneratorRuntime.wrap(function _callee7$(_context7) {
         while (1) {
-          switch (_context8.prev = _context8.next) {
+          switch (_context7.prev = _context7.next) {
             case 0:
               _req$body2 = req.body, receiverId = _req$body2.receiverId, subject = _req$body2.subject, message = _req$body2.message;
 
               if (_helpers.default.isValidEmail(receiverId)) {
-                _context8.next = 3;
+                _context7.next = 3;
                 break;
               }
 
-              return _context8.abrupt("return", res.status(400).send({
+              return _context7.abrupt("return", res.status(400).send({
                 status: 400,
                 error: 'Please enter a valid receiver email address'
               }));
 
             case 3:
               selectMembers = 'SELECT memberid FROM groupmembertable WHERE groupid=$1';
-              sendMailGroupQuery = "INSERT INTO\n      messageTable(id, createon, subject, message, parentmessageid, status, senderid, receiverid, senderdelete, receiverdelete)\n      VALUES(DEFAULT,$1, $2, $3, $4, $5, (SELECT email FROM userTable WHERE id=$6), $7, $8)\n      returning *";
-              _context8.prev = 5;
-              _context8.next = 8;
+              sendMailGroupQuery = "INSERT INTO\n      messageTable(id, createon, subject, message, parentmessageid, status, senderid, receiverid, senderdelete, receiverdelete)\n      VALUES(DEFAULT,$1, $2, $3, $4, $5, (SELECT email FROM userTable WHERE id=$6), $7, $8, $9)\n      returning *";
+              _context7.prev = 5;
+              _context7.next = 8;
               return _index.default.query(selectMembers, [req.params.groupId]);
 
             case 8:
-              _ref8 = _context8.sent;
+              _ref8 = _context7.sent;
               rows = _ref8.rows;
 
               if (rows[0]) {
-                _context8.next = 12;
+                _context7.next = 12;
                 break;
               }
 
-              return _context8.abrupt("return", res.status(404).send({
+              return _context7.abrupt("return", res.status(404).send({
                 status: 404,
                 message: 'Group not found'
               }));
 
             case 12:
-              send =
-              /*#__PURE__*/
-              function () {
-                var _ref9 = _asyncToGenerator(
-                /*#__PURE__*/
-                regeneratorRuntime.mark(function _callee7() {
-                  var _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, row;
-
-                  return regeneratorRuntime.wrap(function _callee7$(_context7) {
-                    while (1) {
-                      switch (_context7.prev = _context7.next) {
-                        case 0:
-                          _iteratorNormalCompletion = true;
-                          _didIteratorError = false;
-                          _iteratorError = undefined;
-                          _context7.prev = 3;
-
-                          for (_iterator = rows[Symbol.iterator](); !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                            row = _step.value;
-
-                            _index.default.query(sendMailGroupQuery, [(0, _moment.default)(new Date()), subject, message, 0, 'unread', req.body.receiverId, row.receiverId, false, false]);
-                          }
-
-                          _context7.next = 11;
-                          break;
-
-                        case 7:
-                          _context7.prev = 7;
-                          _context7.t0 = _context7["catch"](3);
-                          _didIteratorError = true;
-                          _iteratorError = _context7.t0;
-
-                        case 11:
-                          _context7.prev = 11;
-                          _context7.prev = 12;
-
-                          if (!_iteratorNormalCompletion && _iterator.return != null) {
-                            _iterator.return();
-                          }
-
-                        case 14:
-                          _context7.prev = 14;
-
-                          if (!_didIteratorError) {
-                            _context7.next = 17;
-                            break;
-                          }
-
-                          throw _iteratorError;
-
-                        case 17:
-                          return _context7.finish(14);
-
-                        case 18:
-                          return _context7.finish(11);
-
-                        case 19:
-                        case "end":
-                          return _context7.stop();
-                      }
-                    }
-                  }, _callee7, null, [[3, 7, 11, 19], [12,, 14, 18]]);
-                }));
-
-                return function send() {
-                  return _ref9.apply(this, arguments);
-                };
-              }();
-
-              return _context8.abrupt("return", res.status(200).send({
+              return _context7.abrupt("return", res.status(200).send({
                 status: 200,
                 message: 'Mail sent to group successfully',
                 data: rows[0]
               }));
 
-            case 16:
-              _context8.prev = 16;
-              _context8.t0 = _context8["catch"](5);
-              console.log(_context8.t0); // if (error.routine !== '_bt_check_unique') {
-              //   return res.status(400).send({ status: 400, message: 'Receiver email does not exist' });
-              // }
+            case 15:
+              _context7.prev = 15;
+              _context7.t0 = _context7["catch"](5);
 
-              return _context8.abrupt("return", res.status(400).send({
+              if (!(_context7.t0.routine !== '_bt_check_unique')) {
+                _context7.next = 19;
+                break;
+              }
+
+              return _context7.abrupt("return", res.status(400).send({
+                status: 400,
+                message: 'Receiver email does not exist'
+              }));
+
+            case 19:
+              return _context7.abrupt("return", res.status(400).send({
                 status: 400,
                 message: 'Bad request',
-                error: _context8.t0
+                error: _context7.t0
               }));
 
             case 20:
             case "end":
-              return _context8.stop();
+              return _context7.stop();
           }
         }
-      }, _callee8, null, [[5, 16]]);
+      }, _callee7, null, [[5, 15]]);
     }));
 
     function sendMailGroup(_x13, _x14) {

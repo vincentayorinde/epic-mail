@@ -48,8 +48,10 @@ function () {
             groupTable = "CREATE TABLE IF NOT EXISTS\n      groupTable(\n        id SERIAL PRIMARY KEY,\n        groupName VARCHAR(128) NOT NULL,\n        groupDesc VARCHAR(128) NOT NULL,\n        groupMail VARCHAR(128) UNIQUE NOT NULL,\n        role VARCHAR(128) NOT NULL,\n        ownerId VARCHAR(128) REFERENCES userTable(email),\n        createdOn TIMESTAMP,\n        modifiedDate TIMESTAMP,\n        constraint check_role check (role in ('admin', 'user'))\n      )";
             _context.next = 3;
             return pool.query(groupTable).then(function (res) {
+              console.log(res);
               pool.end();
             }).catch(function (err) {
+              console.log(err);
               pool.end();
             });
 
@@ -84,8 +86,10 @@ function () {
             dropGroup = 'DROP TABLE IF EXISTS groupTable';
             _context2.next = 3;
             return pool.query(dropGroup).then(function (res) {
+              console.log(res);
               pool.end();
             }).catch(function (err) {
+              console.log(err);
               pool.end();
             });
 
@@ -100,7 +104,11 @@ function () {
   return function dropGroupTable() {
     return _ref2.apply(this, arguments);
   };
-}();
+}(); // pool.on('remove', () => {
+//   console.log('groupTable removed');
+//   process.exit(0);
+// });
+
 
 module.exports = {
   createGroupTable: createGroupTable,

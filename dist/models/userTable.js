@@ -53,8 +53,10 @@ function () {
             userTable = "CREATE TABLE IF NOT EXISTS\n      userTable(\n        id SERIAL PRIMARY KEY,\n        email VARCHAR(128) UNIQUE NOT NULL,\n        firstname VARCHAR(128) NOT NULL,\n        lastname VARCHAR(128) NOT NULL,\n        password VARCHAR(128) NOT NULL,\n        mobile VARCHAR(128) NOT NULL,\n        join_date TIMESTAMP\n      )";
             _context.next = 3;
             return pool.query(userTable).then(function (res) {
+              console.log(res);
               pool.end();
             }).catch(function (err) {
+              console.log(err);
               pool.end();
             });
 
@@ -89,8 +91,10 @@ function () {
             dropUsers = 'DROP TABLE IF EXISTS userTable';
             _context2.next = 3;
             return pool.query(dropUsers).then(function (res) {
+              console.log(res);
               pool.end();
             }).catch(function (err) {
+              console.log(err);
               pool.end();
             });
 

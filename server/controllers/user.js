@@ -11,13 +11,10 @@ const User = {
    */
   async signUp(req, res) {
     const { errors, isValid } = Helper.validateCreateUser(req.body);
-    const { password } = req.body;
+    const { password, email, firstname, lastname, mobile } = req.body;
     if (!isValid) {
       return res.status(400).send({ status: 400, errors });
     }
-    const {
-      email, firstname, lastname, mobile,
-    } = req.body;
     const hashPassword = Helper.hashPassword(password);
     const signUpQuery = `INSERT INTO userTable(id, email, firstname, lastname, password, mobile, join_date)
       VALUES(DEFAULT, $1, $2, $3, $4, $5, $6) returning *`;
@@ -27,6 +24,7 @@ const User = {
       const token = Helper.generateToken(rows[0].id);
       return res.status(201).send({ status: 201, message: 'User account created successfully', data: { token } });
     } catch (error) {
+      console.log(error);
       if (error.routine === '_bt_check_unique') {
         return res.status(409).send({ status: 409, message: 'User with that email already exist' });
       }

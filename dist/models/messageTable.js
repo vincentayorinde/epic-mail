@@ -48,8 +48,10 @@ function () {
             messageTable = "CREATE TABLE IF NOT EXISTS\n      messageTable(\n        id SERIAL PRIMARY KEY,\n        createOn TIMESTAMP,\n        subject VARCHAR(128) NOT NULL,\n        message TEXT NOT NULL,\n        parentMessageId integer NOT NULL,\n        status VARCHAR(128) NOT NULL,\n        senderId VARCHAR(128) REFERENCES userTable(email),\n        receiverId VARCHAR(128) REFERENCES userTable(email),\n        senderDelete BOOLEAN NOT NULL,\n        receiverDelete BOOLEAN NOT NULL,\n        groupmail VARCHAR(128),\n        constraint check_status check (status in ('unread', 'read', 'draft'))\n      )";
             _context.next = 3;
             return pool.query(messageTable).then(function (res) {
+              console.log(res);
               pool.end();
             }).catch(function (err) {
+              console.log(err);
               pool.end();
             });
 
@@ -84,8 +86,10 @@ function () {
             dropMessageT = 'DROP TABLE IF EXISTS messageTable';
             _context2.next = 3;
             return pool.query(dropMessageT).then(function (res) {
+              console.log(res);
               pool.end();
             }).catch(function (err) {
+              console.log(err);
               pool.end();
             });
 
