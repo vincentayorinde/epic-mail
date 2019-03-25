@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/compose.css">
-  <title>compose Message</title>
+  <title>Compose Message</title>
 </head>
 <body>
 
@@ -42,15 +42,16 @@
         <div id="notify">Message sent successfully!</div>
         <form action="#" method="post" onsubmit="fadeIn(); return false;">
         <div>
-           <input type="email" required placeholder="To" />
+           <input type="email" id="receiverId" required placeholder="To" />
         </div>
         <div>
-            <input type="text" required placeholder="Subject" />
+            <input type="text" id="subject" required placeholder="Subject" />
         </div>
         <div>
-        <textarea rows="10" required></textarea>
+        <textarea id="message" rows="10" required></textarea>
         </div>
-        <button  id="compose">Send</button>
+        <button id="compose">Send</button>
+        <button id="draft">Save</button>
       </form>
       
       </div>
@@ -64,13 +65,13 @@
           <div id="notifyMobile">Message sent successfully!</div>
           <form action="#" method="post" onsubmit="fadeInMobile(); return false;">
           <div>
-             <input type="email" required placeholder="To" />
+             <input type="email" id="receiverId_mobile" required placeholder="To" />
           </div>
           <div>
-              <input type="text" required placeholder="Subject" />
+              <input type="text" id="subject_mobile" required placeholder="Subject" />
           </div>
           <div>
-          <textarea rows="10" required></textarea>
+          <textarea id="message_mobile" rows="10" required></textarea>
           </div>
           <button id="composeMobile">Send</button>
         </form>
@@ -79,5 +80,6 @@
     </div>
    
   <script src="assets/js/fadeInMobile.js"></script>
+  <script src="assets/js/compose.js"></script>
 </body>
 </html>

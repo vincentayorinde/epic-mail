@@ -70,6 +70,7 @@
     display: flex;
     border-bottom: 1px #e7ecf0 solid;
     box-shadow: -1px 0 10px 1px #e7ecf0;
+    font-weight: lighter;
   }
   .box-9 .pic{
     flex: 1;
@@ -86,6 +87,7 @@
     border-radius: 10px;
     cursor: pointer;
     transition-duration: 0.35s;
+    font-weight: bold;
   }
   .box-9 .record h3{
     color: #65686a;
@@ -398,6 +400,12 @@ html, body {
   border-radius: 10px;
   cursor: pointer;
 }
+.box-5 .record .del {
+  float:right; 
+  padding-right:10px; 
+  color: red;
+  visibility: hidden;
+} 
 .box-5 .record:hover{
   padding-top: 20px;
   box-shadow: -10px 0 30px 1px #e7ecf0;
@@ -405,6 +413,12 @@ html, body {
   border-radius: 10px;
   cursor: pointer;
   transition-duration: 0.35s;
+}
+.box-5 .fa-trash-alt {
+  float:right; 
+  padding-right:10px; 
+  color: red !important;
+  visibility: visible;
 }
 .box-5 .record h3{
   color: #65686a;
@@ -440,9 +454,15 @@ html, body {
   margin-left: 50px;
   margin-top: 20px;
 }
+.box-6 > #content-dp {
+  visibility: hidden;
+}
 .box-7{
   flex: 7;
   background-color: #fff;
+}
+.box-7 > #message-content{
+  visibility: hidden;
 }
 .box-7 p{
   margin: 20px; 

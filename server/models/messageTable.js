@@ -34,11 +34,10 @@ const createMessageTable = async () => {
         message TEXT NOT NULL,
         parentMessageId integer NOT NULL,
         status VARCHAR(128) NOT NULL,
-        senderId VARCHAR(128) REFERENCES userTable(email),
+        senderId VARCHAR(128) NOT NULL,
         receiverId VARCHAR(128) REFERENCES userTable(email),
         senderDelete BOOLEAN NOT NULL,
         receiverDelete BOOLEAN NOT NULL,
-        groupmail VARCHAR(128),
         constraint check_status check (status in ('unread', 'read', 'draft'))
       )`;
 

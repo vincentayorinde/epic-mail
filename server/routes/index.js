@@ -12,6 +12,15 @@ router.post('/api/v2/auth/signup', User.signUp);
 // Login user
 router.post('/api/v2/auth/login', User.loginUser);
 
+// Forgot password user
+router.post('/forgot', User.forgotPassword);
+
+// Reset password link
+router.put('/reset-password/:token', Auth.verify, User.resetPassword);
+
+// Reset password link
+router.post('/profile', User.profilePic);
+
 // Send or create a message
 router.post('/api/v2/messages', Auth.verifyToken, Message.sendMail);
 
@@ -24,8 +33,20 @@ router.get('/api/v2/messages/unread', Auth.verifyToken, Message.getAllUnreadMail
 // Get all user sent messages
 router.get('/api/v2/messages/sent', Auth.verifyToken, Message.sentByUser);
 
+// Get all user sent messages
+router.get('/api/v2/messages/draft', Auth.verifyToken, Message.draftByUser);
+
+//  draft message
+router.put('/api/v2/messages/draft/:messageId', Auth.verifyToken, Message.sendDraft);
+
+// Get all user sent messages
+router.get('/api/v2/messages/draft/:messageId', Auth.verifyToken, Message.getADraftRecord);
+
 // Get a specific mail record
 router.get('/api/v2/messages/:messageId', Auth.verifyToken, Message.getAMailRecord);
+
+// Get a specific mail record
+router.get('/api/v2/messages/sent/:messageId', Auth.verifyToken, Message.getASentMailRecord);
 
 // // Delete a specific mail record
 router.delete('/api/v2/messages/:messageId', Auth.verifyToken, Message.deleteUserMail);
@@ -38,6 +59,12 @@ router.get('/api/v2/groups', Auth.verifyToken, Group.getAllGroups);
 
 // Edit the name of a specific group
 router.patch('/api/v2/groups/:groupId', Auth.verifyToken, Group.editGroupName);
+
+// Get a specific group
+router.get('/api/v2/groups/:groupId', Auth.verifyToken, Group.getSpecificGroup);
+
+// Get a specific group members
+router.get('/api/v2/groups/:groupId/members', Auth.verifyToken, Group.getSpecificGroupMembers);
 
 // Delete a specific group
 router.delete('/api/v2/groups/:groupId', Auth.verifyToken, Group.deleteGroup);

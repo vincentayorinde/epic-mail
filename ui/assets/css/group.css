@@ -403,6 +403,12 @@ html, body {
   border-radius: 10px;
   cursor: pointer;
 }
+.box-5 .record .opts {
+  float:right; 
+  padding-right:10px; 
+  color: red;
+  visibility: hidden;
+} 
 .box-5 .record span{
   font-size: 12px;
 }
@@ -413,6 +419,14 @@ html, body {
   border-radius: 10px;
   cursor: pointer;
   transition-duration: 0.35s;
+}
+.box-5  .record:hover .fa-trash-alt,
+.box-5  .record:hover .fa-edit,
+.box-5  .record:hover .fa-user-plus{
+  float:right; 
+  padding-right:10px; 
+  color: red !important;
+  visibility: visible;
 }
 .box-5 .record h3{
   color: #65686a;
@@ -444,9 +458,10 @@ html, body {
 .box-6 
 input[type='text'],
 input[type='email'],
-textarea{
+select{
   border: 0px;
-  width: 40%;
+  height: 40px;
+  width: 50%;
   color: #b0b3b6;
   background-color: #fff;
   font-family: 'Montserrat', sans-serif;
@@ -454,7 +469,17 @@ textarea{
   border-bottom: 1px solid #ccc; 
   margin-bottom: 10px;
 }
-
+.box-6 
+textarea{
+  border: 0px;
+  width: 50%;
+  color: #b0b3b6;
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc; 
+  margin-bottom: 10px;
+}
 .box-6 button{
   background-color: #02c386;
   color: #fff;
@@ -473,6 +498,29 @@ textarea{
   padding: 15px;
   box-shadow: -10px 1px 30px 1px #ccc;
   transition-duration: 0.55s;
+}
+.box-6 .del-button{
+  background-color: #e03d20;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 2px 10px 2px 10px;
+  box-shadow: -5px 1px 10px 1px #ccc;
+}
+.box-6 .del-button:hover {
+  background-color: #a72c16;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 2px 10px 2px 10px;
+  box-shadow: -5px 1px 10px 1px #ccc;
+  transition-duration: 0.55s;
+}
+
+.box-6 .group-content {
+  /* visibility: hidden; */
 }
 
 .box-6 #notify{

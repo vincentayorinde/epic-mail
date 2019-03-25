@@ -32,48 +32,32 @@
           <li class="link"><a href="mailbox.html">Inbox</a> &nbsp;&nbsp;&nbsp; <span class="notification">1</span></li>
           <li class="link"><a href="sent.html">Sent</a></li>
           <li class="link"><a href="draft.html">Draft &nbsp;&nbsp;&nbsp; <span class="notification">2</span></a></li>
-          <li class="active">Groups</li>
+          <li class="active">Groups <span class="notification" id="notification">2</span></li>
           <li class="link"><a href="trash.html">Trash</a></li>
           <li class="link"><a href="sign-in.html">Sign Out</a></li>
         </ul>
       </div>
-      <div class="box-5">
-        <div class="record"><span>16:00 Feb 19</span><br>
-          <h3>Managers</h3> 
-          <h4>The managment team</h4>
-          <p>bello@epicmail.com, terry@epicmail.com, matt@epicmail.com...</p>
-        </div>
-        <div class="record"><span>08:00 Jan 22</span>
-          <h3>Sales Team</h3> 
-          <h4>All salesforce members</h4>
-          <p>larry@epicmail.com, teni@epicmail.com, dayo@epicmail.com...</p>
-        </div>
-        <div class="record"><span>21:00 Jan 19</span>
-          <h3>Remote Employees</h3> 
-          <h4>Workers in Japan</h4>
-          <p>Jumoke@epicmail.com, david@epicmail.com, obinna@epicmail.com...</p>
-        </div>
-      
+      <div class="box-5" id="box-5-group-data">
+        
       </div>
       <div class="box-6">
+        <div class="group-content" id="group-content">
           <div id="notify">Group added successfully!</div>
           <h3>Add new Group</h3>
           <form action="#" method="post" onsubmit="fadeIn(); return false;">
           <div>
-             <input type="text" required placeholder="Group name" />
+             <input type="text" id="groupName" required placeholder="Group name" />
           </div>
           <div>
-              <input type="email" required placeholder="group@epicmail.com" />
+              <input type="email" id="groupEmail" required placeholder="group@epicmail.com" />
            </div>
+           
           <div>
-              <input type="text" required placeholder="Members" />
+          <textarea rows="10" id="desc" required>Description</textarea>
           </div>
-          <div>
-          <textarea rows="10" required>Description</textarea>
-          </div>
-          <button  id="group">Add group</button>
+          <button id="group">Add group</button>
         </form>
-        
+        </div>
       </div>
    </div>
    <div class="container-mobile">

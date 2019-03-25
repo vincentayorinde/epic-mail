@@ -30,10 +30,12 @@ const createGroupMemberTable = async () => {
       groupMemberTable(
         id SERIAL PRIMARY KEY,
         groupId integer REFERENCES groupTable(id),
+        groupEmail VARCHAR(128) NOT NULL,
         memberId integer REFERENCES userTable(id),
-        membermail VARCHAR(128) REFERENCES usertable(email),
-        groupMail VARCHAR(128),
-        join_date TIMESTAMP
+        memberEmail VARCHAR(128) NOT NULL,
+        role VARCHAR(128) NOT NULL,
+        join_date TIMESTAMP,
+        constraint check_role check (role in ('admin', 'user'))
       )`;
 
   await pool.query(groupMemberTable)

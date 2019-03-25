@@ -402,6 +402,12 @@ html, body {
   border-radius: 10px;
   cursor: pointer;
 }
+.box-5 .record .del {
+  float:right; 
+  padding-right:10px; 
+  color: red;
+  visibility: hidden;
+}
 .box-5 .record:hover{
   padding-top: 20px;
   box-shadow: -10px 0 30px 1px #e7ecf0;
@@ -429,6 +435,12 @@ html, body {
   border-radius: 10px;
   cursor: pointer;
 }
+.box-5 .fa-trash-alt {
+  float:right; 
+  padding-right:10px; 
+  color: red !important;
+  visibility: visible;
+}
 .box-5 .record-hover h4{
   color: #b0b3b6;
   margin: 5px 0px 5px 0px;
@@ -445,9 +457,15 @@ html, body {
   margin-left: 50px;
   margin-top: 20px;
 }
+.box-6 > #content-dp {
+  visibility: hidden;
+}
 .box-7{
   flex: 7;
   background-color: #fff;
+  visibility: hidden;
+}
+.box-7 > #message-content{
   visibility: hidden;
 }
 .box-7 p{
@@ -455,6 +473,51 @@ html, body {
 }
 .box-7 .hr {
   border-top: 1px solid #e9eef2;
+}
+.box-7 
+input[type='text'],
+input[type='email']{
+  height: 40px;;
+  border: 0px;
+  width: 60%;
+  color: #b0b3b6;
+  background-color: #f4f7f9;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc; 
+  margin-bottom: 10px;
+}
+.box-7 
+textarea{
+  border: 0px;
+  width: 60%;
+  color: #b0b3b6;
+  background-color: #f4f7f9;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc; 
+  margin-bottom: 10px;
+}
+
+.box-7 button#compose{
+  background-color: #02c386;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px;
+  margin-left: 18px;
+  box-shadow: -10px 1px 30px 1px #ccc;
+}
+.box-7 button#compose:hover {
+  background-color: #10966b;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px;
+  box-shadow: -10px 1px 30px 1px #ccc;
+  transition-duration: 0.55s;
 }
 .box-7 button{
   background-color: #02c386;

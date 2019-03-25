@@ -31,39 +31,26 @@
         <ul>
           <li class="link"><a href="mailbox.html">Inbox</a> &nbsp;&nbsp;&nbsp; <span class="notification">1</span></li>
           <li class="link"><a href="sent.html">Sent</a></li>
-          <li class="active">Draft &nbsp;&nbsp;&nbsp; <span class="notification">2</span></li>
+          <li class="active">Draft &nbsp;&nbsp;&nbsp; <span class="notification" id="notification">2</span></li>
           <li class="link"><a href="group.html">Groups</a></li>
           <li class="link"><a href="trash.html">Trash</a></li>
           <li class="link"><a href="sign-in.html">Sign Out</a></li>
         </ul>
       </div>
-      <div class="box-5">
-        <div class="record"><span>23:00</span><br>
-          <span> <h3> Vincent Ayorinde</h3> </span>
-          <h4>Company goals for 2019</h4>
-          <p>Hello everyone, I am happy to share with you our new company goals...</p>
-        </div>
-        <div class="record"><span>23:00</span>
-          <h3>Larry Peters</h3> 
-          <h4>Designing of Estage Project</h4>
-          <p>I love your UI design work and would love your to talk to you about...</p>
-        </div>
-      
+      <div class="box-5" id="draft-data">      
       </div>
       <div class="box-6">
-        <div class="">
+        <div id="content-dp">
           <img src="assets/img/profile-pictures/vince.jpg" alt="Profile Picture">
         </div>
         
       </div>
       <div class="box-7">
-        <p><strong>Vincent Ayorinde</strong> to <strong>Larry Peters</strong></p>
-        <h1>Designing of Estate Project</h1>
-        <p>Hi Larry</p>
-        <p>I love your UI design work and would love your to talk to you about possibly revamping the UI on our desktop application. Can we jump on Zoom and discus when you have the time </p>
-        <p>I am looking for a UI designer for an upcoming Estate app. We already have an established web presence and we are now moving to mobile space.</p>
-        <p>Have a nice day.</p>
-        <p>Vincent</p>
+          <div id="message-content">
+              
+            <button id="sendDraft">Send</button>
+            </form>
+          </div>
         <div class="hr"></div>
                
         <p>Hi Vincent</p>
@@ -145,5 +132,6 @@
     </div>
     <script src="assets/js/draft.js"></script>
     <script src="assets/js/searchMobile.js"></script>
+   
 </body>
 </html>
