@@ -15,7 +15,7 @@ if (env === 'test') {
   pool = new Pool({
     connectionString: process.env.DATABASE_URL_TEST,
   });
-}
+} 
 if (env === 'production') {
   pool = new Pool({
     connectionString: process.env.DATABASE_URL_PROD,
@@ -44,9 +44,11 @@ const createMessageTable = async () => {
 
   await pool.query(messageTable)
     .then((res) => {
+      console.log(res);
       pool.end();
     })
     .catch((err) => {
+      console.log(err);
       pool.end();
     });
 };
@@ -58,9 +60,11 @@ const dropMessageTable = async () => {
   const dropMessageT = 'DROP TABLE IF EXISTS messageTable';
   await pool.query(dropMessageT)
     .then((res) => {
+      console.log(res);
       pool.end();
     })
     .catch((err) => {
+      console.log(err);
       pool.end();
     });
 };
