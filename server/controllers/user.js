@@ -48,6 +48,7 @@ const User = {
   async loginUser(req, res) {
     const { errors, isValid } = Helper.validateUserLogin(req.body);
     const { email, password } = req.body;
+
     if (!isValid) { return res.status(400).send({ status: 400, errors }); }
     const signInQuery = 'SELECT * FROM userTable WHERE email = $1';
     try {
@@ -60,11 +61,12 @@ const User = {
       }
       const token = Helper.generateToken(rows[0].email);
       res.cookie('userData', token, { maxAge: 3600000, httpOnly: false });
-      res.AddHeader('Set-Cookie', `userData=${token}; path=/;`);
+      // res.AddHeader('Set-Cookie', `userData=${token}; path=/;`);
       // Cookies.set('userData', token, { expires: 7, path: '' });
       console.log(req.headers.userData);
       return res.status(200).send({ status: 200, message: 'Login successful', token });
     } catch (error) {
+      console.log('>>>>>>',error);
       return res.status(401).send({ status: 401, message: 'Auth failed' });
     }
   },

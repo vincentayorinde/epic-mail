@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/vincentayorinde/epic-mail.svg?branch=develop)](https://travis-ci.org/vincentayorinde/epic-mail)
-
-<!-- [![Maintainability](https://api.codeclimate.com/v1/badges/24369de22068a482c55d/maintainability)](https://codeclimate.com/github/vincentayorinde/epic-mail/maintainability) [![Coverage Status](https://coveralls.io/repos/github/vincentayorinde/epic-mail/badge.svg?branch=ch-coverage-report-164623346)](https://coveralls.io/github/vincentayorinde/epic-mail?branch=ch-coverage-report-164623346) -->
+[![Build Status](https://travis-ci.org/vincentayorinde/epic-mail.svg?branch=develop)](https://travis-ci.org/vincentayorinde/epic-mail) [![Maintainability](https://api.codeclimate.com/v1/badges/24369de22068a482c55d/maintainability)](https://codeclimate.com/github/vincentayorinde/epic-mail/maintainability) [![Coverage Status](https://coveralls.io/repos/github/vincentayorinde/epic-mail/badge.svg?branch=ch-coverage-report-164623346)](https://coveralls.io/github/vincentayorinde/epic-mail?branch=ch-coverage-report-164623346)
 
 # Epic Mail
 

@@ -29,7 +29,7 @@ const Message = {
       if (status !== 'draft') {
         const { rows } = await db.query(getPhone, phoneValue);
         console.log(rows[0].mobile);
-        await smsPackage.sendSMS(req.user.id, rows[0].mobile, subject, message);
+        // await smsPackage.sendSMS(req.user.id, rows[0].mobile, subject, message);
       }
       return res.status(201).send({ status: 201, message: 'Email sent successfully' });
     } catch (error) {
