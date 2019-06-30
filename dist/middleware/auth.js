@@ -3,13 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _jsonwebtoken = _interopRequireDefault(require("jsonwebtoken"));
 
 var _index = _interopRequireDefault(require("../db/index"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -47,13 +47,13 @@ var Auth = {
             case 3:
               _context.prev = 3;
               _context.next = 6;
-              return _jsonwebtoken.default.verify(token, process.env.SECRET);
+              return _jsonwebtoken["default"].verify(token, process.env.SECRET);
 
             case 6:
               decoded = _context.sent;
               text = 'SELECT * FROM userTable  WHERE email = $1';
               _context.next = 10;
-              return _index.default.query(text, [decoded.userId]);
+              return _index["default"].query(text, [decoded.userId]);
 
             case 10:
               _ref = _context.sent;
@@ -97,7 +97,82 @@ var Auth = {
     }
 
     return verifyToken;
+  }(),
+  verify: function () {
+    var _verify = _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee2(req, res, next) {
+      var token, decoded, text, _ref2, rows;
+
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              token = req.params.token;
+
+              if (token) {
+                _context2.next = 3;
+                break;
+              }
+
+              return _context2.abrupt("return", res.status(400).send({
+                message: 'Token is not provided'
+              }));
+
+            case 3:
+              _context2.prev = 3;
+              _context2.next = 6;
+              return _jsonwebtoken["default"].verify(token, process.env.SECRET);
+
+            case 6:
+              decoded = _context2.sent;
+              text = 'SELECT * FROM userTable  WHERE email = $1';
+              _context2.next = 10;
+              return _index["default"].query(text, [decoded.userId]);
+
+            case 10:
+              _ref2 = _context2.sent;
+              rows = _ref2.rows;
+
+              if (rows[0]) {
+                _context2.next = 14;
+                break;
+              }
+
+              return _context2.abrupt("return", res.status(400).send({
+                message: 'The token you provided is invalid'
+              }));
+
+            case 14:
+              req.user = {
+                id: decoded.userId
+              };
+              next();
+              _context2.next = 21;
+              break;
+
+            case 18:
+              _context2.prev = 18;
+              _context2.t0 = _context2["catch"](3);
+              return _context2.abrupt("return", res.status(400).send({
+                status: 400,
+                message: 'The token you provided is invalid'
+              }));
+
+            case 21:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[3, 18]]);
+    }));
+
+    function verify(_x4, _x5, _x6) {
+      return _verify.apply(this, arguments);
+    }
+
+    return verify;
   }()
 };
 var _default = Auth;
-exports.default = _default;
+exports["default"] = _default;

@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import session from 'express-session';
 import swaggerUi from 'swagger-ui-express';
 import dotenv from 'dotenv';
 import 'idempotent-babel-polyfill';
@@ -14,28 +15,36 @@ dotenv.config();
 // Global app object
 const app = express();
 
-const corsOptions = {
-  origin: 'http://localhost:5500',
-  credentials: true,
-};
-
-app.use(cors(corsOptions))
+app.use(cors());
 app.use(bodyParser.json());
-app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser('secret'));
+app.use(
+  session({
+    resave: false,
+    saveUninitialized: false,
+    secret: 'secret',
+  }),
+);
 // Middleware
 app.use(router);
 
-app.get('/', (req, res) => {
-  res.cookie('myfirstcookie', 'looks good', { maxAge: 360000, httpOnly: true });
-  res.end('Welcome to Epic Mail');
-  console.log(req.cookies.myfirstcookie);
-});
+app.get('/', (req, res) => res.status(200).json({
+  message: 'welcome to Epic Mail',
+}));
+app.use((req, res) => res.status(404).json({
+  status: 404,
+  error: `Route ${req.url} Not found`,
+}));
+
+app.use((error, req, res) => res.status(500).json({
+  status: 500,
+  error,
+}));
 
 app.get('/logout', (req, res) => {
   res.clearCookie('myfirstcookie');
-  res.redirect('http://localhost:5500/ui/index.html');
+  res.redirect('/');
 });
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 

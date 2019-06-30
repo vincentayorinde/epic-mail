@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _moment = _interopRequireDefault(require("moment"));
 
@@ -11,11 +11,9 @@ var _index = _interopRequireDefault(require("../db/index"));
 
 var _helpers = _interopRequireDefault(require("../helpers/helpers"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _sms = _interopRequireDefault(require("../helpers/sms"));
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -32,15 +30,15 @@ var Message = {
     var _sendMail = _asyncToGenerator(
     /*#__PURE__*/
     regeneratorRuntime.mark(function _callee(req, res) {
-      var _req$body, subject, message, receiverId, sendMailQuery, values, _ref, rows;
+      var _req$body, subject, message, receiverId, status, receiverdelete, getPhone, phoneValue, sendMailQuery, values, _ref, rows;
 
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _req$body = req.body, subject = _req$body.subject, message = _req$body.message, receiverId = _req$body.receiverId;
+              _req$body = req.body, subject = _req$body.subject, message = _req$body.message, receiverId = _req$body.receiverId, status = _req$body.status, receiverdelete = _req$body.receiverdelete;
 
-              if (_helpers.default.isValidEmail(receiverId)) {
+              if (_helpers["default"].isValidEmail(receiverId)) {
                 _context.next = 3;
                 break;
               }
@@ -51,27 +49,41 @@ var Message = {
               }));
 
             case 3:
-              sendMailQuery = "INSERT INTO\n      messageTable(id, createon, subject, message, parentmessageid, status, senderid, receiverid, senderdelete, receiverdelete)\n      VALUES(DEFAULT,$1, $2, $3, $4, $5, (SELECT email FROM userTable WHERE email=$6), $7, $8, $9)\n      returning *";
-              values = [(0, _moment.default)(new Date()), subject, message, 0, 'unread', req.user.id, receiverId, false, false];
-              _context.prev = 5;
-              _context.next = 8;
-              return _index.default.query(sendMailQuery, values);
+              getPhone = 'SELECT mobile FROM userTable WHERE email=$1 LIMIT 1';
+              phoneValue = [receiverId];
+              sendMailQuery = "INSERT INTO\n      messageTable(id, createon, subject, message, parentmessageid, status, senderid, receiverid, senderdelete, receiverdelete)\n      VALUES(DEFAULT,$1, $2, $3, $4, $5, $6, (SELECT email FROM userTable WHERE email=$7), $8, $9)\n      returning *";
+              values = [(0, _moment["default"])(new Date()), subject, message, 0, status, req.user.id, receiverId, false, receiverdelete];
+              _context.prev = 7;
+              _context.next = 10;
+              return _index["default"].query(sendMailQuery, values);
 
-            case 8:
-              _ref = _context.sent;
-              rows = _ref.rows;
-              return _context.abrupt("return", res.status(201).send({
-                status: 201,
-                message: 'Email sent successfully',
-                data: _objectSpread({}, rows[0])
-              }));
+            case 10:
+              if (!(status !== 'draft')) {
+                _context.next = 16;
+                break;
+              }
+
+              _context.next = 13;
+              return _index["default"].query(getPhone, phoneValue);
 
             case 13:
-              _context.prev = 13;
-              _context.t0 = _context["catch"](5);
+              _ref = _context.sent;
+              rows = _ref.rows;
+              console.log(rows[0].mobile); // await smsPackage.sendSMS(req.user.id, rows[0].mobile, subject, message);
+
+            case 16:
+              return _context.abrupt("return", res.status(201).send({
+                status: 201,
+                message: 'Email sent successfully'
+              }));
+
+            case 19:
+              _context.prev = 19;
+              _context.t0 = _context["catch"](7);
+              console.log(_context.t0);
 
               if (!(_context.t0.routine !== '_bt_check_unique')) {
-                _context.next = 17;
+                _context.next = 24;
                 break;
               }
 
@@ -80,19 +92,19 @@ var Message = {
                 message: 'Receiver email does not exist'
               }));
 
-            case 17:
+            case 24:
               return _context.abrupt("return", res.status(400).send({
                 status: 400,
                 message: 'Bad request',
                 error: _context.t0
               }));
 
-            case 18:
+            case 25:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[5, 13]]);
+      }, _callee, null, [[7, 19]]);
     }));
 
     function sendMail(_x, _x2) {
@@ -118,10 +130,10 @@ var Message = {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              AllMailsQuery = 'SELECT * FROM messageTable WHERE senderid=$1 OR receiverid=$1';
+              AllMailsQuery = 'SELECT * FROM messageTable WHERE receiverid=$1 AND receiverdelete=false ORDER BY id DESC';
               _context2.prev = 1;
               _context2.next = 4;
-              return _index.default.query(AllMailsQuery, [req.user.id]);
+              return _index["default"].query(AllMailsQuery, [req.user.id]);
 
             case 4:
               _ref2 = _context2.sent;
@@ -192,7 +204,7 @@ var Message = {
               values = ['unread', req.user.id];
               _context3.prev = 2;
               _context3.next = 5;
-              return _index.default.query(AllMailsByUserQuery, values);
+              return _index["default"].query(AllMailsByUserQuery, values);
 
             case 5:
               _ref3 = _context3.sent;
@@ -253,23 +265,23 @@ var Message = {
     var _sentByUser = _asyncToGenerator(
     /*#__PURE__*/
     regeneratorRuntime.mark(function _callee4(req, res) {
-      var sentByUserQuery, _ref4, rows, rowNo;
+      var sentByUserQuery, _ref4, rows, rowCount;
 
       return regeneratorRuntime.wrap(function _callee4$(_context4) {
         while (1) {
           switch (_context4.prev = _context4.next) {
             case 0:
-              sentByUserQuery = 'SELECT * FROM messageTable WHERE senderId=$1';
+              sentByUserQuery = 'SELECT * FROM messageTable WHERE senderId=$1 ORDER BY createon DESC';
               _context4.prev = 1;
               _context4.next = 4;
-              return _index.default.query(sentByUserQuery, [req.user.id]);
+              return _index["default"].query(sentByUserQuery, [req.user.id]);
 
             case 4:
               _ref4 = _context4.sent;
               rows = _ref4.rows;
-              rowNo = _ref4.rowNo;
+              rowCount = _ref4.rowCount;
 
-              if (!(rowNo < 1)) {
+              if (!(rowCount < 1)) {
                 _context4.next = 9;
                 break;
               }
@@ -284,7 +296,7 @@ var Message = {
                 status: 200,
                 message: 'Sent Emails retrieved successfully',
                 data: {
-                  rowNo: rowNo,
+                  rowCount: rowCount,
                   rows: rows
                 }
               }));
@@ -314,6 +326,76 @@ var Message = {
   }(),
 
   /**
+   * Get All Mails Sent by User
+   * @param {object} req
+   * @param {object} res
+   * @returns {object} mails array
+   */
+  draftByUser: function () {
+    var _draftByUser = _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee5(req, res) {
+      var draftByUserQuery, _ref5, rows, rowCount;
+
+      return regeneratorRuntime.wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              draftByUserQuery = 'SELECT * FROM messageTable WHERE senderId=$1 AND status=$2 ORDER BY createon DESC';
+              _context5.prev = 1;
+              _context5.next = 4;
+              return _index["default"].query(draftByUserQuery, [req.user.id, 'draft']);
+
+            case 4:
+              _ref5 = _context5.sent;
+              rows = _ref5.rows;
+              rowCount = _ref5.rowCount;
+
+              if (!(rowCount < 1)) {
+                _context5.next = 9;
+                break;
+              }
+
+              return _context5.abrupt("return", res.status(200).send({
+                status: 200,
+                message: 'No mails found'
+              }));
+
+            case 9:
+              return _context5.abrupt("return", res.status(200).send({
+                status: 200,
+                message: 'Draft Emails retrieved successfully',
+                data: {
+                  rowCount: rowCount,
+                  rows: rows
+                }
+              }));
+
+            case 12:
+              _context5.prev = 12;
+              _context5.t0 = _context5["catch"](1);
+              return _context5.abrupt("return", res.status(400).send({
+                status: 400,
+                message: 'Bad request',
+                error: _context5.t0
+              }));
+
+            case 15:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5, null, [[1, 12]]);
+    }));
+
+    function draftByUser(_x9, _x10) {
+      return _draftByUser.apply(this, arguments);
+    }
+
+    return draftByUser;
+  }(),
+
+  /**
    * Get A Specific Mail
    * @param {object} req
    * @param {object} res
@@ -322,67 +404,260 @@ var Message = {
   getAMailRecord: function () {
     var _getAMailRecord = _asyncToGenerator(
     /*#__PURE__*/
-    regeneratorRuntime.mark(function _callee5(req, res) {
-      var findMailQuery, updateMailQuery, _ref5, rows, values, row;
+    regeneratorRuntime.mark(function _callee6(req, res) {
+      var findMailQuery, updateMailQuery, _ref6, rows, values, row;
 
-      return regeneratorRuntime.wrap(function _callee5$(_context5) {
+      return regeneratorRuntime.wrap(function _callee6$(_context6) {
         while (1) {
-          switch (_context5.prev = _context5.next) {
+          switch (_context6.prev = _context6.next) {
             case 0:
               findMailQuery = 'SELECT * FROM messageTable WHERE id = $1';
               updateMailQuery = 'UPDATE messageTable SET status=$1 WHERE id=$2 returning *';
-              _context5.prev = 2;
-              _context5.next = 5;
-              return _index.default.query(findMailQuery, [req.params.messageId]);
+              _context6.prev = 2;
+              _context6.next = 5;
+              return _index["default"].query(findMailQuery, [req.params.messageId]);
 
             case 5:
-              _ref5 = _context5.sent;
-              rows = _ref5.rows;
+              _ref6 = _context6.sent;
+              rows = _ref6.rows;
 
               if (rows[0]) {
-                _context5.next = 9;
+                _context6.next = 9;
                 break;
               }
 
-              return _context5.abrupt("return", res.status(200).send({
+              return _context6.abrupt("return", res.status(200).send({
                 status: 200,
                 message: 'no unread mail with ID provided'
               }));
 
             case 9:
               values = ['read', rows[0].id];
-              _context5.next = 12;
-              return _index.default.query(updateMailQuery, values);
+              _context6.next = 12;
+              return _index["default"].query(updateMailQuery, values);
 
             case 12:
-              row = _context5.sent;
-              return _context5.abrupt("return", res.status(200).send({
+              row = _context6.sent;
+              return _context6.abrupt("return", res.status(200).send({
                 status: 200,
                 message: 'Email retrieved successfully',
                 data: row.rows[0]
               }));
 
             case 16:
-              _context5.prev = 16;
-              _context5.t0 = _context5["catch"](2);
-              return _context5.abrupt("return", res.status(400).send({
+              _context6.prev = 16;
+              _context6.t0 = _context6["catch"](2);
+              return _context6.abrupt("return", res.status(400).send({
                 status: 400,
                 message: 'mail not found'
               }));
 
             case 19:
             case "end":
-              return _context5.stop();
+              return _context6.stop();
           }
         }
-      }, _callee5, null, [[2, 16]]);
+      }, _callee6, null, [[2, 16]]);
     }));
 
-    function getAMailRecord(_x9, _x10) {
+    function getAMailRecord(_x11, _x12) {
       return _getAMailRecord.apply(this, arguments);
     }
 
     return getAMailRecord;
+  }(),
+  getASentMailRecord: function () {
+    var _getASentMailRecord = _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee7(req, res) {
+      var findMailQuery, _ref7, rows;
+
+      return regeneratorRuntime.wrap(function _callee7$(_context7) {
+        while (1) {
+          switch (_context7.prev = _context7.next) {
+            case 0:
+              findMailQuery = 'SELECT * FROM messageTable WHERE id = $1';
+              _context7.prev = 1;
+              _context7.next = 4;
+              return _index["default"].query(findMailQuery, [req.params.messageId]);
+
+            case 4:
+              _ref7 = _context7.sent;
+              rows = _ref7.rows;
+
+              if (rows[0]) {
+                _context7.next = 8;
+                break;
+              }
+
+              return _context7.abrupt("return", res.status(200).send({
+                status: 200,
+                message: 'no unread mail with ID provided'
+              }));
+
+            case 8:
+              return _context7.abrupt("return", res.status(200).send({
+                status: 200,
+                message: 'Email retrieved successfully',
+                data: rows[0]
+              }));
+
+            case 11:
+              _context7.prev = 11;
+              _context7.t0 = _context7["catch"](1);
+              return _context7.abrupt("return", res.status(400).send({
+                status: 400,
+                message: 'mail not found'
+              }));
+
+            case 14:
+            case "end":
+              return _context7.stop();
+          }
+        }
+      }, _callee7, null, [[1, 11]]);
+    }));
+
+    function getASentMailRecord(_x13, _x14) {
+      return _getASentMailRecord.apply(this, arguments);
+    }
+
+    return getASentMailRecord;
+  }(),
+
+  /**
+   * Get A Specific Mail
+   * @param {object} req
+   * @param {object} res
+   * @returns {object} mail object
+   */
+  sendDraft: function () {
+    var _sendDraft = _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee8(req, res) {
+      var findMailQuery, updateMailQuery, _ref8, rows, values, row;
+
+      return regeneratorRuntime.wrap(function _callee8$(_context8) {
+        while (1) {
+          switch (_context8.prev = _context8.next) {
+            case 0:
+              findMailQuery = 'SELECT * FROM messageTable WHERE id = $1';
+              updateMailQuery = 'UPDATE messageTable SET status=$1, receiverdelete=$2 WHERE id=$3 returning *';
+              _context8.prev = 2;
+              _context8.next = 5;
+              return _index["default"].query(findMailQuery, [req.params.messageId]);
+
+            case 5:
+              _ref8 = _context8.sent;
+              rows = _ref8.rows;
+
+              if (rows[0]) {
+                _context8.next = 9;
+                break;
+              }
+
+              return _context8.abrupt("return", res.status(200).send({
+                status: 200,
+                message: 'no draft mail with ID provided'
+              }));
+
+            case 9:
+              values = ['unread', false, rows[0].id];
+              _context8.next = 12;
+              return _index["default"].query(updateMailQuery, values);
+
+            case 12:
+              row = _context8.sent;
+              location.href = 'http://google.com';
+              return _context8.abrupt("return", location.href);
+
+            case 17:
+              _context8.prev = 17;
+              _context8.t0 = _context8["catch"](2);
+              return _context8.abrupt("return", res.status(400).send({
+                status: 400,
+                message: 'mail not found'
+              }));
+
+            case 20:
+            case "end":
+              return _context8.stop();
+          }
+        }
+      }, _callee8, null, [[2, 17]]);
+    }));
+
+    function sendDraft(_x15, _x16) {
+      return _sendDraft.apply(this, arguments);
+    }
+
+    return sendDraft;
+  }(),
+
+  /**
+   * Get A Specific Mail
+   * @param {object} req
+   * @param {object} res
+   * @returns {object} mail object
+   */
+  getADraftRecord: function () {
+    var _getADraftRecord = _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee9(req, res) {
+      var findMailQuery, _ref9, rows;
+
+      return regeneratorRuntime.wrap(function _callee9$(_context9) {
+        while (1) {
+          switch (_context9.prev = _context9.next) {
+            case 0:
+              findMailQuery = 'SELECT * FROM messageTable WHERE id = $1';
+              _context9.prev = 1;
+              _context9.next = 4;
+              return _index["default"].query(findMailQuery, [req.params.messageId]);
+
+            case 4:
+              _ref9 = _context9.sent;
+              rows = _ref9.rows;
+
+              if (rows[0]) {
+                _context9.next = 8;
+                break;
+              }
+
+              return _context9.abrupt("return", res.status(200).send({
+                status: 200,
+                message: 'no draft mail with ID provided'
+              }));
+
+            case 8:
+              return _context9.abrupt("return", res.status(200).send({
+                status: 200,
+                message: 'Draft retrieved successfully',
+                data: rows[0]
+              }));
+
+            case 11:
+              _context9.prev = 11;
+              _context9.t0 = _context9["catch"](1);
+              console.log(_context9.t0);
+              return _context9.abrupt("return", res.status(400).send({
+                status: 400,
+                message: 'mail not found'
+              }));
+
+            case 15:
+            case "end":
+              return _context9.stop();
+          }
+        }
+      }, _callee9, null, [[1, 11]]);
+    }));
+
+    function getADraftRecord(_x17, _x18) {
+      return _getADraftRecord.apply(this, arguments);
+    }
+
+    return getADraftRecord;
   }(),
 
   /**
@@ -395,72 +670,72 @@ var Message = {
   deleteUserMail: function () {
     var _deleteUserMail = _asyncToGenerator(
     /*#__PURE__*/
-    regeneratorRuntime.mark(function _callee6(req, res) {
-      var senderDeletionUpdateQuery, receiverDeletionUpdateQuery, deleteQuery, senderValues, _ref6, rows1, receiverValues, _ref7, rows2, deleteValues, _ref8, rows3;
+    regeneratorRuntime.mark(function _callee10(req, res) {
+      var senderDeletionUpdateQuery, receiverDeletionUpdateQuery, deleteQuery, senderValues, _ref10, rows1, receiverValues, _ref11, rows2, deleteValues, _ref12, rows3;
 
-      return regeneratorRuntime.wrap(function _callee6$(_context6) {
+      return regeneratorRuntime.wrap(function _callee10$(_context10) {
         while (1) {
-          switch (_context6.prev = _context6.next) {
+          switch (_context10.prev = _context10.next) {
             case 0:
               senderDeletionUpdateQuery = 'UPDATE messageTable SET senderDelete=$1 WHERE senderid=$2 AND id=$3 returning *';
               receiverDeletionUpdateQuery = 'UPDATE messageTable SET receiverDelete=$1 WHERE receiverid=$2 AND id=$3 returning *';
               deleteQuery = 'DELETE FROM messageTable WHERE senderDelete=$1 AND receiverDelete=$1 AND id=$2 returning *';
-              _context6.prev = 3;
+              _context10.prev = 3;
               senderValues = [true, req.user.id, req.params.messageId];
-              _context6.next = 7;
-              return _index.default.query(senderDeletionUpdateQuery, senderValues);
+              _context10.next = 7;
+              return _index["default"].query(senderDeletionUpdateQuery, senderValues);
 
             case 7:
-              _ref6 = _context6.sent;
-              rows1 = _ref6.rows1;
+              _ref10 = _context10.sent;
+              rows1 = _ref10.rows1;
               receiverValues = [true, req.user.id, req.params.messageId];
-              _context6.next = 12;
-              return _index.default.query(receiverDeletionUpdateQuery, receiverValues);
+              _context10.next = 12;
+              return _index["default"].query(receiverDeletionUpdateQuery, receiverValues);
 
             case 12:
-              _ref7 = _context6.sent;
-              rows2 = _ref7.rows2;
+              _ref11 = _context10.sent;
+              rows2 = _ref11.rows2;
               deleteValues = [true, req.params.messageId];
-              _context6.next = 17;
-              return _index.default.query(deleteQuery, deleteValues);
+              _context10.next = 17;
+              return _index["default"].query(deleteQuery, deleteValues);
 
             case 17:
-              _ref8 = _context6.sent;
-              rows3 = _ref8.rows3;
+              _ref12 = _context10.sent;
+              rows3 = _ref12.rows3;
 
               if (!(!rows1[0] || !rows2[0] || !rows3[0])) {
-                _context6.next = 21;
+                _context10.next = 21;
                 break;
               }
 
-              return _context6.abrupt("return", res.status(404).send({
+              return _context10.abrupt("return", res.status(404).send({
                 status: 404,
                 message: 'mail not found'
               }));
 
             case 21:
-              return _context6.abrupt("return", res.status(200).send({
+              return _context10.abrupt("return", res.status(200).send({
                 status: 200,
                 message: 'Email deleted successfully'
               }));
 
             case 24:
-              _context6.prev = 24;
-              _context6.t0 = _context6["catch"](3);
-              return _context6.abrupt("return", res.status(404).send({
+              _context10.prev = 24;
+              _context10.t0 = _context10["catch"](3);
+              return _context10.abrupt("return", res.status(404).send({
                 status: 404,
                 message: 'mail not found'
               }));
 
             case 27:
             case "end":
-              return _context6.stop();
+              return _context10.stop();
           }
         }
-      }, _callee6, null, [[3, 24]]);
+      }, _callee10, null, [[3, 24]]);
     }));
 
-    function deleteUserMail(_x11, _x12) {
+    function deleteUserMail(_x19, _x20) {
       return _deleteUserMail.apply(this, arguments);
     }
 
@@ -468,4 +743,4 @@ var Message = {
   }()
 };
 var _default = Message;
-exports.default = _default;
+exports["default"] = _default;

@@ -8,14 +8,13 @@ var _chai = _interopRequireDefault(require("chai"));
 
 var _app = _interopRequireDefault(require("../app"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var expect = _chai.default.expect;
+var expect = _chai["default"].expect;
 
-_chai.default.use(_chaiHttp.default); // dotenv.config();
+_chai["default"].use(_chaiHttp["default"]);
 
-
-var should = _chai.default.should();
+var should = _chai["default"].should();
 
 var userToken;
 describe('POST /auth/signup Validations', function () {
@@ -29,7 +28,7 @@ describe('POST /auth/signup Validations', function () {
       confirmPassword: 'password3'
     };
 
-    _chai.default.request(_app.default).post('/api/v2/auth/signup').send(user).end(function (err, res) {
+    _chai["default"].request(_app["default"]).post('/api/v2/auth/signup').send(user).end(function (err, res) {
       expect(res).to.have.status(400);
       expect(res.body.errors.confirmPassword).to.equal('Your password does not match');
       expect(res.body).to.be.a('object');
@@ -46,7 +45,7 @@ describe('POST /auth/signup Validations', function () {
       confirmPassword: 'Password1'
     };
 
-    _chai.default.request(_app.default).post('/api/v2/auth/signup').send(user).end(function (err, res) {
+    _chai["default"].request(_app["default"]).post('/api/v2/auth/signup').send(user).end(function (err, res) {
       expect(res.body.errors.firstname).to.equal('Firstname must be between 2 and 30 characters');
       expect(res).to.have.status(400);
       expect(res.body).to.be.a('object');
@@ -63,7 +62,7 @@ describe('POST /auth/signup Validations', function () {
       confirmPassword: 'Password1'
     };
 
-    _chai.default.request(_app.default).post('/api/v2/auth/signup').send(user).end(function (err, res) {
+    _chai["default"].request(_app["default"]).post('/api/v2/auth/signup').send(user).end(function (err, res) {
       expect(res.body.errors.lastname).to.equal('Lastname must be between 2 and 30 characters');
       expect(res).to.have.status(400);
       expect(res.body).to.be.a('object');
@@ -80,7 +79,7 @@ describe('POST /auth/signup Validations', function () {
       confirmPassword: 'Password1'
     };
 
-    _chai.default.request(_app.default).post('/api/v2/auth/signup').send(user).end(function (err, res) {
+    _chai["default"].request(_app["default"]).post('/api/v2/auth/signup').send(user).end(function (err, res) {
       expect(res.body.errors.lastname).to.equal('Lastname must be between 2 and 30 characters');
       expect(res).to.have.status(400);
       expect(res.body).to.be.a('object');
@@ -97,7 +96,7 @@ describe('POST /auth/signup Validations', function () {
       confirmPassword: 'Password123'
     };
 
-    _chai.default.request(_app.default).post('/api/v2/auth/signup').send(user).end(function (err, res) {
+    _chai["default"].request(_app["default"]).post('/api/v2/auth/signup').send(user).end(function (err, res) {
       expect(res.body.errors.lastname).to.equal('Lastname must be only alphabets');
       expect(res).to.have.status(400);
       expect(res.body).to.be.a('object');
@@ -114,7 +113,7 @@ describe('POST /auth/signup Validations', function () {
       mobile: '4554'
     };
 
-    _chai.default.request(_app.default).post('/api/v2/auth/signup').send(user).end(function (err, res) {
+    _chai["default"].request(_app["default"]).post('/api/v2/auth/signup').send(user).end(function (err, res) {
       expect(res.body.errors.mobile).to.equal('Mobile number must be a Nigerian');
       expect(res).to.have.status(400);
       expect(res.body).to.be.a('object');
@@ -123,14 +122,14 @@ describe('POST /auth/signup Validations', function () {
   });
 });
 describe('Test POST /api/v2/auth/signup Endpoint', function () {
-  it('Should register new user', function (done) {
-    _chai.default.request(_app.default).post('/api/v2/auth/signup').send({
-      firstname: 'Test',
-      lastname: 'User',
+  it.only('Should register new user', function (done) {
+    _chai["default"].request(_app["default"]).post('/api/v2/auth/signup').send({
+      firstname: 'newest',
+      lastname: 'newestu',
       password: 'password1',
       confirmPassword: 'password1',
       mobile: '08063475512',
-      email: _faker.default.internet.email()
+      email: _faker["default"].internet.email()
     }).end(function (err, res) {
       expect(res).to.have.status(201);
       expect(res.body.message).to.equal('User account created successfully');
@@ -140,8 +139,8 @@ describe('Test POST /api/v2/auth/signup Endpoint', function () {
   });
 });
 describe('Test POST /api/v2/auth/login Endpoint', function () {
-  it('Should login user and release token', function (done) {
-    _chai.default.request(_app.default).post('/api/v2/auth/login').send({
+  it.only('Should login user and release token', function (done) {
+    _chai["default"].request(_app["default"]).post('/api/v2/auth/login').send({
       email: 'test@epicmail.com',
       password: 'password1'
     }).end(function (err, res) {
@@ -154,14 +153,16 @@ describe('Test POST /api/v2/auth/login Endpoint', function () {
   });
 });
 describe('Test POST /api/v2/messages Endpoint', function () {
-  it('Should send a message to user', function (done) {
-    _chai.default.request(_app.default).post('/api/v2/messages').set('Content-Type', 'application/json').set({
+  it.only('Should send a message to user', function (done) {
+    _chai["default"].request(_app["default"]).post('/api/v2/messages').set('Content-Type', 'application/json').set({
       'x-access-token': userToken,
       Accept: 'application/json'
     }).send({
       subject: 'First Message',
       message: 'The message',
-      receiverId: 'test@epicmail.com'
+      status: 'unread',
+      receiverId: 'test@epicmail.com',
+      receiverdelete: false
     }).end(function (err, res) {
       expect(res).to.have.status(201);
       expect(res.body).to.be.a('object');
@@ -170,8 +171,8 @@ describe('Test POST /api/v2/messages Endpoint', function () {
   });
 });
 describe('Test GET /api/v2/messages Endpoint', function () {
-  it('Should get all mails', function (done) {
-    _chai.default.request(_app.default).get('/api/v2/messages').set('Content-Type', 'application/json').set({
+  it.only('Should get all mails', function (done) {
+    _chai["default"].request(_app["default"]).get('/api/v2/messages').set('Content-Type', 'application/json').set({
       'x-access-token': userToken,
       Accept: 'application/json'
     }).end(function (err, res) {
@@ -182,8 +183,8 @@ describe('Test GET /api/v2/messages Endpoint', function () {
   });
 });
 describe('Test GET /api/v2/messages/unread Endpoint', function () {
-  it('Should get all user unread mails', function (done) {
-    _chai.default.request(_app.default).get('/api/v2/messages/unread').set('Content-Type', 'application/json').set({
+  it.only('Should get all user unread mails', function (done) {
+    _chai["default"].request(_app["default"]).get('/api/v2/messages/unread').set('Content-Type', 'application/json').set({
       'x-access-token': userToken,
       Accept: 'application/json'
     }).end(function (err, res) {
@@ -194,8 +195,8 @@ describe('Test GET /api/v2/messages/unread Endpoint', function () {
   });
 });
 describe('Test GET /api/v2/messages/sent Endpoint', function () {
-  it('Should get all user sent mails', function (done) {
-    _chai.default.request(_app.default).get('/api/v2/messages/sent').set('Content-Type', 'application/json').set({
+  it.only('Should get all user sent mails', function (done) {
+    _chai["default"].request(_app["default"]).get('/api/v2/messages/sent').set('Content-Type', 'application/json').set({
       'x-access-token': userToken,
       Accept: 'application/json'
     }).end(function (err, res) {
@@ -206,8 +207,8 @@ describe('Test GET /api/v2/messages/sent Endpoint', function () {
   });
 });
 describe('Test GET /api/v2/messages/:messageId Endpoint', function () {
-  it('Should get a specific mail record', function (done) {
-    _chai.default.request(_app.default).get('/api/v2/messages/1').set('Content-Type', 'application/json').set({
+  it.only('Should get a specific mail record', function (done) {
+    _chai["default"].request(_app["default"]).get('/api/v2/messages/1').set('Content-Type', 'application/json').set({
       'x-access-token': userToken,
       Accept: 'application/json'
     }).end(function (err, res) {
@@ -218,8 +219,8 @@ describe('Test GET /api/v2/messages/:messageId Endpoint', function () {
   });
 });
 describe('Test DELETE /api/v2/messages/:messageId Endpoint', function () {
-  it('Should delete a specific mail record', function (done) {
-    _chai.default.request(_app.default).delete('/api/v2/messages/1').set('Content-Type', 'application/json').set({
+  it.only('Should delete a specific mail record', function (done) {
+    _chai["default"].request(_app["default"])["delete"]('/api/v2/messages/1').set('Content-Type', 'application/json').set({
       'x-access-token': userToken,
       Accept: 'application/json'
     }).end(function (err, res) {
@@ -230,14 +231,14 @@ describe('Test DELETE /api/v2/messages/:messageId Endpoint', function () {
   });
 });
 describe('Test POST /api/v2/groups Endpoint', function () {
-  it('Should create a group', function (done) {
-    _chai.default.request(_app.default).post('/api/v2/groups').set('Content-Type', 'application/json').set({
+  it.only('Should create a group', function (done) {
+    _chai["default"].request(_app["default"]).post('/api/v2/groups').set('Content-Type', 'application/json').set({
       'x-access-token': userToken,
       Accept: 'application/json'
     }).send({
-      groupname: 'First Group',
-      groupdesc: 'The Group Desc',
-      groupmail: _faker.default.internet.email()
+      groupName: 'First Group',
+      groupDesc: 'The Group Desc',
+      groupEmail: _faker["default"].internet.email()
     }).end(function (err, res) {
       expect(res).to.have.status(201);
       expect(res.body).to.be.a('object');
@@ -246,8 +247,8 @@ describe('Test POST /api/v2/groups Endpoint', function () {
   });
 });
 describe('Test GET /api/v2/groups Endpoint', function () {
-  it('Should all groups by user', function (done) {
-    _chai.default.request(_app.default).get('/api/v2/groups').set('Content-Type', 'application/json').set({
+  it.only('Should all groups by user', function (done) {
+    _chai["default"].request(_app["default"]).get('/api/v2/groups').set('Content-Type', 'application/json').set({
       'x-access-token': userToken,
       Accept: 'application/json'
     }).end(function (err, res) {
@@ -258,12 +259,12 @@ describe('Test GET /api/v2/groups Endpoint', function () {
   });
 });
 describe('Test PATCH /api/v2/groups/:groupId Endpoint', function () {
-  it('Should update a group name', function (done) {
-    _chai.default.request(_app.default).patch('/api/v2/groups/3').set('Content-Type', 'application/json').set({
+  it.only('Should update a group name', function (done) {
+    _chai["default"].request(_app["default"]).patch('/api/v2/groups/3').set('Content-Type', 'application/json').set({
       'x-access-token': userToken,
       Accept: 'application/json'
     }).send({
-      groupname: 'First Group Update'
+      groupName: 'First Group Update'
     }).end(function (err, res) {
       expect(res).to.have.status(200);
       expect(res.body).to.be.a('object');
@@ -272,8 +273,8 @@ describe('Test PATCH /api/v2/groups/:groupId Endpoint', function () {
   });
 });
 describe('Test DELETE /api/v2/group/:groupId Endpoint', function () {
-  it('Should delete a specific group', function (done) {
-    _chai.default.request(_app.default).delete('/api/v2/groups/19').set('Content-Type', 'application/json').set({
+  it.only('Should delete a specific group', function (done) {
+    _chai["default"].request(_app["default"])["delete"]('/api/v2/groups/19').set('Content-Type', 'application/json').set({
       'x-access-token': userToken,
       Accept: 'application/json'
     }).end(function (err, res) {
@@ -284,22 +285,22 @@ describe('Test DELETE /api/v2/group/:groupId Endpoint', function () {
   });
 });
 describe('Test POST /api/v2/groups/:groupId/users Endpoint', function () {
-  it('Should add a user to group', function (done) {
-    _chai.default.request(_app.default).post('/api/v2/groups/1/users').set('Content-Type', 'application/json').set({
+  it.only('Should not add a user to group if user does not exists', function (done) {
+    _chai["default"].request(_app["default"]).post('/api/v2/groups/1/users').set('Content-Type', 'application/json').set({
       'x-access-token': userToken,
       Accept: 'application/json'
     }).send({
       email: 'Juliet22@gmail.com'
     }).end(function (err, res) {
-      expect(res).to.have.status(409);
+      expect(res).to.have.status(400);
       expect(res.body).to.be.a('object');
       done();
     });
   });
 });
 describe('Test DELETE /api/v2/groups/:groupId/users/:userId Endpoint', function () {
-  it('Should delete a user from group', function (done) {
-    _chai.default.request(_app.default).delete('/api/v2/groups/1/users/23').set('Content-Type', 'application/json').set({
+  it.only('Should delete a user from group', function (done) {
+    _chai["default"].request(_app["default"])["delete"]('/api/v2/groups/1/users/23').set('Content-Type', 'application/json').set({
       'x-access-token': userToken,
       Accept: 'application/json'
     }).end(function (err, res) {
@@ -310,8 +311,8 @@ describe('Test DELETE /api/v2/groups/:groupId/users/:userId Endpoint', function 
   });
 });
 describe('Test POST /api/v2/groups/:groupId/messages Endpoint', function () {
-  it('Should send message a user from group', function (done) {
-    _chai.default.request(_app.default).delete('/api/v2/groups/1/messages').set('Content-Type', 'application/json').set({
+  it.only('Should send message a user from group', function (done) {
+    _chai["default"].request(_app["default"])["delete"]('/api/v2/groups/1/messages').set('Content-Type', 'application/json').set({
       'x-access-token': userToken,
       Accept: 'application/json'
     }).end(function (err, res) {

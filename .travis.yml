@@ -8,7 +8,7 @@ cache:
   - node_modules\
 before_install:
   - npm install -g nyc
-  -
+
 env:
   global:
   - NODE_ENV=development
