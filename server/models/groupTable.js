@@ -22,8 +22,6 @@ if (env === 'production') {
   });
 }
 
-
-
 //  Create Messate Table
 
 const createGroupTable = async () => {
@@ -32,12 +30,10 @@ const createGroupTable = async () => {
         id SERIAL PRIMARY KEY,
         groupName VARCHAR(128) NOT NULL,
         groupDesc VARCHAR(128) NOT NULL,
-        groupMail VARCHAR(128) UNIQUE NOT NULL,
-        role VARCHAR(128) NOT NULL,
+        groupMail VARCHAR(128) NOT NULL,
         ownerId VARCHAR(128) REFERENCES userTable(email),
         createdOn TIMESTAMP,
-        modifiedDate TIMESTAMP,
-        constraint check_role check (role in ('admin', 'user'))
+        modifiedDate TIMESTAMP
       )`;
 
   await pool.query(groupTable)

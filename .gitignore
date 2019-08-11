@@ -3,3 +3,6 @@ package-lock.json
 vim.exe.stackdump
 .nyc_output
 coverage
+.env
+**/*.DS_Store
+env

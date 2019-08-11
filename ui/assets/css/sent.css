@@ -400,6 +400,12 @@ html, body {
   border-radius: 10px;
   cursor: pointer;
 }
+.box-5 .record .del {
+  float:right; 
+  padding-right:10px; 
+  color: red;
+  visibility: hidden;
+}
 .box-5 .record:hover{
   padding-top: 20px;
   box-shadow: -10px 0 30px 1px #e7ecf0;
@@ -427,6 +433,12 @@ html, body {
   border-radius: 10px;
   cursor: pointer;
 }
+.box-5 .fa-trash-alt {
+  float:right; 
+  padding-right:10px; 
+  color: red !important;
+  visibility: visible;
+}
 .box-5 .record-hover h4{
   color: #b0b3b6;
   margin: 5px 0px 5px 0px;
@@ -443,9 +455,15 @@ html, body {
   margin-left: 50px;
   margin-top: 20px;
 }
+.box-6 > #content-dp {
+  visibility: hidden;
+}
 .box-7{
   flex: 7;
   background-color: #fff;
+  visibility: hidden;
+}
+.box-7 > #message-content{
   visibility: hidden;
 }
 .box-7 p{

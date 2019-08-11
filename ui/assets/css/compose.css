@@ -245,15 +245,16 @@ html, body {
   font-weight: bold;
 }
 .box-5{
-  flex: 12;
-  margin-right: 40px;
+  flex: 8;
+  margin-right: 50px;
+  margin-left: 250px;
 }
 .box-5 
 input[type='text'],
-input[type='email'],
-textarea{
+input[type='email']{
+  height: 40px;;
   border: 0px;
-  width: 40%;
+  width: 60%;
   color: #b0b3b6;
   background-color: #f4f7f9;
   font-family: 'Montserrat', sans-serif;
@@ -262,17 +263,30 @@ textarea{
   margin-bottom: 10px;
 }
 
-.box-5 button{
+.box-5 
+textarea{
+  border: 0px;
+  width: 60%;
+  color: #b0b3b6;
+  background-color: #f4f7f9;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc; 
+  margin-bottom: 10px;
+}
+
+.box-5 button#compose{
   background-color: #02c386;
   color: #fff;
   cursor: pointer;
   border: 0px;
   font-family: 'Montserrat', sans-serif;
   padding: 15px;
+  margin-left: 18px;
   box-shadow: -10px 1px 30px 1px #ccc;
 }
-.box-5 button:hover {
-  background-color: #09b57e;
+.box-5 button#compose:hover {
+  background-color: #10966b;
   color: #fff;
   cursor: pointer;
   border: 0px;
@@ -281,7 +295,26 @@ textarea{
   box-shadow: -10px 1px 30px 1px #ccc;
   transition-duration: 0.55s;
 }
-
+.box-5 button#draft{
+  background-color: #24a7ff;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px;
+  margin-left: 18px;
+  box-shadow: -10px 1px 30px 1px #ccc;
+}
+.box-5 button#draft:hover {
+  background-color: #1584ce;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px;
+  box-shadow: -10px 1px 30px 1px #ccc;
+  transition-duration: 0.55s;
+}
 
 .box-5 #notify{
   color: #fff;

@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import { Pool } from 'pg';
-import 'idempotent-babel-polyfill';
+// import 'idempotent-babel-polyfill';
 
 
 dotenv.config();
