@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _moment = _interopRequireDefault(require("moment"));
 
@@ -11,7 +11,7 @@ var _index = _interopRequireDefault(require("../db/index"));
 
 var _helpers = _interopRequireDefault(require("../helpers/helpers"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -42,10 +42,10 @@ var Group = {
 
             case 3:
               groupQuery = "INSERT INTO\n      groupTable(id, groupname, groupdesc, groupmail, role, ownerid, createdon, modifieddate)\n      VALUES(DEFAULT, $1, $2, $3, $4, $5, $6, $7) returning *";
-              values = [groupname, groupdesc, groupmail, 'admin', req.user.id, (0, _moment.default)(new Date()), (0, _moment.default)(new Date())];
+              values = [groupname, groupdesc, groupmail, 'admin', req.user.id, (0, _moment["default"])(new Date()), (0, _moment["default"])(new Date())];
               _context.prev = 5;
               _context.next = 8;
-              return _index.default.query(groupQuery, values);
+              return _index["default"].query(groupQuery, values);
 
             case 8:
               _ref = _context.sent;
@@ -92,7 +92,7 @@ var Group = {
               AllGroupsQuery = 'SELECT * FROM groupTable WHERE ownerid=$1';
               _context2.prev = 1;
               _context2.next = 4;
-              return _index.default.query(AllGroupsQuery, [req.user.id]);
+              return _index["default"].query(AllGroupsQuery, [req.user.id]);
 
             case 4:
               _ref2 = _context2.sent;
@@ -144,7 +144,7 @@ var Group = {
               patchOneGroupQuery = 'UPDATE groupTable SET groupname=$1,modifieddate=$2 WHERE id=$3 returning *';
               _context3.prev = 2;
               _context3.next = 5;
-              return _index.default.query(findOneGroupQuery, [req.params.groupId]);
+              return _index["default"].query(findOneGroupQuery, [req.params.groupId]);
 
             case 5:
               _ref3 = _context3.sent;
@@ -161,9 +161,9 @@ var Group = {
               }));
 
             case 9:
-              values = [req.body.groupname || rows[0].groupname, (0, _moment.default)(new Date()), req.params.groupId];
+              values = [req.body.groupname || rows[0].groupname, (0, _moment["default"])(new Date()), req.params.groupId];
               _context3.next = 12;
-              return _index.default.query(patchOneGroupQuery, values);
+              return _index["default"].query(patchOneGroupQuery, values);
 
             case 12:
               row = _context3.sent;
@@ -209,7 +209,7 @@ var Group = {
               deleteGroupQuery = 'DELETE FROM groupTable WHERE id=$1 AND ownerid=$2 returning *';
               _context4.prev = 1;
               _context4.next = 4;
-              return _index.default.query(deleteGroupQuery, [req.params.groupId, req.user.id]);
+              return _index["default"].query(deleteGroupQuery, [req.params.groupId, req.user.id]);
 
             case 4:
               _ref4 = _context4.sent;
@@ -264,7 +264,7 @@ var Group = {
         while (1) {
           switch (_context5.prev = _context5.next) {
             case 0:
-              if (_helpers.default.isValidEmail(req.body.email)) {
+              if (_helpers["default"].isValidEmail(req.body.email)) {
                 _context5.next = 2;
                 break;
               }
@@ -279,7 +279,7 @@ var Group = {
               findUserQuery = 'SELECT * FROM groupmembertable WHERE membermail=$1';
               groupQuery = "INSERT INTO groupMemberTable(id, groupid, memberid, membermail, groupmail, join_date)\n      VALUES(DEFAULT, (SELECT id FROM groupTable WHERE id=$1), (SELECT id FROM userTable WHERE email=$2), (SELECT email FROM userTable WHERE email=$2), (SELECT groupmail FROM groupTable WHERE id=$1), $3) returning *";
               _context5.next = 7;
-              return _index.default.query(checkUserQuery, [req.body.email]);
+              return _index["default"].query(checkUserQuery, [req.body.email]);
 
             case 7:
               _ref5 = _context5.sent;
@@ -297,7 +297,7 @@ var Group = {
 
             case 11:
               _context5.next = 13;
-              return _index.default.query(findUserQuery, [req.body.email]);
+              return _index["default"].query(findUserQuery, [req.body.email]);
 
             case 13:
               data = _context5.sent;
@@ -313,10 +313,10 @@ var Group = {
               }));
 
             case 16:
-              values = [req.params.groupId, req.body.email, (0, _moment.default)(new Date())];
+              values = [req.params.groupId, req.body.email, (0, _moment["default"])(new Date())];
               _context5.prev = 17;
               _context5.next = 20;
-              return _index.default.query(groupQuery, values);
+              return _index["default"].query(groupQuery, values);
 
             case 20:
               _ref6 = _context5.sent;
@@ -377,7 +377,7 @@ var Group = {
               values = [userId, groupId];
               _context6.prev = 3;
               _context6.next = 6;
-              return _index.default.query(deleteUserGroupQuery, values);
+              return _index["default"].query(deleteUserGroupQuery, values);
 
             case 6:
               _ref7 = _context6.sent;
@@ -433,7 +433,7 @@ var Group = {
             case 0:
               _req$body2 = req.body, receiverId = _req$body2.receiverId, subject = _req$body2.subject, message = _req$body2.message;
 
-              if (_helpers.default.isValidEmail(receiverId)) {
+              if (_helpers["default"].isValidEmail(receiverId)) {
                 _context7.next = 3;
                 break;
               }
@@ -448,7 +448,7 @@ var Group = {
               sendMailGroupQuery = "INSERT INTO\n      messageTable(id, createon, subject, message, parentmessageid, status, senderid, receiverid, senderdelete, receiverdelete)\n      VALUES(DEFAULT,$1, $2, $3, $4, $5, (SELECT email FROM userTable WHERE id=$6), $7, $8, $9)\n      returning *";
               _context7.prev = 5;
               _context7.next = 8;
-              return _index.default.query(selectMembers, [req.params.groupId]);
+              return _index["default"].query(selectMembers, [req.params.groupId]);
 
             case 8:
               _ref8 = _context7.sent;
@@ -508,4 +508,4 @@ var Group = {
   }()
 };
 var _default = Group;
-exports.default = _default;
+exports["default"] = _default;

@@ -3,13 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _jsonwebtoken = _interopRequireDefault(require("jsonwebtoken"));
 
 var _index = _interopRequireDefault(require("../db/index"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -47,13 +47,13 @@ var Auth = {
             case 3:
               _context.prev = 3;
               _context.next = 6;
-              return _jsonwebtoken.default.verify(token, process.env.SECRET);
+              return _jsonwebtoken["default"].verify(token, process.env.SECRET);
 
             case 6:
               decoded = _context.sent;
               text = 'SELECT * FROM userTable  WHERE email = $1';
               _context.next = 10;
-              return _index.default.query(text, [decoded.userId]);
+              return _index["default"].query(text, [decoded.userId]);
 
             case 10:
               _ref = _context.sent;
@@ -100,4 +100,4 @@ var Auth = {
   }()
 };
 var _default = Auth;
-exports.default = _default;
+exports["default"] = _default;

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _moment = _interopRequireDefault(require("moment"));
 
@@ -11,9 +11,11 @@ var _index = _interopRequireDefault(require("../db/index"));
 
 var _helpers = _interopRequireDefault(require("../helpers/helpers"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -40,7 +42,7 @@ var Message = {
             case 0:
               _req$body = req.body, subject = _req$body.subject, message = _req$body.message, receiverId = _req$body.receiverId;
 
-              if (_helpers.default.isValidEmail(receiverId)) {
+              if (_helpers["default"].isValidEmail(receiverId)) {
                 _context.next = 3;
                 break;
               }
@@ -52,10 +54,10 @@ var Message = {
 
             case 3:
               sendMailQuery = "INSERT INTO\n      messageTable(id, createon, subject, message, parentmessageid, status, senderid, receiverid, senderdelete, receiverdelete)\n      VALUES(DEFAULT,$1, $2, $3, $4, $5, (SELECT email FROM userTable WHERE email=$6), $7, $8, $9)\n      returning *";
-              values = [(0, _moment.default)(new Date()), subject, message, 0, 'unread', req.user.id, receiverId, false, false];
+              values = [(0, _moment["default"])(new Date()), subject, message, 0, 'unread', req.user.id, receiverId, false, false];
               _context.prev = 5;
               _context.next = 8;
-              return _index.default.query(sendMailQuery, values);
+              return _index["default"].query(sendMailQuery, values);
 
             case 8:
               _ref = _context.sent;
@@ -121,7 +123,7 @@ var Message = {
               AllMailsQuery = 'SELECT * FROM messageTable WHERE senderid=$1 OR receiverid=$1';
               _context2.prev = 1;
               _context2.next = 4;
-              return _index.default.query(AllMailsQuery, [req.user.id]);
+              return _index["default"].query(AllMailsQuery, [req.user.id]);
 
             case 4:
               _ref2 = _context2.sent;
@@ -192,7 +194,7 @@ var Message = {
               values = ['unread', req.user.id];
               _context3.prev = 2;
               _context3.next = 5;
-              return _index.default.query(AllMailsByUserQuery, values);
+              return _index["default"].query(AllMailsByUserQuery, values);
 
             case 5:
               _ref3 = _context3.sent;
@@ -262,7 +264,7 @@ var Message = {
               sentByUserQuery = 'SELECT * FROM messageTable WHERE senderId=$1';
               _context4.prev = 1;
               _context4.next = 4;
-              return _index.default.query(sentByUserQuery, [req.user.id]);
+              return _index["default"].query(sentByUserQuery, [req.user.id]);
 
             case 4:
               _ref4 = _context4.sent;
@@ -333,7 +335,7 @@ var Message = {
               updateMailQuery = 'UPDATE messageTable SET status=$1 WHERE id=$2 returning *';
               _context5.prev = 2;
               _context5.next = 5;
-              return _index.default.query(findMailQuery, [req.params.messageId]);
+              return _index["default"].query(findMailQuery, [req.params.messageId]);
 
             case 5:
               _ref5 = _context5.sent;
@@ -352,7 +354,7 @@ var Message = {
             case 9:
               values = ['read', rows[0].id];
               _context5.next = 12;
-              return _index.default.query(updateMailQuery, values);
+              return _index["default"].query(updateMailQuery, values);
 
             case 12:
               row = _context5.sent;
@@ -408,21 +410,21 @@ var Message = {
               _context6.prev = 3;
               senderValues = [true, req.user.id, req.params.messageId];
               _context6.next = 7;
-              return _index.default.query(senderDeletionUpdateQuery, senderValues);
+              return _index["default"].query(senderDeletionUpdateQuery, senderValues);
 
             case 7:
               _ref6 = _context6.sent;
               rows1 = _ref6.rows1;
               receiverValues = [true, req.user.id, req.params.messageId];
               _context6.next = 12;
-              return _index.default.query(receiverDeletionUpdateQuery, receiverValues);
+              return _index["default"].query(receiverDeletionUpdateQuery, receiverValues);
 
             case 12:
               _ref7 = _context6.sent;
               rows2 = _ref7.rows2;
               deleteValues = [true, req.params.messageId];
               _context6.next = 17;
-              return _index.default.query(deleteQuery, deleteValues);
+              return _index["default"].query(deleteQuery, deleteValues);
 
             case 17:
               _ref8 = _context6.sent;
@@ -468,4 +470,4 @@ var Message = {
   }()
 };
 var _default = Message;
-exports.default = _default;
+exports["default"] = _default;
