@@ -1,8 +1,7 @@
 exclude_patterns:
-  dist/
-  features/
-  node_modules/
-  tests/
-  server/controllers/
-  server/models/
-  server/helpers/
+  - dist/
+  - node_modules/
+  - tests/
+  - server/controllers/
+  - server/models/
+  - server/helpers/

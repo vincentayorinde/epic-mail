@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _pg = require("pg");
 
@@ -34,4 +34,4 @@ var environment = function environment(env) {
 };
 
 var _default = environment;
-exports.default = _default;
+exports["default"] = _default;

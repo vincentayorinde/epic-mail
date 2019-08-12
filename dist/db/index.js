@@ -3,15 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _pg = require("pg");
 
 var _dotenv = _interopRequireDefault(require("dotenv"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-_dotenv.default.config();
+_dotenv["default"].config();
 
 var pool;
 var env = process.env.NODE_ENV;
@@ -46,10 +46,10 @@ var _default = {
     return new Promise(function (resolve, reject) {
       pool.query(text, params).then(function (res) {
         resolve(res);
-      }).catch(function (err) {
+      })["catch"](function (err) {
         reject(err);
       });
     });
   }
 };
-exports.default = _default;
+exports["default"] = _default;

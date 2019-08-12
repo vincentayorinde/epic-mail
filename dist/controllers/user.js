@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _moment = _interopRequireDefault(require("moment"));
 
@@ -11,7 +11,7 @@ var _index = _interopRequireDefault(require("../db/index"));
 
 var _helpers = _interopRequireDefault(require("../helpers/helpers"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -34,7 +34,7 @@ var User = {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _Helper$validateCreat = _helpers.default.validateCreateUser(req.body), errors = _Helper$validateCreat.errors, isValid = _Helper$validateCreat.isValid;
+              _Helper$validateCreat = _helpers["default"].validateCreateUser(req.body), errors = _Helper$validateCreat.errors, isValid = _Helper$validateCreat.isValid;
               _req$body = req.body, password = _req$body.password, email = _req$body.email, firstname = _req$body.firstname, lastname = _req$body.lastname, mobile = _req$body.mobile;
 
               if (isValid) {
@@ -48,17 +48,17 @@ var User = {
               }));
 
             case 4:
-              hashPassword = _helpers.default.hashPassword(password);
+              hashPassword = _helpers["default"].hashPassword(password);
               signUpQuery = "INSERT INTO userTable(id, email, firstname, lastname, password, mobile, join_date)\n      VALUES(DEFAULT, $1, $2, $3, $4, $5, $6) returning *";
-              values = [email, firstname, lastname, hashPassword, mobile, (0, _moment.default)(new Date())];
+              values = [email, firstname, lastname, hashPassword, mobile, (0, _moment["default"])(new Date())];
               _context.prev = 7;
               _context.next = 10;
-              return _index.default.query(signUpQuery, values);
+              return _index["default"].query(signUpQuery, values);
 
             case 10:
               _ref = _context.sent;
               rows = _ref.rows;
-              token = _helpers.default.generateToken(rows[0].id);
+              token = _helpers["default"].generateToken(rows[0].id);
               return _context.abrupt("return", res.status(201).send({
                 status: 201,
                 message: 'User account created successfully',
@@ -119,7 +119,7 @@ var User = {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              _Helper$validateUserL = _helpers.default.validateUserLogin(req.body), errors = _Helper$validateUserL.errors, isValid = _Helper$validateUserL.isValid;
+              _Helper$validateUserL = _helpers["default"].validateUserLogin(req.body), errors = _Helper$validateUserL.errors, isValid = _Helper$validateUserL.isValid;
               _req$body2 = req.body, email = _req$body2.email, password = _req$body2.password;
 
               if (isValid) {
@@ -136,7 +136,7 @@ var User = {
               signInQuery = 'SELECT * FROM userTable WHERE email = $1';
               _context2.prev = 5;
               _context2.next = 8;
-              return _index.default.query(signInQuery, [email]);
+              return _index["default"].query(signInQuery, [email]);
 
             case 8:
               _ref2 = _context2.sent;
@@ -153,7 +153,7 @@ var User = {
               }));
 
             case 12:
-              if (_helpers.default.comparePassword(rows[0].password, password)) {
+              if (_helpers["default"].comparePassword(rows[0].password, password)) {
                 _context2.next = 14;
                 break;
               }
@@ -164,7 +164,7 @@ var User = {
               }));
 
             case 14:
-              token = _helpers.default.generateToken(rows[0].email);
+              token = _helpers["default"].generateToken(rows[0].email);
               return _context2.abrupt("return", res.status(200).send({
                 status: 200,
                 message: 'Login successful',
@@ -192,4 +192,4 @@ var User = {
   }()
 };
 var _default = User;
-exports.default = _default;
+exports["default"] = _default;
